@@ -1,8 +1,9 @@
 ### install libraries
-  BiocManager::install("SRAdb")
-  BiocManager::install("gdsfmt")
-  BiocManager::install("SeqArray")
-
+  BiocManager::install("SRAdb", lib="~/biol4559-R-packages/")
+  BiocManager::install("gdsfmt", lib="~/biol4559-R-packages/")
+  BiocManager::install("SeqArray", lib="~/biol4559-R-packages/")
+  install.packages("readxl", lib="~/biol4559-R-packages/")
+  
 ### necessary libraries
   .libPaths(c("~/biol4559-R-packages/", .libPaths()))
   library(foreach)
@@ -11,4 +12,4 @@
   library(rlang)
   library(SRAdb)
   library(data.table)
-  
+  library(readxl)
