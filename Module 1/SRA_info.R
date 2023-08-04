@@ -8,7 +8,7 @@
 ### load excel sheet
   sras <- na.omit(as.data.table(read_xlsx("/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/SRA_accessions.xlsx")))
 
-### how much space do we need?
+### approx how much space do we need?
   info <- foreach(acc=sras$accession)%do%{
     # acc <- "PRJNA657615"
     as.data.table(read_xlsx("/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/SRA_accessions.xlsx", sheet=acc))
@@ -16,5 +16,16 @@
   }
   info <- rbindlist(info[-1], fill=T)
 
+### just return vector of individual accession IDs
+  runs <- foreach(acc=sras$accession, .combine="rbind")%do%{
+    # acc <- sras$accession[1]
+    tmp <- as.data.table(read_xlsx("/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/SRA_accessions.xlsx", sheet=acc))
+    data.table(project=acc, run=tmp$Run)
+  }
+  info <- rbindlist(info[-1], fill=T)
+  write.table(info, file="/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/runs.csv", quote=F, row.names=F, col.names=F)
+
+
 ### plots
   ggplot(data=info, aes(x=Model, y=bases)) + geom_point()
+  sum(info$size_MB)
