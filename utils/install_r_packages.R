@@ -8,7 +8,5 @@
   library(foreach)
   library(ggplot2)
   library(SeqArray)
-  library(rlang)
   library(SRAdb)
   library(data.table)
-  
