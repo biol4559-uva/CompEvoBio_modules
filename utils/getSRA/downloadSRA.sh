@@ -8,11 +8,11 @@
 #SBATCH -o /scratch/aob2x/compBio/logs/prefetch.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/compBio/logs/prefetch.%A_%a.err # Standard error
 #SBATCH -p standard
-#SBATCH --account berglandlab
+#SBATCH --account berglandlab_standard
 
 wd=/scratch/aob2x/compBio
 ### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs.csv ) ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
-### sacct -j 18750292
+### sacct -j 51982508
 
 module load sratoolkit/2.10.5
 
