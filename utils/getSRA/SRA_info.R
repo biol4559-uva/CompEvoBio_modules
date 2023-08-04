@@ -22,9 +22,7 @@
     tmp <- as.data.table(read_xlsx("/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/SRA_accessions.xlsx", sheet=acc))
     data.table(project=acc, run=tmp$Run)
   }
-  info <- rbindlist(info[-1], fill=T)
-  write.table(info, file="/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/runs.csv", quote=F, row.names=F, col.names=F)
-
+  write.table(runs, file="/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/runs.csv", quote=F, row.names=F, col.names=F)
 
 ### plots
   ggplot(data=info, aes(x=Model, y=bases)) + geom_point()
