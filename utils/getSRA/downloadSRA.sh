@@ -12,8 +12,8 @@
 
 wd=/scratch/aob2x/compBio
 ### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs.csv ) ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
-### sacct -j 51983121
-### cat /scratch/aob2x/compBio/logs/prefetch.51983121_1.err
+### sacct -j 52096862
+### cat /scratch/aob2x/compBio/logs/prefetch.52096862_1.out
 
 module load sratoolkit/2.10.5
 
@@ -26,16 +26,26 @@ echo $sampName " / " $sranum
 
 prefetch \
 -o /scratch/aob2x/compBio/sra/${sranum}.sra \
+-p \
 ${sranum}
+
+### sranum=SRR6240764
 
 fasterq-dump \
 --split-files \
 --split-3 \
 --outfile /scratch/aob2x/compBio/fastq/${sranum} \
 -e 10 \
+-p \
 /scratch/aob2x/compBio/sra/${sranum}.sra
 
-gzip /scratch/aob2x/compBio/fastq/${sranum}_1.fastq
-gzip /scratch/aob2x/compBio/fastq/${sranum}_2.fastq
+if [ -f "/scratch/aob2x/compBio/fastq/${sranum}_1.fastq" ]; then
+  gzip /scratch/aob2x/compBio/fastq/${sranum}_1.fastq
+  gzip /scratch/aob2x/compBio/fastq/${sranum}_2.fastq
+fi
+
+if [ -f "/scratch/aob2x/compBio/fastq/${sranum}" ]; then
+  gzip -c /scratch/aob2x/compBio/fastq/${sranum} > /scratch/aob2x/compBio/fastq/${sranum}.fastq.gz
+fi
 
 #rm /scratch/aob2x/fastq/${sranum}.sra
