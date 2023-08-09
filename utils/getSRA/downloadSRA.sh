@@ -12,18 +12,18 @@
 
 wd=/scratch/aob2x/compBio
 ### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs.csv )%10 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
-### sacct -j 52141033
-### cat /scratch/aob2x/compBio/logs/prefetch.52096862_1.out
+### sacct -j 52147331
+### cat /scratch/aob2x/compBio/logs/prefetch.52147331_223.err
 
 module load sratoolkit/2.10.5
 
-#SLURM_ARRAY_TASK_ID=1
+#SLURM_ARRAY_TASK_ID=194
 
 sranum=$( sed "${SLURM_ARRAY_TASK_ID}q;d" /home/aob2x/CompEvoBio_modules/data/runs.csv | cut -f2 -d' ' )
 sampName=$( sed "${SLURM_ARRAY_TASK_ID}q;d" /home/aob2x/CompEvoBio_modules/data/runs.csv | cut -f2 -d' ' )
 proj=$( sed "${SLURM_ARRAY_TASK_ID}q;d" /home/aob2x/CompEvoBio_modules/data/runs.csv | cut -f1 -d' ' )
 
-echo $sampName " / " $sranum
+echo $sampName " / " $sranum " / " $proj
 
 prefetch \
 -o /scratch/aob2x/compBio/sra/${sranum}.sra \
@@ -40,13 +40,18 @@ fi
 if ls /scratch/aob2x/compBio/fastq/${proj}/${sranum}*fastq.gz 1> /dev/null 2>&1; then
     echo "files do exist"
 else
+  echo "files do not exist"
   fasterq-dump \
   --split-files \
   --split-3 \
   --outfile /scratch/aob2x/compBio/fastq/${proj}/${sranum} \
   -e 10 \
   -p \
+  --temp /scratch/aob2x/tmp \
   /scratch/aob2x/compBio/sra/${sranum}.sra
+
+  ls -lh /scratch/aob2x/compBio/fastq/${proj}/${sranum}*
+
 fi
 
 if [ -f "/scratch/aob2x/compBio/fastq/${proj}/${sranum}_1.fastq" ]; then
@@ -60,3 +65,4 @@ if [ -f "/scratch/aob2x/compBio/fastq/${proj}/${sranum}" ]; then
 fi
 
 #rm /scratch/aob2x/fastq/${sranum}.sra
+cat /home/aob2x/CompEvoBio_modules/data/runs.csv | nl | grep "PRJNA194129"
