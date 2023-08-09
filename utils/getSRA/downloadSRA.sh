@@ -12,7 +12,7 @@
 
 wd=/scratch/aob2x/compBio
 ### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs.csv )%10 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
-### sacct -j 52117013
+### sacct -j 52141033
 ### cat /scratch/aob2x/compBio/logs/prefetch.52096862_1.out
 
 module load sratoolkit/2.10.5
@@ -30,19 +30,24 @@ prefetch \
 -p \
 ${sranum}
 
-### sranum=ERR103321
+### sranum=SRR1184609; proj=PRJNA194129
 
 if [ ! -d "/scratch/aob2x/compBio/fastq/${proj}" ]; then
   mkdir /scratch/aob2x/compBio/fastq/${proj}
 fi
 
-fasterq-dump \
---split-files \
---split-3 \
---outfile /scratch/aob2x/compBio/fastq/${proj}/${sranum} \
--e 10 \
--p \
-/scratch/aob2x/compBio/sra/${sranum}.sra
+
+if ls /scratch/aob2x/compBio/fastq/${proj}/${sranum}*fastq.gz 1> /dev/null 2>&1; then
+    echo "files do exist"
+else
+  fasterq-dump \
+  --split-files \
+  --split-3 \
+  --outfile /scratch/aob2x/compBio/fastq/${proj}/${sranum} \
+  -e 10 \
+  -p \
+  /scratch/aob2x/compBio/sra/${sranum}.sra
+fi
 
 if [ -f "/scratch/aob2x/compBio/fastq/${proj}/${sranum}_1.fastq" ]; then
   gzip /scratch/aob2x/compBio/fastq/${proj}/${sranum}_1.fastq
