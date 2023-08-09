@@ -11,8 +11,8 @@
 #SBATCH --account berglandlab_standard
 
 wd=/scratch/aob2x/compBio
-### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs.csv ) ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
-### sacct -j 52096862
+### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs.csv )%10 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
+### sacct -j 52117013
 ### cat /scratch/aob2x/compBio/logs/prefetch.52096862_1.out
 
 module load sratoolkit/2.10.5
@@ -21,6 +21,7 @@ module load sratoolkit/2.10.5
 
 sranum=$( sed "${SLURM_ARRAY_TASK_ID}q;d" /home/aob2x/CompEvoBio_modules/data/runs.csv | cut -f2 -d' ' )
 sampName=$( sed "${SLURM_ARRAY_TASK_ID}q;d" /home/aob2x/CompEvoBio_modules/data/runs.csv | cut -f2 -d' ' )
+proj=$( sed "${SLURM_ARRAY_TASK_ID}q;d" /home/aob2x/CompEvoBio_modules/data/runs.csv | cut -f1 -d' ' )
 
 echo $sampName " / " $sranum
 
@@ -29,23 +30,28 @@ prefetch \
 -p \
 ${sranum}
 
-### sranum=SRR6240764
+### sranum=ERR103321
+
+if [ ! -d "/scratch/aob2x/compBio/fastq/${proj}" ]; then
+  mkdir /scratch/aob2x/compBio/fastq/${proj}
+fi
 
 fasterq-dump \
 --split-files \
 --split-3 \
---outfile /scratch/aob2x/compBio/fastq/${sranum} \
+--outfile /scratch/aob2x/compBio/fastq/${proj}/${sranum} \
 -e 10 \
 -p \
 /scratch/aob2x/compBio/sra/${sranum}.sra
 
-if [ -f "/scratch/aob2x/compBio/fastq/${sranum}_1.fastq" ]; then
-  gzip /scratch/aob2x/compBio/fastq/${sranum}_1.fastq
-  gzip /scratch/aob2x/compBio/fastq/${sranum}_2.fastq
+if [ -f "/scratch/aob2x/compBio/fastq/${proj}/${sranum}_1.fastq" ]; then
+  gzip /scratch/aob2x/compBio/fastq/${proj}/${sranum}_1.fastq
+  gzip /scratch/aob2x/compBio/fastq/${proj}/${sranum}_2.fastq
 fi
 
-if [ -f "/scratch/aob2x/compBio/fastq/${sranum}" ]; then
-  gzip -c /scratch/aob2x/compBio/fastq/${sranum} > /scratch/aob2x/compBio/fastq/${sranum}.fastq.gz
+if [ -f "/scratch/aob2x/compBio/fastq/${proj}/${sranum}" ]; then
+  gzip -c /scratch/aob2x/compBio/fastq/${proj}/${sranum} > /scratch/aob2x/compBio/fastq/${proj}/${sranum}.fastq.gz
+  rm /scratch/aob2x/compBio/fastq/${proj}/${sranum}
 fi
 
 #rm /scratch/aob2x/fastq/${sranum}.sra

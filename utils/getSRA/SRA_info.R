@@ -27,3 +27,17 @@
 ### plots
   ggplot(data=info, aes(x=Model, y=bases)) + geom_point()
   sum(info$size_MB)
+
+
+### double check that all the files downloaded
+  system("ls -lh > /scratch/aob2x//downloaded_sra")
+  dl <- fread("~/downloaded_sra")
+  dl <- dl[grepl("gz", V9)]
+  dl[,run:=gsub(".fastq.gz", "", V9)]
+  dl[,run:=gsub(".fastq", "", run)]
+  dl[,run:=tstrsplit(run, "_")[[1]]]
+
+  dl.ag <- dl[,.N,run]
+
+### merge
+  rdl <- merge(runs, dl.ag, by="run", all.x=T)
