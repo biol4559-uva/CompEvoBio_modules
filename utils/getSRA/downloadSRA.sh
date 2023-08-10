@@ -7,8 +7,8 @@
 #SBATCH --mem 10G
 #SBATCH -o /scratch/aob2x/compBio/logs/prefetch.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/compBio/logs/prefetch.%A_%a.err # Standard error
-#SBATCH -p standard
-#SBATCH --account berglandlab_standard
+#SBATCH -p instructional
+#SBATCH --account biol4559_aob2x
 
 wd=/scratch/aob2x/compBio
 ### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs.csv )%1 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
