@@ -11,9 +11,9 @@
 #SBATCH --account berglandlab_standard
 
 wd=/scratch/aob2x/compBio
-### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs.csv )%10 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
-### sacct -j 52147331
-### cat /scratch/aob2x/compBio/logs/prefetch.52147331_223.err
+### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs.csv )%1 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
+### sacct -j 52153472
+### cat /scratch/aob2x/compBio/logs/prefetch.52153472_198.err
 
 module load sratoolkit/2.10.5
 
@@ -65,4 +65,4 @@ if [ -f "/scratch/aob2x/compBio/fastq/${proj}/${sranum}" ]; then
 fi
 
 #rm /scratch/aob2x/fastq/${sranum}.sra
-cat /home/aob2x/CompEvoBio_modules/data/runs.csv | nl | grep "PRJNA194129"
+cat /home/aob2x/CompEvoBio_modules/data/runs.csv | nl | grep "SRR12463313"
