@@ -10,7 +10,11 @@
 #SBATCH -p instructional
 #SBATCH --account biol4559-aob2x
 
+### run as: sbatch /project/biol4559-aob2x/repos/CompEvoBio_modules/utils/makeSingularityDocker.sh
+### sacct -j 52186145
+### cat /scratch/aob2x/compBio/logs/makeSingularity.52186145*.err
+
 
 module load singularity
 cd /project/biol4559-aob2x/singularity
-singularity pull docker://jcbn/dest_v2.5
+singularity --disable-cache destv2.sif pull docker://jcbn/dest_v2.5:latest
