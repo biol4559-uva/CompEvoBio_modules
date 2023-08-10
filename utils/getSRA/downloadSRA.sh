@@ -12,7 +12,7 @@
 
 wd=/scratch/aob2x/compBio
 ### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs.csv )%1 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
-### sacct -j 52153472
+### sacct -j 52174039
 ### cat /scratch/aob2x/compBio/logs/prefetch.52153472_198.err
 
 module load sratoolkit/2.10.5
