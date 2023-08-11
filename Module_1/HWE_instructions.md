@@ -11,7 +11,9 @@ Objectives:
 Goals:
 1.	Increased familiarity with R.
 2.	Increased understanding of allele frequencies, precision, and statistical tests
+
 ---
+
 ## Steps
 ### 1.	Log into [OpenOneDemand](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard) and start an interactive Rstudio job.
 <p align="center">
@@ -19,7 +21,7 @@ Goals:
 </p>
 
 
-### 2. Select the options below. Why do these options matter (we’ll discuss but here is the notes)
+### 2. Select the options below. Why do these options matter? (we’ll discuss but here is the notes)
 
 >a.	Version = which libraries to use<br>
 >b.	Partition = what sort of computer your job gets given to, constraints, SU<br>
@@ -31,3 +33,6 @@ Goals:
 <p align="center">
 <img src="/Module_1/images/OOD2.png" width="500"/>
 </p>
+
+### 3. Create a new script in Rstudio
+1. Copy the contents of the [HWE_template.R](/Module_1/HWE_template.R) to a new script in Rstudio. Try running the script. 
