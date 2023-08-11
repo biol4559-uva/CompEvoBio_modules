@@ -13,5 +13,4 @@ Goals:
 2.	Increased understanding of allele frequencies, precision, and statistical tests
 ---
 ## Steps
-1.	Log into [OpenOneDemand](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard) and start an interactive Rstudio job.
-![Starting Rstudio!](/Module 1/images/OOD1.png)
+1.	Log into [OpenOneDemand](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard) and start an interactive Rstudio job. ![](Module 1/images/OOD1.png?raw=true)
