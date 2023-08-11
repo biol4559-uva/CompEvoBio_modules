@@ -11,3 +11,7 @@ Objectives:
 Goals:
 1.	Increased familiarity with R.
 2.	Increased understanding of allele frequencies, precision, and statistical tests
+---
+## Steps
+1.	Log into [OpenOneDemand](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard) and start an interactive Rstudio job.
+![Starting Rstudio](CompEvoBio_modules/Module 1/images/OOD1.png)
