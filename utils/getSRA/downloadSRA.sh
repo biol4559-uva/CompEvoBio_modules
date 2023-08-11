@@ -7,12 +7,12 @@
 #SBATCH --mem 10G
 #SBATCH -o /scratch/aob2x/compBio/logs/prefetch.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/compBio/logs/prefetch.%A_%a.err # Standard error
-#SBATCH -p standard
+#SBATCH -p largemem
 #SBATCH --account berglandlab_standard
 
 wd=/scratch/aob2x/compBio
 ### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs.csv )%1 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
-### sacct -j 52191472
+### sacct -j 52222105
 ### cat /scratch/aob2x/compBio/logs/prefetch.52153472_198.err
 
 module load sratoolkit/2.10.5
