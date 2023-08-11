@@ -14,4 +14,4 @@ Goals:
 ---
 ## Steps
 1.	Log into [OpenOneDemand](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard) and start an interactive Rstudio job.
-![Starting Rstudio!](/CompEvoBio_modules/Module 1/images/OOD1.png)
+![Starting Rstudio!](/Module 1/images/OOD1.png)
