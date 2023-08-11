@@ -14,6 +14,4 @@ Goals:
 ---
 ## Steps
 1.	Log into [OpenOneDemand](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard) and start an interactive Rstudio job.
-![Some text here.](/Module_1/images/OOD1.png){width=100px}
-
-<img src="/Module_1/images/OOD1.png" width="100" />
+<img src="/Module_1/images/OOD1.png" width="400"/>
