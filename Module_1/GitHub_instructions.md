@@ -18,7 +18,11 @@ As a member of this GitHub Organization, you can create your own repositories. I
 
 3. Once your repository is created, click on it. Then click on "Manage Access". You might be asked for your GitHub password again. Click "Add People" and type in Alan's id ("alanbergland") and Connor's id ("connor122721"). Give us "Write" privileges.
 
-4. Next you will need to set up an `ssh-key`. This is a way that GitHub can verify your identity when you are pushing and pulling scripts. You will be setting up your `ssh-key` on Rivanna, although you might also want to set it up on your own computer. Follow the steps listed [here](https://jdblischak.github.io/2014-09-18-chicago/novice/git/05-sshkeys.html).
+4. Next you will need to set up an `ssh-key`. This is a way that GitHub can verify your identity when you are pushing and pulling scripts. You will be setting up your `ssh-key` on Rivanna, although you might also want to set it up on your own computer. Follow the steps listed [here](https://jdblischak.github.io/2014-09-18-chicago/novice/git/05-sshkeys.html). You will be using OpenOnDemand's shell access to complete these steps:
+<p align="center">
+<img src="/Module_1/images/create_new_repo8.jpeg" width="500"/>
+</p>
+
 
 5. Once you have generated your `ssh-key` clone your repository onto Rivanna. There are different ways to clone your repository. One way is using the command line:
 ```git clone git@github.com:biol4559-uva/aob-test.git``` The other is using a program like RStudio or GitHub desktop. Today, we are going to try using RStudio. Using OpenOnDemand, launch an RStudio job. Go to the File menu and click "New Project". Click on Version Control:
