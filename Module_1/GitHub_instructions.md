@@ -52,8 +52,8 @@ You'll need to enter the password that you set when you generated an `ssh-key`.
 </p>
 <br>
 
-7. Next, you will push your script and figure to GitHub. Click on on the `Git` tab, and then click the `Staged` boxes for every file. Then click commit and follot he instrucitons.
-8. <p align="center">
+7. Next, you will push your script and figure to GitHub. Click on on the `Git` tab, and then click the `Staged` boxes for every file. Then click commit and follo the instrucitons.
+<p align="center">
 <img src="/Module_1/images/create_new_repo7.jpeg" width="500"/>
 </p>
 <br>
