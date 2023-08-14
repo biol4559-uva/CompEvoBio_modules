@@ -11,7 +11,7 @@ Objectives:
 Goals:
 1.	Increased familiarity with R.
 2.	Increased understanding of allele frequencies, precision, and statistical tests
-
+3.  Understand the difference between long and wide data
 ---
 
 ## Steps
@@ -35,4 +35,9 @@ Goals:
 </p>
 
 ### 3. Create a new script in Rstudio
-1. Copy the contents of the [HWE_template.R](/Module_1/HWE_template.R) to a new script in Rstudio. Try running the script. 
+1. Copy the contents of the [HWE_template.R](/Module_1/HWE_template.R) to a new script in Rstudio. Try running the script. Play around for a minute modifying the functions. Can you write a new function that takes input parameters, performs calculations using two different sets of equations and returns the output from those two equations?
+
+### 4. Write your own script/function to answer question 1.4 from Gillespie
+1. The initial goal is to recreate a version of this figure using a function that you write yourself in R and plot using ggplot.
+<p align="center">
+<img src="/Module_1/images/hwe_plot.png" width="500"/>

@@ -39,5 +39,16 @@
 
   dl.ag <- dl[,.N,run]
 
+
+  dl <- list
+
 ### merge
   rdl <- merge(runs, dl.ag, by="run", all.x=T)
+  rdl.ag <- rdl[,list(missing=mean(is.na(N))), list(project)]
+  table(is.na(rdl$N))
+
+
+#### sras
+  runs <- fread("~/CompEvoBio_modules/data/runs.csv", header=F)
+  sras <- gsub(".sra", "", list.files("/scratch/aob2x/compBio/sra/"))
+  runs[!runs$V2%in%sras]

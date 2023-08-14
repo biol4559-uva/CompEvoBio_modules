@@ -11,8 +11,8 @@
 #SBATCH --account biol4559-aob2x
 
 ### run as: sbatch /project/biol4559-aob2x/repos/CompEvoBio_modules/utils/makeSingularityDocker.sh
-### sacct -j 52190819
-### cat /scratch/aob2x/compBio/logs/makeSingularity.52190819*.err
+### sacct -j 52190826
+### cat /scratch/aob2x/compBio/logs/makeSingularity.52190826*.err
 
 
 module load singularity
