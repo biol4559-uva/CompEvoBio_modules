@@ -12,14 +12,9 @@ As a member of this GitHub Organization, you can create your own repositories. I
 
 2. Use your UVA computing ID as the repository-name and put your full name in the Description. Select "Private", and leave the rest as is. Click "Create Repo"
 <p align="center">
-<img src="/Module_1/images/create_new_repo1.jpeg" width="500"/>
+<img src="/Module_1/images/create_new_repo1.jpeg" width="1000"/>
 </p>
 
-2. Use your UVA computing ID as the repository-name and put your full name in the Description. Select "Private", and leave the rest as is. Click "Create Repo"
-<p align="center">
-<img src="/Module_1/images/create_new_repo1.jpeg" width="500"/>
-</p>
-<br>
 
 3. Once your repository is created, click on it. Then click on "Manage Access". You might be asked for your GitHub password again. Click "Add People" and type in Alan's id ("alanbergland") and Connor's id ("connor122721"). Give us "Write" privileges.
 
