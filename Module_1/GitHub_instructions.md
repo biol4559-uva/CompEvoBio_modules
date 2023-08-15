@@ -5,7 +5,12 @@ Once you have created a GitHub account and shared your username with me, you wil
 
 As a member of this GitHub Organization, you can create your own repositories. In today's class, you will create your own repository and use it to store scripts that you write for assignmenbts. This will be a private repository that you own and that you share with me and the TA. Down the road, you will create a repository for your team during the analysis of the data-set that you are working on. Using GitHub will allow us to more easily share code and also to get feedback and help when things go awry.
 
-**To complete the GitHub assignment today, you will be upload your figure and script for your HWE assignment to a repository that you have made***
+Objective:
+1. Learn how to use Github for cloning, pushing and pulling
+
+Goals:
+1. Creat an `ssh-key`
+2. **To complete the GitHub assignment today, you will be upload your figure and script for your HWE assignment to a repository that you have made***
 
 ## Steps
 1. Create a new repository on the [biol4559-uva](https://github.com/biol4559-uva) organization. To create a repository, navigate to the [biol4559-uva](https://github.com/biol4559-uva) and click the "New" button.
@@ -57,3 +62,5 @@ You'll need to enter the password that you set when you generated an `ssh-key`.
 <img src="/Module_1/images/create_new_repo7.jpeg" width="500"/>
 </p>
 <br>
+
+8. There is a lot more to Git than that, and some of those other aspects might come up later on in the course. If you are curious, check out this lesson on Git from [Sofwware Carpentry](https://swcarpentry.github.io/git-novice/)
