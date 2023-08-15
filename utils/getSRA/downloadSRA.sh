@@ -13,22 +13,20 @@
 wd=/scratch/aob2x/compBio
 ### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs.csv )%1 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
 ### sacct -j 52222298
-### cat /scratch/aob2x/compBio/logs/prefetch.52153472_198.err
+### cat /scratch/aob2x/compBio/logs/prefetch.52222298_*.out | grep -B1 "do not"
+### cat /scratch/aob2x/compBio/logs/prefetch.52222298_61.err
 
 module load sratoolkit/2.10.5
 
 #SLURM_ARRAY_TASK_ID=194
+# cat /home/aob2x/CompEvoBio_modules/data/runs.csv | nl | grep "SRR1988519"
+# SLURM_ARRAY_TASK_ID=61
 
 sranum=$( sed "${SLURM_ARRAY_TASK_ID}q;d" /home/aob2x/CompEvoBio_modules/data/runs.csv | cut -f2 -d' ' )
 sampName=$( sed "${SLURM_ARRAY_TASK_ID}q;d" /home/aob2x/CompEvoBio_modules/data/runs.csv | cut -f2 -d' ' )
 proj=$( sed "${SLURM_ARRAY_TASK_ID}q;d" /home/aob2x/CompEvoBio_modules/data/runs.csv | cut -f1 -d' ' )
 
 echo $sampName " / " $sranum " / " $proj
-
-prefetch \
--o /scratch/aob2x/compBio/sra/${sranum}.sra \
--p \
-${sranum}
 
 ### sranum=SRR1184609; proj=PRJNA194129
 
@@ -41,6 +39,15 @@ if ls /scratch/aob2x/compBio/fastq/${proj}/${sranum}*fastq.gz 1> /dev/null 2>&1;
     echo "files do exist"
 else
   echo "files do not exist"
+
+  echo "force re-download"
+  prefetch \
+  -o /scratch/aob2x/compBio/sra/${sranum}.sra \
+  -p \
+  -f \
+  ${sranum}
+
+
   fasterq-dump \
   --split-files \
   --split-3 \
