@@ -12,14 +12,14 @@
 
 wd=/scratch/aob2x/compBio
 ### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs.csv )%1 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
-### sacct -j 52222298
+### sacct -j 52367522
 ### cat /scratch/aob2x/compBio/logs/prefetch.52222298_*.out | grep -B1 "do not"
-### cat /scratch/aob2x/compBio/logs/prefetch.52222298_61.err
+### cat /scratch/aob2x/compBio/logs/prefetch.52222298_52.out
 
 module load sratoolkit/2.10.5
 
 #SLURM_ARRAY_TASK_ID=194
-# cat /home/aob2x/CompEvoBio_modules/data/runs.csv | nl | grep "SRR1988519"
+# cat /home/aob2x/CompEvoBio_modules/data/runs.csv | nl | grep "SRR1988514"
 # SLURM_ARRAY_TASK_ID=61
 
 sranum=$( sed "${SLURM_ARRAY_TASK_ID}q;d" /home/aob2x/CompEvoBio_modules/data/runs.csv | cut -f2 -d' ' )

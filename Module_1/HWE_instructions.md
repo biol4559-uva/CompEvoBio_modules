@@ -17,7 +17,7 @@ Goals:
 ## Steps
 ### 1.	Log into [OpenOneDemand](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard) and start an interactive Rstudio job.
 <p align="center">
-  <img src="/Module_1/images/OOD1.png" width="500"/>
+  <img src="/Module_1/images/OOD1.png" width="750"/>
 </p>
 
 
@@ -31,7 +31,7 @@ Goals:
 >f. Allocation = the account to bill SUs to. The instructional allocation prioritizes our jobs during our class-time so that we don’t have to wait. bio4559-aob2x<br>
 
 <p align="center">
-<img src="/Module_1/images/OOD2.png" width="500"/>
+<img src="/Module_1/images/OOD2.png" width="750"/>
 </p>
 
 ### 3. Create a new script in Rstudio
@@ -40,4 +40,4 @@ Goals:
 ### 4. Write your own script/function to answer question 1.4 from Gillespie
 1. The main goal is to recreate a version of this figure using a function that you write yourself in R and plot using ggplot.
 <p align="center">
-<img src="/Module_1/images/hwe_plot.png" width="500"/>
+<img src="/Module_1/images/hwe_plot.png" width="750"/>

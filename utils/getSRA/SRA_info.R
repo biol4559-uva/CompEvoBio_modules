@@ -1,3 +1,7 @@
+# ijob -A berglandlab_standard -c1 -p dev --mem=6G
+### module load gcc/7.1.0  openmpi/3.1.4 R/4.1.1; R
+
+
 ### necessary libraries
   .libPaths(c("~/biol4559-R-packages/", .libPaths()))
   library(foreach)
@@ -6,7 +10,7 @@
   library(data.table)
 
 ### load excel sheet
-  sras <- na.omit(as.data.table(read_xlsx("/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/SRA_accessions.xlsx")))
+  sras <- na.omit(as.data.table(read_xlsx("~/CompEvoBio_modules/data/SRA_accessions.xlsx")))
 
 ### approx how much space do we need?
   info <- foreach(acc=sras$accession)%do%{
@@ -30,20 +34,21 @@
 
 
 ### double check that all the files downloaded
-  system("ls -lh > /scratch/aob2x//downloaded_sra")
-  dl <- fread("~/downloaded_sra")
-  dl <- dl[grepl("gz", V9)]
-  dl[,run:=gsub(".fastq.gz", "", V9)]
-  dl[,run:=gsub(".fastq", "", run)]
-  dl[,run:=tstrsplit(run, "_")[[1]]]
+  dl <- foreach(prj=sras$accession, .combine="rbind", .errorhandling="remove")%do%{
+    #prj <- sras$accession[2]
+    fl <- list.files(paste("/scratch/aob2x/compBio/fastq/", prj, sep=""))
+    dl <- data.table(proj=prj, run=fl)
+    dl[,run:=gsub(".fastq.gz", "", run)]
+    dl[,run:=gsub(".fastq", "", run)]
 
-  dl.ag <- dl[,.N,run]
-
-
-  dl <- list
+    dl[,run:=tstrsplit(run, "_")[[1]]]
+    dl
+  }
 
 ### merge
-  rdl <- merge(runs, dl.ag, by="run", all.x=T)
+  dl.ag <- dl[,list(N=length(unique(run))),proj]
+
+  rdl <- merge(sras, dl.ag, by.x="accession", by.y="proj", all.x=T)
   rdl.ag <- rdl[,list(missing=mean(is.na(N))), list(project)]
   table(is.na(rdl$N))
 

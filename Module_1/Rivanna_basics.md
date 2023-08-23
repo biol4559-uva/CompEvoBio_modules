@@ -26,6 +26,14 @@ https://ucsbcarpentry.github.io/2021-01-21-SWC-Bash-online/02-filedir/
 4. You can read about the arguments for any program by typing `man ____`, e.g. `man lh`.
 
 5. Here are some other useful `bash` programs that let you see the contents of files:<br>
-• `cat`:  <br>
-• `less -S`:  <bv>
+• `cat`: prints out the contents of a file <br>
+• `less -S`:  lets you scroll through a file. The -S flag prevents line-wrapping<br>
+• `wc -l`: How many lines are in an text input stream<br>
+
+
+
+6. You have three main places to go on Rivanna:
+• `~/`: this is your home directory. How much space do you have on it?
+• `/scratch/USERNAME`: this is your scratch directory. How much space do you have on it?
+• `/project/biol4559-aob2x`: this is our shared project directory. Are there hidden files there? If so, what does the hidden file say?
  
