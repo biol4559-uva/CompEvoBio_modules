@@ -11,7 +11,7 @@ Goals:
 Objective:
 1. Make the classic 'drift' figure
 <p align="center">
-  <img src="/Module_2/images/wf.png" width="100"/>
+  <img src="/Module_2/images/wf.png" width="1000"/>
 </p>
 
 
