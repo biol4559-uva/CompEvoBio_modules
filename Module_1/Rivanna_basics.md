@@ -29,11 +29,10 @@ https://ucsbcarpentry.github.io/2021-01-21-SWC-Bash-online/02-filedir/
 • `cat`: prints out the contents of a file <br>
 • `less -S`:  lets you scroll through a file. The -S flag prevents line-wrapping<br>
 • `wc -l`: How many lines are in an text input stream<br>
-
-
+• `|`: this is a pipe. It lets you direct the output of one program into the input of another. For instance, to determine how many files are in a directory type: `ls -lh | wc -l`
 
 6. You have three main places to go on Rivanna:
-• `~/`: this is your home directory. How much space do you have on it?
+• `~/`: this is your home directory. How many files are there in your home directory?
 • `/scratch/USERNAME`: this is your scratch directory. How much space do you have on it?
 • `/project/biol4559-aob2x`: this is our shared project directory. Are there hidden files there? If so, what does the hidden file say?
  
