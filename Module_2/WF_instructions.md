@@ -101,7 +101,7 @@ test_fun <- function(popSize) {
   return(data.table(initialPopSize=popSize, newPopSize=popSize * 2))
 }
 
-foreach(popSize.i=c(100, 500), .combine="rbind")%do%{
+tmp <- foreach(popSize.i=c(100, 500), .combine="rbind")%do%{
   test_fun(popSize=popSize.i)
 }
 ```
