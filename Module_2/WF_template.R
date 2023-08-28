@@ -3,6 +3,8 @@
   library(ggplot2)
   library(data.table)
   library(foreach)
+  library(doMC)
+  registerDoMC(2)
 
 ### A first view of bean-bag geneticcs
 ### let's say that we have a population of 5 diploid individuals.
@@ -15,4 +17,7 @@ gen2 <- sample(gen1, replace=T)
 table(gen1)
 table(gen2)
 
-### 
+table(gen1)/length(gen1)
+table(gen2)/length(gen2)
+
+###

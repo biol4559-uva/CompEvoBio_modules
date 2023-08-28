@@ -1,7 +1,7 @@
-# **A Wrigh-Fisher simulation**
+# **A Wright-Fisher simulation**
 
 ## Overview
-In this exercise we will learn how to model drift. Drift is the random change in allele frequencies due to finite population size. Drift in small populations can be a strong evolutionary force, but in large populations is a weak force. When drift is a strong force (and thus when population sizes are small) allele frequencies will change quickly. Eventually drift will cause allele frequencies to go to 0% (lost) or 100% (fixed), and in small populations this happens faster. In large populations, this happens very slowly. This is why populations that have more individuals have more genetic diversity. By simulating the drift process using a Wrigh-Fisher simulation, we can begin to gain insight into the role of population size on genetic diversity
+In this exercise we will learn how to model drift. Drift is the random change in allele frequencies due to finite population size. Drift in small populations can be a strong evolutionary force, but in large populations is a weak force. When drift is a strong force (and thus when population sizes are small) allele frequencies will change quickly. Eventually drift will cause allele frequencies to go to 0% (lost) or 100% (fixed), and in small populations this happens faster. In large populations, this happens very slowly. This is why populations that have more individuals have more genetic diversity. By simulating the drift process using a Wright-Fisher simulation, we can begin to gain insight into the role of population size on genetic diversity.
 
 Goals:
 1. Practice more with R & Github & functions
@@ -23,6 +23,9 @@ Objective:
 3. Population is in Hardy-Weinberg equilibrium. One implication of this assumption is that we only have to model allele frequencies, and can ignore genotypes.
 
 
+## Start up an RStudio on Demand Job
+Choose 2 cores. Load the libraries in the HWE_template.R script.
+
 ## A first attempt.
 This structure of the WF simulation resembles the "bean-bag genetics" picture that we show in class. We create the first generation ("gen1") of 2N gametes. In this example the population size is 5.
 
@@ -40,7 +43,7 @@ table(gen2)/length(gen2)
 If you run these lines of code multiple times, you will see that the frequency shifts in gen2.
 
 ## Streamlining things a bit with `rbinom`
-The code above requires that we intialize our population with a certain number of individuals. If we wanted to model a population of size 1e6, this woulc be very tedious. We can simplify things by using the binomial random number generator function. <br>
+The code above requires that we initialize our population with a certain number of individuals. If we wanted to model a population of size 1e6, this would be very tedious. We can simplify things by using the binomial random number generator function. <br>
 
 Why do we use this function? In this model, we are assuming that polymorphisms are bi-allelic. This means that there are two alleles, different by state. This assumption fits for most SNP markers. It also fits for coins, where there are heads and tails (two alleles).
 
@@ -68,7 +71,7 @@ gen3 <- rbinom(n=1, size=10, prob=gen2)/10
 gen4 <- rbinom(n=1, size=10, prob=gen3)/10
 ```
 
-Would this solution scale well? Probably not and it is very tedious to write out. Instead, we can use a `for` loop and a pre-constructed matrix to store the output. Each interation of the `for` loop is a generation.
+Would this solution scale well? Probably not and it is very tedious to write out. Instead, we can use a `for` loop and a pre-constructed matrix to store the output. Each iteration of the `for` loop is a generation.
 
 ```
 ### First we define our parameters
@@ -94,7 +97,7 @@ Would this solution scale well? Probably not and it is very tedious to write out
 </p>
 
 ## Multiple alleles
-The specific trajectory of a single neutral allele only gives us a glimpse into the dynamics of drift. What we are really interested in is the distribution of allele frequencies at different loci through time. How do we generate this? One solution is to use a `foreach` loop. A `foreach` loop is like a `for` loop except that each iteration of the `foreach` loop is independent of the others. This is in contrast to a `for` loop where you can easily access information about previous iterations. The benefit of `foreach` loops are twofold: (1) they make bookkeeping and data-output much easier, and (2) they can be parallized and run on multicore computers.
+The specific trajectory of a single neutral allele only gives us a glimpse into the dynamics of drift. What we are really interested in is the distribution of allele frequencies at different loci through time. How do we generate this? One solution is to use a `foreach` loop. A `foreach` loop is like a `for` loop except that each iteration of the `foreach` loop is independent of the others. This is in contrast to a `for` loop where you can easily access information about previous iterations. The benefit of `foreach` loops are twofold: (1) they make bookkeeping and data-output much easier, and (2) they can be spead up on multicore computers, where each core runs the independent interaction of the foreach loop.
 
 ```
 test_fun <- function(popSize) {
@@ -110,7 +113,7 @@ The `.combine` parameter tells `foreach` how to combine the different iterations
 
 
 ## Your objective:
-Population size (the sample size) will determine the speed of drift. You can see this property by observing that allele frequencies change more, per generation when population size is small comapred to when it is large. Using the information provided above, write a script that generates this basic figure. This figure includes multiple loci, and various population sizes. You are free to add your own artistic flair. Satisfactory submissions will write the WF simulator as a function and will use for-loops & foreach. Unsatisfactor submissions will iterate out each step manually (as in the sample above). Exceptional submissions will first use a for-loops & foreach to generate the figure, and then will develop another method that is faster and document the speed improvement. The improved method cannot simply use more cores to existing code!
+Population size (the sample size) will determine the speed of drift. You can see this property by observing that allele frequencies change more, per generation when population size is small compared to when it is large. Using the information provided above, write a script that generates this basic figure. This figure includes multiple loci, and various population sizes. You are free to add your own artistic flair. Satisfactory submissions will write the WF simulator as a function and will use for-loops & foreach. Unsatisfactory submissions will iterate out each step manually (as in the sample above). Exceptional submissions will first use a for-loops & foreach to generate the figure, and then will develop another method that is faster and document the speed improvement. The improved method cannot simply use more cores to existing code!
 
 <p align="center">
   <img src="/Module_2/images/wf.png" width="1000"/>

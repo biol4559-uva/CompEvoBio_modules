@@ -20,7 +20,6 @@ Goals:
   <img src="/Module_1/images/OOD1.png" width="750"/>
 </p>
 
-
 ### 2. Select the options below. Why do these options matter? (we’ll discuss but here is the notes)
 
 >a.	Version = which libraries to use<br>
