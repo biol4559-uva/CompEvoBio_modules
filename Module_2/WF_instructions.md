@@ -93,6 +93,11 @@ Would this solution scale well? Probably not and it is very tedious to write out
   <img src="/Module_2/images/single.wf.png" width="500"/>
 </p>
 
+## Multiple alleles
+The specific trajectory of a single neutral allele only gives us a glimpse into the dynamics of drift. What we are really interested in is the distribution of allele frequencies at different loci through time. 
+
+
+
 ## Your objective:
 Population size (the sample size) will determine the speed of drift. You can see this property by observing that allele frequencies change more, per generation when population size is small comapred to when it is large. Using the information provided above, write a script that generates this basic figure. This figure includes multiple loci, and various population sizes. You are free to add your own artistic flair. Satisfactory submissions will write the WF simulator as a function and will use for-loops. Unsatisfactor submissions will iterate out each step manually (as in the sample above). Exceptional submissions will first use a for-loop to generate the figure, and then will develop another method that is faster and document the speed improvement.
 
