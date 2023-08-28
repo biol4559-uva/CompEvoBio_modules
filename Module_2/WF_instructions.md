@@ -90,7 +90,7 @@ Would this solution scale well? Probably not and it is very tedious to write out
 
 ```
 <p align="center">
-  <img src="/Module_2/images/wf.png" width="250"/>
+  <img src="/Module_2/images/single.wf.png" width="500"/>
 </p>
 
 ## Your objective:
