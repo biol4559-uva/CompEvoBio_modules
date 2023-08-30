@@ -20,7 +20,7 @@ Objective:
 4. Lines 17-30 load modules, and run a small example. Run these lines to run fastqc. Download the output of that program to your computer using the Files menu on OpenOnDemand. What is the basic pattern of change in quality across the sequence read?
 
 <p align="center">
-  <img src="/Module_2/images/download_fastq.jpeg" width="1000"/>
+  <img src="/Module_2/images/download_fastqc.jpeg" width="1000"/>
 </p>
 
 5. Once your paper is assigned, you will be running FASTQC on all of the samples associated with your paper. Download the multiqc report and describe one of the figures. To modify the slurm example script to run well, you need to do the following: <br>
