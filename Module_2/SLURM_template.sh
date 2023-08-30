@@ -5,14 +5,14 @@
 #SBATCH -N 1 # on one node
 #SBATCH -t 2:00:00 ### 6 hours
 #SBATCH --mem 10G
-#SBATCH -o /scratch/aob2x/logs/runFASTQC.%A_%a.out # Standard output
-#SBATCH -e /scratch/aob2x/logs/runFASTQC.%A_%a.err # Standard error
+#SBATCH -o /scratch/COMPUTE_ID/logs/runFASTQC.%A_%a.out # Standard output
+#SBATCH -e /scratch/COMPUTE_ID/logs/runFASTQC.%A_%a.err # Standard error
 #SBATCH -p instructional
 #SBATCH --account biol4559-aob2x
 
-### run as: sbatch /project/biol4559-aob2x/repos/CompEvoBio_modules/utils/makeSingularityDocker.sh
+### run as: sbatch PATH_TO_THIS_FILE
 ### sacct -j XXXXXXXXX
-### cat /scratch/aob2x/logs/runFASTQC.*.err
+### cat /scratch/COMPUTE_ID/logs/runFASTQC.*.err
 
 module load fastqc
 module load multiqc
