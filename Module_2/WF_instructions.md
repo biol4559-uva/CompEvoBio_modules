@@ -115,6 +115,8 @@ The `.combine` parameter tells `foreach` how to combine the different iterations
 ## Your objective:
 Population size (the sample size) will determine the speed of drift. You can see this property by observing that allele frequencies change more, per generation when population size is small compared to when it is large. Using the information provided above, write a script that generates this basic figure. This figure includes multiple loci, and various population sizes. You are free to add your own artistic flair. Satisfactory submissions will write the WF simulator as a function and will use for-loops & foreach. Unsatisfactory submissions will iterate out each step manually (as in the sample above). Exceptional submissions will first use a for-loops & foreach to generate the figure, and then will develop another method that is faster and document the speed improvement. The improved method cannot simply use more cores to existing code!
 
+To complete this project, user GitHub to upload your script and figure to a new folder in your repo and submit the link.
+
 <p align="center">
   <img src="/Module_2/images/wf.png" width="1000"/>
 </p>
