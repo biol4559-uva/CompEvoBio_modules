@@ -1,7 +1,7 @@
 # **Sample Metadata instructions**
 
 ## Overview
-We need to assemble metadata associated with our FASTQ files in order to interpret the data later on. The metadata will include information about the experimental treatments, the origin of the base fly population, the experimental details. You will need to revisit the paper, and possibly dig around in the literature a bit. You should also consult the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) by searching for the bioproject associated with your paper. You will also need to consult with this data sheet that contains the SRA bioproject and accession IDs. [you can find that file here](data/SRA_accessions_v2.xlsx).
+We need to assemble metadata associated with our FASTQ files in order to interpret the data later on. The metadata will include information about the experimental treatments, the origin of the base fly population, the experimental details. You will need to revisit the paper, and possibly dig around in the literature a bit. You should also consult the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) by searching for the bioproject associated with your paper. You will also need to consult with this data sheet that contains the SRA bioproject and accession IDs. [you can find that file here](/data/SRA_accessions_v2.xlsx).
 
 Goals:
 1. Explore the stated origin of the samples
