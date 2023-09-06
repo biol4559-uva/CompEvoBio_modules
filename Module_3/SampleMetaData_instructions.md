@@ -10,10 +10,10 @@ Objective:
 1. Make two files. One is a detailed Excel sheet, the other is a simple text file. Examples below
 
 ## Instructions
-1. Working with your group, fill in your samples using the `CompEvoBio_modules/Module_3/SampleMetatdata_template.xlsx` file as your template.
+1. Working with your group, fill in your samples using the [CompEvoBio_modules/Module_3/SampleMetatdata_template.xlsx](/Module_3/SampleMetatdata_template.xlsx) file as your template.
 
-2. You can find more information about each sample in this file `CompEvoBio_modules/Module_3/SampleMetaData.pptx`.
+2. You can find more information about each sample in this file [CompEvoBio_modules/Module_3/SampleMetaData.pptx](/Module_3/SampleMetaData.pptx).
 
-3. Once you have filled out that sheet, make a simple table like `CompEvoBio_modules/Module_3/sras.txt`. It is a comma separated file with no spaces, that has 3 columns: the SRR number, the number of flies, the sample names.
+3. Once you have filled out that sheet, make a simple table like [CompEvoBio_modules/Module_3/sras.txt](/Module_3/sras.txt). It is a comma separated file with no spaces, that has 3 columns: the SRR number, the number of flies, the sample names.
 
 4. To complete this assignment, submit both documents to Canvas as a group submission.
