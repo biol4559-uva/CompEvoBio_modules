@@ -25,9 +25,9 @@ Objective:
 1. Map your data using the DEST docker. Send the output of your samples to our shared project folder
 
 ## Instructions
-1. Using the meta-data table that you and your group constructed, divide up the samples roughly evenly. Copy your lines to a new file.
+1. Using the [csv table](/Module_3/sras.txt)that you and your group constructed, divide up the samples roughly evenly. Copy your lines to a new file and save in your assignment folder.
 
-2. Copy the `mapping_script.sh` to a new file using Rstudio. Modify that file to have the proper paths. Copy the lines below to a dummy text file, and modify `PATH_to_your_small_file` to point it to the small csv file you made in the previous step. Also modify the `PROJECTID` to include the proper SRA project ID. Record the job number
+2. Copy the `mapping_script.sh` to a new file using Rstudio. Modify that file to have the proper paths and decide if you need PE or SE. Copy the lines below to a dummy text file, and modify `PATH_to_your_small_file` to point it to the small csv file you made in the previous step. Also modify the `PROJECTID` to include the proper SRA project ID. Record the job number.
 
 ```
 sbatch --array=1-$( PATH_to_your_small_file  | wc -l  ) \
@@ -37,3 +37,7 @@ PATH_to_your_version_of_mapping_script.sh \ # The script
 /project/biol4559-aob2x/mapping_output \ # Argument 3: Output folder
 PATH_to_your_small_file
 ```
+
+3. Confirm your job is successfully running by running the command `sacct -j JOBID`
+
+4. To complete this assignment, upload your JOBID to Cavnas.
