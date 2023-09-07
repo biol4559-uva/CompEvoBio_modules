@@ -31,10 +31,10 @@ Objective:
 
 ```
 sbatch --array=1-$( cat PATH_to_your_small_file  | wc -l  ) \
-PATH_to_your_version_of_mapping_script.sh \ # The script
-/project/biol4559-aob2x/singularity \ # Argument 1: Where the SIF file is located
-/project/biol4559-aob2x/data/fastq/PROJECTID \ # Argument 2: Where the reads are located
-/project/biol4559-aob2x/mapping_output \ # Argument 3: Output folder
+PATH_to_your_version_of_mapping_script.sh \
+/project/biol4559-aob2x/singularity \
+/project/biol4559-aob2x/data/fastq/PROJECTID \
+/project/biol4559-aob2x/mapping_output \
 PATH_to_your_small_file
 ```
 
