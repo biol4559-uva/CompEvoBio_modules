@@ -30,7 +30,7 @@ Objective:
 2. Copy the `mapping_script.sh` to a new file using Rstudio. Modify that file to have the proper paths and decide if you need PE or SE. Copy the lines below to a dummy text file, and modify `PATH_to_your_small_file` to point it to the small csv file you made in the previous step. Also modify the `PROJECTID` to include the proper SRA project ID. Record the job number.
 
 ```
-sbatch --array=1-$( PATH_to_your_small_file  | wc -l  ) \
+sbatch --array=1-$( cat PATH_to_your_small_file  | wc -l  ) \
 PATH_to_your_version_of_mapping_script.sh \ # The script
 /project/biol4559-aob2x/singularity \ # Argument 1: Where the SIF file is located
 /project/biol4559-aob2x/data/fastq/PROJECTID \ # Argument 2: Where the reads are located
