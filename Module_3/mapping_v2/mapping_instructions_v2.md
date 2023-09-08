@@ -12,8 +12,15 @@ Please follow the instructions as carefully as you can! If you run into issues, 
   <img src="/Module_3/mapping_v2/images/step1.jpg" width="1000"/>
 </p>
 
+2. Create a new text file by going to the File menu, New File, Text File. The arrow points to it below.
+<p align="center">
+  <img src="/Module_3/mapping_v2/images/step4.jpg" width="1000"/>
+</p>
 
-
+3. Copy the contents of the ![NEW MAPPING SCRIPT](/Module_3/mapping_v2/mapping_instructions_v2.md) and paste it in the text file. Change your COMPUTEID to your computing ID
+<p align="center">
+  <img src="/Module_3/mapping_v2/images/step6.jpg" width="1000"/>
+</p>
 
 
 
