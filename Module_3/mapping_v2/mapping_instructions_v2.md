@@ -22,8 +22,15 @@ Please follow the instructions as carefully as you can! If you run into issues, 
   <img src="/Module_3/mapping_v2/images/step6.jpg" width="1000"/>
 </p>
 
+4. Save the script in your scripts folder. In the image below, you can see it pointing to my `aob2x` folder. Make sure that you are saving to your folder.
+<p align="center">
+  <img src="/Module_3/mapping_v2/images/step7.jpg" width="1000"/>
+</p>
 
-
+5. Save the file as `mapping_script.sh`
+<p align="center">
+  <img src="/Module_3/mapping_v2/images/step8.jpg" width="1000"/>
+</p>
 
 Using the [csv table](/Module_3/sras.txt)that you and your group constructed, divide up the samples roughly evenly. Copy your lines to a new file and save in your assignment folder.
 
