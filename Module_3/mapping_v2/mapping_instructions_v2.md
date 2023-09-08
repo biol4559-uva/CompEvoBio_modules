@@ -37,7 +37,7 @@ Please follow the instructions as carefully as you can! If you run into issues, 
   <img src="/Module_3/mapping_v2/images/step4.jpg" width="1000"/>
 </p>
 
-7. Copy the contents of ![mapping_call.sh](/Module_3/mapping_v2/mapping_call.sh) to the new file. Note, that this is a different version compared compared ot the first time. Replace the `COMPUTEID` with your computing ID. Replace the `PROJECTID` with the BioProject ID. If you have forgotten what the BioProject Id for your paper is, you can look it up in this ![Excel file](/data/SRA_accessions_v2.xlsx):
+7. Copy the contents of ["mapping_call.sh"](/Module_3/mapping_v2/mapping_call.sh) to the new file. Note, that this is a different version compared compared ot the first time. Replace the `COMPUTEID` with your computing ID. Replace the `PROJECTID` with the BioProject ID. If you have forgotten what the BioProject Id for your paper is, you can look it up in this [Excel file](/data/SRA_accessions_v2.xlsx):
 
 <p align="center">
   <img src="/Module_3/mapping_v2/images/step9.jpg" width="1000"/>
