@@ -17,12 +17,12 @@ Please follow the instructions as carefully as you can! If you run into issues, 
   <img src="/Module_3/mapping_v2/images/step4.jpg" width="1000"/>
 </p>
 
-3. Copy the contents of the ![NEW MAPPING SCRIPT](/Module_3/mapping_v2/mapping_instructions_v2.md) and paste it in the text file. Change your COMPUTEID to your computing ID
+3. Copy the contents of the ![NEW MAPPING SCRIPT](/Module_3/mapping_v2/mapping_script.sh) and paste it in the text file. Change your COMPUTEID to your computing ID. Determine if your samples are Single Ended or Paired End reads. Delete the lines of code (found in lines 43-70) that you DO NOT NEED.
 <p align="center">
   <img src="/Module_3/mapping_v2/images/step6.jpg" width="1000"/>
 </p>
 
-4. Save the script in your scripts folder. In the image below, you can see it pointing to my `aob2x` folder. Make sure that you are saving to your folder.
+4. Save the script in your scripts folder. In the image below, you can see it pointing to my `aob2x` folder. Make sure that you are saving to YOUR folder.
 <p align="center">
   <img src="/Module_3/mapping_v2/images/step7.jpg" width="1000"/>
 </p>
@@ -32,19 +32,41 @@ Please follow the instructions as carefully as you can! If you run into issues, 
   <img src="/Module_3/mapping_v2/images/step8.jpg" width="1000"/>
 </p>
 
-Using the [csv table](/Module_3/sras.txt)that you and your group constructed, divide up the samples roughly evenly. Copy your lines to a new file and save in your assignment folder.
+6. Create a new text file
+<p align="center">
+  <img src="/Module_3/mapping_v2/images/step4.jpg" width="1000"/>
+</p>
 
-2. Copy the `mapping_script.sh` to a new file using Rstudio. Modify that file to have the proper paths and decide if you need PE or SE. Copy the lines below to a dummy text file, and modify `PATH_to_your_small_file` to point it to the small csv file you made in the previous step. Also modify the `PROJECTID` to include the proper SRA project ID. Record the job number.
+7. Copy the contents of ![mapping_call.sh](/Module_3/mapping_v2/mapping_call.sh) to the new file. Note, that this is a different version compared compared ot the first time. Replace the `COMPUTEID` with your computing ID. Replace the `PROJECTID` with the BioProject ID. If you have forgotten what the BioProject Id for your paper is, you can look it up in this ![Excel file](/data/SRA_accessions_v2.xlsx):
 
-```
-sbatch --array=1-$( PATH_to_your_small_file  | wc -l  ) \
-PATH_to_your_version_of_mapping_script.sh \ # The script
-/project/biol4559-aob2x/singularity \ # Argument 1: Where the SIF file is located
-/project/biol4559-aob2x/data/fastq/PROJECTID \ # Argument 2: Where the reads are located
-/project/biol4559-aob2x/mapping_output \ # Argument 3: Output folder
-PATH_to_your_small_file
-```
+<p align="center">
+  <img src="/Module_3/mapping_v2/images/step9.jpg" width="1000"/>
+</p>
 
-3. Confirm your job is successfully running by running the command `sacct -j JOBID`
+8. Save that file as `mapping_call.sh` in the scripts folder.
 
-4. To complete this assignment, upload your JOBID to Cavnas.
+9. Create a new text file
+<p align="center">
+  <img src="/Module_3/mapping_v2/images/step4.jpg" width="1000"/>
+</p>
+
+10. Find your "small csv file" wherever you have it. Copy the contents of that file to the new text file.
+
+11. Save the file in the `data` folder that is inside your new directory. You'll see below that I am saving my file in my data folder. Notice the path and that it points to `aob2x`. Yours should point to your directory.
+<p align="center">
+  <img src="/Module_3/mapping_v2/images/step10.jpg" width="1000"/>
+</p>
+
+12. Once you have created and saved all three files (mapping_script.sh, sras.txt, mapping_call.sh), return to the mapping_call.sh script. Select all of the lines and copy them.
+<p align="center">
+  <img src="/Module_3/mapping_v2/images/step11.jpg" width="1000"/>
+</p>
+
+13. Open a new terminal window, and paste the lines in terminal. Record the SLURM job ID.
+<p align="center">
+  <img src="/Module_3/mapping_v2/images/step12.jpg" width="1000"/>
+</p>
+
+14. It might take a few moments (or maybe an hour) for the job to start. In the meantime, submit your job ID to Canvas.
+
+15. have a good weekend!
