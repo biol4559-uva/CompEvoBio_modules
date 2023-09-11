@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 #SBATCH -J dockerMap # A single job name for the array
-#SBATCH -c 11 ### 11 cores
+#SBATCH -c 10 ### 11 cores
 #SBATCH -N 1 # on one node
 #SBATCH -t 72:00:00
 #SBATCH --mem 90G
