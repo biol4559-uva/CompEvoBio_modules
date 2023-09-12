@@ -68,7 +68,7 @@ In this way, our slurm script is a bit like a function that only takes one param
 1. Copy and modify `SLURM_demo_4.sh` so that it fits with your path names, as well as your paper `proj` variable. Run it, and check that it is running.
 
 ### Run MULTIQC.
-1. Combine your FASTQC output files into a single comparative file using MULTIQC:
+1. Combine your FASTQC output files into a single comparative file using MULTIQC in an interactive terminal:
 ```
 module load multiqc
 multiqc -o ~/multiQC_output/ /scratch/COMPUTEID/fastq_QC_Out/
