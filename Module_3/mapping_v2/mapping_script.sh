@@ -42,7 +42,7 @@ if [ ! -f /project/biol4559-aob2x/mapping_output/${sampleId}.sync.gz ]; then
 
   ### If your reads are Paired End use this version (and delete the other)
     singularity run \
-    $1/dest_v2.6_latest.sif \
+    $1/dest_v2.6.1_latest.sif \
     $2/${srr}_1.fastq.gz \
     $2/${srr}_2.fastq.gz \
     ${sampleId} \
@@ -57,7 +57,7 @@ if [ ! -f /project/biol4559-aob2x/mapping_output/${sampleId}.sync.gz ]; then
 
   ### If your reads are Single End use this version (and delete the other)
     singularity run \
-    $1/dest_v2.6_latest.sif \
+    $1/dest_v2.6.1_latest.sif \
     $2/${srr}.fastq.gz \
     ${sampleId} \
     $3 \
