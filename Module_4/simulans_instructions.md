@@ -19,10 +19,10 @@ Objective:
 ## Instructions
 1. Open a new Rstudio job. Select 2 cores. We will utilize a little bit of multicore computing in this example.
 
-2. Copy the contents of [simulans_template.R][/Module_4/simulans_template.R] into a new file in your GitHub folder.
+2. Copy the contents of [simulans_template.R](/Module_4/simulans_template.R) into a new file in your GitHub folder.
 
 3. Run the code to generate the base figure with the black points. The data for this figure come from a "experiment" where we took short read sequence data from samples we were very certain were either D.melanogaster or D. simulans and mixed them together in various proportions. We generated pools of 40 diploid individuals with varying numbers and ran them through our mapping pipeline. The estimated proportions reflect the number of total reads that map to the D. simulans genome divided by the number of reads that map to both genomes. The correlation is pretty good!
 
-4. Add to your version of [simulans_template.R][/Module_4/simulans_template.R] to estimate levels of contamination in your samples. You will have to take the parts of the script that load in the test data and fiddle with a few things to get it to work. One is figuring out how to get the list of bam files that you want. The other is some details inside the `%dopar` call.
+4. Add to your version of [simulans_template.R](/Module_4/simulans_template.R) to estimate levels of contamination in your samples. You will have to take the parts of the script that load in the test data and fiddle with a few things to get it to work. One is figuring out how to get the list of bam files that you want. The other is some details inside the `%dopar%` call.
 
 5. To complete this assignment, upload your script and figure to GitHub. In the Canvas assignment, upload your figure and the path to your github folder.
