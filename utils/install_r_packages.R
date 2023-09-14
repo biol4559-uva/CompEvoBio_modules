@@ -13,3 +13,9 @@
   library(SRAdb)
   library(data.table)
   library(readxl)
+
+
+  if (!require("BiocManager", quietly = TRUE))
+      install.packages("BiocManager")
+
+  BiocManager::install("Rsamtools",lib="/project/biol4559-aob2x/biol4559-R-packages/")
