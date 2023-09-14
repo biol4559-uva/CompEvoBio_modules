@@ -60,3 +60,5 @@ You shoudl get something like this; the 9th column should be the duplication rat
 <p align="center">
   <img src="/Module_4/images/dupRate.jpeg" width="1000"/>
 </p>
+
+8. To complete this assignment, upload your estimates to Canvas and determine if the authors of your study reported performing PCR de-duplication.
