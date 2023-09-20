@@ -7,6 +7,9 @@ To understand the importance of read depth, consider the analogy of a coin. If w
 
 $$ SE = {sqrt{pq \over n} $$
 
+This sentence uses `$` delimiters to show math inline:  $\sqrt{3x-1}+(1+x)^2$
+
+
 Goals:
 1. Practice data-table and string manipulation.
 2. Learn about the difference in effective coverage vs nominal coverage
