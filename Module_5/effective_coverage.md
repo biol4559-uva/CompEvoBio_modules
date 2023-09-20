@@ -5,7 +5,7 @@ We have just looked at the statistics regarding the nominal coverage from a samp
 
 To understand the importance of read depth, consider the analogy of a coin. If we want to estimate the frequency that a coin flip gives a "tail", we would flip that coin multiple times. The mulitple flips of a coin is analagous to the multiple reads at a position in the genome. If you flip the coin ten times, maybe you get 3 heads and 7 tails. That does not mean that the true frequency of tails is 70%! The confidence intervals for our frequency estimate are calculated as:
 
-$$ SE = {sqrt{pq \over n} $$
+$$ SE = {sqrt{pq / n} $$
 
 This sentence uses `$` delimiters to show math inline:  $\sqrt{3x-1}+(1+x)^2$
 
