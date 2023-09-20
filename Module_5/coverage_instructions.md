@@ -9,7 +9,10 @@ Goals:
 2. Practice making plots and learn how to make a multi-panel plot
 
 Objective:
-1. Plot a histogram of read depth across the whole genome. Make a box-and-whisker plot stratified on chromosome of read depth.
+1. Make this composite figure based on the test data
+<p align="center">
+  <img src="/Module_5/images/coverage_composite.jpeg" width="1000"/>
+</p>
 
 ## Instructions
 1. Open a terminal window and run the following commands:
@@ -65,16 +68,6 @@ We will assess whether our mapping data conform to a Poisson distribution by sim
 
 13. The UCSC genome browswer is a great way to explore the Drosophila genome. The other excellent resource is [FlyBase](https://flybase.org), and specifically the [Jbrowse broswer](https://flybase.org/jbrowse/?data=data%2Fjson%2Fdmel&loc=2L%3A14617051..14617051&tracks=Gene_span%2CRNA&highlight=), which can display more information about functional characterization of the gene (explore the Gene Expression tracks)
 
-14. Back to our data.
+14. Back to our data.... I've pulled together a file that defines the boundaries of all known repetitive regions in the reference genome. Work through the R-script starting at the "Flag Repetitive Regions"
 
-
-
-
-
-
-
-
-
-
-
-Ultimately, we want to be abel to study allele frequencies at polymorphic sites (we'll be getting to that later in this module). The frequency of an allele is one aspect of information that we care about at a SNP. The other is the coverage. However, the nominal coverage based on the number of reads that map to a SNP
+15. To complete this assignment, upload your final composite figure. Feel free to fiddle with colors, layout, etc.
