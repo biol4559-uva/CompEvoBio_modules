@@ -9,7 +9,7 @@ Goals:
 2. Practice making plots and learn how to make a multi-panel plot
 
 Objective:
-1. Make this composite figure based on the test data
+1. Make this composite figure based on the test data. Panel A shows a box-and-whisker plot of coverage across all chromosomes. Panel B shows the same, but removes the mitochdrion genome. Panel C shows the coverages for regions annotated as repetitive (blue) or not (red filled). The red line shows the expectated distribution based on a Poisson distribution.
 <p align="center">
   <img src="/Module_5/images/coverage_composite.jpeg" width="1000"/>
 </p>
