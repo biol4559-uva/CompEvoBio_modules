@@ -7,7 +7,7 @@
   library(patchwork)
 
 ### read the SYNC file
-  sync <- fread("/scratch/aob2x/biol4559/ExpEvo_PRJEB5713_ancestral1_1_2007-MM-DD.tab.gz", sep2=":")
+  sync <- fread("/scratch/COMPUTEID/coverage/ExpEvo_PRJEB5713_ancestral1_1_2007-MM-DD.tab.gz", sep2=":")
 
   setnames(sync, names(sync), c("chr", "pos", "ref", "A", "T", "C", "G", "N","del"))
   sync <- sync[,-"del",]
@@ -27,7 +27,8 @@
                   list(chr)]
   sync.ag
 
-### do different reference nucleotides have different coverages?
+### Your turn:
+### do different reference nucleotides have different coverages? (modify the aggregation call above)
 
 ### make a box and whisker plot of coverage across the chromosomes
   ### first, we are going to subsample the data
@@ -39,12 +40,10 @@
     coverage.boxplot <- ggplot(data=sync.small, aes(x=chr, y=depth)) + geom_boxplot()
     coverage.boxplot
 
-
-### Your turn
+### Your turn:
   ### How do you make that plot easier to interpret? Try removing the mitochondria.
-  ### (I'll leave it to you to try and figure that out). Use the code example above and make a new object with your plot called "coverage_nomito.boxplot"
-    coverage_nomito.boxplot <- ggplot(data=sync.small[chr!="mitochondrion_genome"], aes(x=chr, y=depth)) + geom_boxplot()
-    coverage_nomito.boxplot
+  ### (I'll leave it to you to try and figure that out).
+  ### Use the code example above and make a new object with your plot called "coverage_nomito.boxplot"
 
   ### combine the two plots together
     cov_boxplot <- coverage.boxplot + coverage_nomito.boxplot + plot_annotation(tag_levels="A", title="Coverage")
@@ -98,6 +97,7 @@
 ### Make a density plot from above and separates out the rep & non-rep regions.
 ### To make the final plot, you'll need to fiddle with two parameters in the geom_density call: fill & alpha
 ### Save that plot as `coverage_density_rep_plot`
+### the code below will get you in the right direction.
       setkey(sync, id)
       subsamp <- sort(sample(1:137567484, 1000000, replace=F))
       sync.small <- sync[J(subsamp)]
