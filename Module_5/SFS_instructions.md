@@ -12,11 +12,11 @@ Goals:
 2. Figure out how to identify polymorphic sites from your SYNC file.
 
 Objective:
-1. Determine if the SFS is different between genic regions (https://en.wikipedia.org/wiki/Coding_region) and non-genic regions. For the purposes of this assignment, we are considering genic regions to be coding sequence, UTR, and introns. Non-coding is everything else.
+1. Determine if the SFS is different between genic regions (https://en.wikipedia.org/wiki/Coding_region) and non-genic regions. For the purposes of this assignment, we are considering genic regions to be coding sequence, UTR, and introns. Non-coding is everything else.n Why is it different?
 <p align="center">
   <img src="/Module_5/images/SFS_2.jpeg" width="1000"/>
 </p>
 
 ## Instructions
 1. Spin up an Rstudio job, and copy the contents of [SFS_template.R](/Module_5/SFS_template.R)
-2. Work your way through the assignment and fill in the missing pieces.
+2. Work your way through the assignment and fill in the missing pieces to make the plot above.
