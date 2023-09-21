@@ -11,9 +11,22 @@ Take an extreme case of a pool of four flies sequenced to 1000X coverage. Clearl
 
 Fortunately, there is an easy formula to esimate a statistic that we call "effective coverage." Effective coverage accounts for both types of sampling (flies + reads):
 
-$$\EC={(nReads * nChrom)/(nReads + nChrom)}$$
+$$EC={(nReads * nChrom)/(nReads + nChrom)}$$
 
+where $nReads$ is the number of reads at any site, and $nChrom$ is the number of chromosomes (2*N for the autosomes.
 
 Goals:
+1. Practice writing a function in R
+2. Gain some insight into the consequences of not correcting for effective coverage
 
 Objective:
+1. How much does effective coverage change between the X and Autosomes if we have a pool of male flies.
+
+## Instructions
+1. Spin up an Rstudio job, copy the contents of [effective_coverage_template.R](/Module_5/effective_coverage_template.R)
+
+2. Write a function that takes two parameters, the number of chromosomes in a sample and the read depth and returns effective coverage. Have it spit out a data.table with two three columns: rd, nChr, and effective_coverage.
+
+3. Use your function to calculate effective coverage for an observed read depth of 40X and 20 flies. On an autosome, what will effective coverage be? On the X-chromosome, what will effective coverage be?
+
+4. To complete this assignment, look at the Effective Coverage assignment on Canvas and help your "friend" solve their problem.
