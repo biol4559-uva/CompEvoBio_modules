@@ -8,7 +8,7 @@
 #SBATCH -o /scratch/aob2x/compBio_SNP_25Sept2023/logsrunSnakemake.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/compBio_SNP_25Sept2023/logsrunSnakemake.%A_%a.err # Standard error
 #SBATCH -p standard
-#SBATCH --account berglandlab_standard
+#SBATCH --account biol4559-aob2x
 
 ### cat /scratch/aob2x/DESTv2_output_26April2023/logs/runSnakemake.53518248*.err
 
