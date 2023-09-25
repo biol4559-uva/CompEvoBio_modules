@@ -1,7 +1,7 @@
 #To run the example, exchange '/scratch/jho5ze/DEST_snakemake with your path to the DEST_freeze1 in all relevant lines below'
 
 script_directory: /scratch/aob2x/CompEvoBio_modules/utils/snpCalling #Location of the snpCalling scripts (from git repo)
-working_directory: /scratch/aob2x/compBio_SNP_26April2023 #Directory where all the data will be processed and where output will be written
+working_directory: /scratch/aob2x/compBio_SNP_25Sept2023 #Directory where all the data will be processed and where output will be written
 pipeline_output: /project/biol4559-aob2x/mapping_output/compBio_F2023 #/project/berglandlab/DEST/dest_mapped/pipeline_output #Directory holding the masked SYNC files from the main pipeline output
 popSet: PoolSeq #Population to use: "all" or "PoolSeq"
 method: PoolSNP #Method to use for variant calling: "PoolSNP" or "SNAPE"
