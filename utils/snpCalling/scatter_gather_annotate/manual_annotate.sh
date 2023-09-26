@@ -13,7 +13,7 @@
 ### cat /scratch/aob2x/DESTv2_output_SNAPE/logs/runSnakemake.49369837*.err
 
 ### sbatch /scratch/aob2x/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_annotate.sh
-### sacct -j 49572492
+### sacct -j 53552478
 ### cat /scratch/aob2x/DESTv2_output_26April2023/logs/manual_annotate.49572492*.out
 
 module purge

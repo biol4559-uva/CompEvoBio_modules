@@ -59,7 +59,7 @@ cd /scratch/aob2x/CompEvoBio_modules/utils/snpCalling
 
 
 sbatch /scratch/aob2x/CompEvoBio_modules/utils/snpCalling/runSnakemake.sh
-sacct -j 53519099
+sacct -j 53533042
 sacct -u aob2x
 cat /scratch/aob2x/mapping_output/compBio_F2023/logs
 ```

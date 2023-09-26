@@ -26,3 +26,4 @@
       install.packages("BiocManager")
 
   BiocManager::install("Rsamtools",lib="/project/biol4559-aob2x/biol4559-R-packages/")
+BiocManager::install("SeqArray", lib="/standard/vol186/bergland-lab/biol4559-aob2x/biol4559-R-packages")

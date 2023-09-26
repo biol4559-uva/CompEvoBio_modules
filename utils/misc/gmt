@@ -1,0 +1,21 @@
+wget http://ftp.flybase.org/releases/FB2023_04/precomputed_files/genes/gene_map_table_fb_2023_04.tsv.gz
+zcat gene_map_table_fb_2023_04.tsv.gz | grep -v "#" | cut -f2,6 | grep "\\.\\." |\
+sed 's/:/\t/g' | sed 's/\.\./\t/g' | sed 's/(1)//g' | sed 's/(-1)//g' | awk '{print $2"\t"$3"\t"$4"\t"$1}' | grep -E "^2L|^2R|^3L|^3R|^X" >\
+/standard/vol186/bergland-lab/biol4559-aob2x/genes.bed
+
+cp /standard/vol186/bergland-lab/biol4559-aob2x/genes.bed /scratch/aob2x/coverage/
+
+cp /standard/vol186/bergland-lab/biol4559-aob2x/packages_temp /scratch/COMPUTEID/.
+
+
+zcat ExpEvo_PRJEB5713_ancestral1_1_2007-MM-DD.tab.gz | awk 'NR % 500 == 0' | gzip -c - > ExpEvo_PRJEB5713_ancestral1_1_2007-MM-DD.tab.small.gz
+
+mkdir data
+mv ExpEvo_PRJEB5713_ancestral1_1_2007-MM-DD.tab.small.gz data/.
+mv genes.bed data/.
+mv repeats.sort.merge.clean.bed data/.
+
+tar -czfv files.tar.gz data
+mv v data.tar.gz
+
+scp aob2x@rivanna.hpc.virginia.edu:/standard/vol186/bergland-lab/biol4559-aob2x/data.tar.gz ~/.
