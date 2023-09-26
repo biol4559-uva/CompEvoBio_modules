@@ -5,16 +5,16 @@
 #SBATCH -N 1 # on one node
 #SBATCH -t 14:00:00 ### 1 hours
 #SBATCH --mem 40G
-#SBATCH -o /scratch/aob2x/DESTv2_output_26April2023/logs/manual_annotate.%A_%a.out # Standard output
-#SBATCH -e /scratch/aob2x/DESTv2_output_26April2023/logs/manual_annotate.%A_%a.err # Standard error
+#SBATCH -o /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_annotate.%A_%a.out # Standard output
+#SBATCH -e /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_annotate.%A_%a.err # Standard error
 #SBATCH -p standard
 #SBATCH --account berglandlab_standard
 
 ### cat /scratch/aob2x/DESTv2_output_SNAPE/logs/runSnakemake.49369837*.err
 
-### sbatch /scratch/aob2x/DESTv2/snpCalling/scatter_gather_annotate/manual_annotate.sh
+### sbatch /scratch/aob2x/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_annotate.sh
 ### sacct -j 49432588
-### cat /scratch/aob2x/DESTv2_output_26April2023/logs/manual_annotate.49432588*.out
+### cat /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_annotate*.out
 
 module purge
 

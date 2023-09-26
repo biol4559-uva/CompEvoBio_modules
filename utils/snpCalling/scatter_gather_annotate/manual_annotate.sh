@@ -20,12 +20,13 @@ module purge
 
 module load  htslib/1.10.2 bcftools/1.9 intel/18.0 intelmpi/18.0 parallel/20200322 R/3.6.3 samtools vcftools
 
-popSet=all
+
+popSet=PoolSeq
 method=PoolSNP
 maf=001
 mac=50
-version=26April2023
-wd=/scratch/aob2x/DESTv2_output_26April2023
+version=25Sept2023
+wd=/scratch/aob2x/compBio_SNP_25Sept2023
 
 snpEffPath=~/snpEff
 

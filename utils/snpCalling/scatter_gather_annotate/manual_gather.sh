@@ -11,9 +11,10 @@
 #SBATCH --account biol4559-aob2x
 
 ### sbatch /scratch/aob2x/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_gather.sh
-### sacct -j 53544098
+### sacct -j 53544100
 ### cat /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_gather.53544098.err
 ### cat /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_gather
+### cd /scratch/aob2x/compBio_SNP_25Sept2023
 
 module purge
 module load htslib/1.10.2 bcftools/1.9 intel/18.0 intelmpi/18.0 parallel/20200322 vcftools/0.1.16
