@@ -38,29 +38,30 @@ First, do a dry run with snakemake. This outputs the jobs which will be submitte
 
 ```bash
 module load gcc/9.2.0 openmpi/3.1.6 python/3.7.7 snakemake/6.0.5
-cd /scratch/aob2x/DESTv2/snpCalling
-snakemake --profile /scratch/aob2x/DESTv2/snpCalling/slurm -n
+cd /scratch/aob2x/CompEvoBio_modules/utils/snpCalling
+snakemake -f --profile /scratch/aob2x/CompEvoBio_modules/utils/snpCalling/slurm -n
 
-snakemake --profile /scratch/aob2x/DESTv2/snpCalling/slurm --unlock
-snakemake -S
+snakemake --profile /scratch/aob2x/CompEvoBio_modules/utils/snpCalling/slurm --unlock
+snakemake -Sf
 ```
 
 Then, if everything looks OK, run:
 
 
 ```bash
-mkdir /scratch/aob2x/DESTv2_output_26April2023/
-mkdir /scratch/aob2x/DESTv2_output_26April2023/logs/
+mkdir /scratch/aob2x/compBio_SNP_25Sept2023
+mkdir /scratch/aob2x/compBio_SNP_25Sept2023/logs
 
 module load gcc/9.2.0 openmpi/3.1.6 python/3.7.7 snakemake/6.0.5
-cd /scratch/aob2x/DESTv2/snpCalling
+cd /scratch/aob2x/CompEvoBio_modules/utils/snpCalling
 
 #cp jobs_genome.csv /scratch/aob2x/DESTv2_output/jobs.csv
 
 
-sbatch /scratch/aob2x/DESTv2/snpCalling/runSnakemake.sh
-sacct -j 49500017
+sbatch /scratch/aob2x/CompEvoBio_modules/utils/snpCalling/runSnakemake.sh
+sacct -j 53519099
 sacct -u aob2x
+cat /scratch/aob2x/mapping_output/compBio_F2023/logs
 ```
 
 

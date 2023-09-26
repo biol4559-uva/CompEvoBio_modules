@@ -26,8 +26,17 @@ cd ${wd}
 echo "making list"
 
 ls -d ${outdir}/*.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz | \
-rev | cut -f1 -d '/' |rev | grep "^${chr}_"| sort -t"_" -k2n,2 -k4g,4 | \
+rev | cut -f1 -d '/' |rev | grep "^${chr}_"| sort -t"_" -k2n,2 -k4g,4 \
 sed "s|^|$outdir|g" > $outdir/vcfs_order.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.sort
+
+# sed -i 's/sub_vcfs/sub_vcfs\//g' vcfs_order.2L.PoolSeq.PoolSNP.001.50.25Sept2023.sort
+# sed -i 's/sub_vcfs/sub_vcfs\//g' vcfs_order.2R.PoolSeq.PoolSNP.001.50.25Sept2023.sort
+# sed -i 's/sub_vcfs/sub_vcfs\//g' vcfs_order.3L.PoolSeq.PoolSNP.001.50.25Sept2023.sort
+# sed -i 's/sub_vcfs/sub_vcfs\//g' vcfs_order.3R.PoolSeq.PoolSNP.001.50.25Sept2023.sort
+# sed -i 's/sub_vcfs/sub_vcfs\//g' vcfs_order.X.PoolSeq.PoolSNP.001.50.25Sept2023.sort
+# sed -i 's/sub_vcfs/sub_vcfs\//g' vcfs_order.4.PoolSeq.PoolSNP.001.50.25Sept2023.sort
+# sed -i 's/sub_vcfs/sub_vcfs\//g' vcfs_order.Y.PoolSeq.PoolSNP.001.50.25Sept2023.sort
+# sed -i 's/sub_vcfs/sub_vcfs\//g' vcfs_order.mitochondrion_genome.PoolSeq.PoolSNP.001.50.25Sept2023.sort
 
 
 
