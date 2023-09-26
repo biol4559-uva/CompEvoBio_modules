@@ -10,40 +10,23 @@
 #SBATCH -p standard
 #SBATCH --account berglandlab_standard
 
-
-
-
-
-
 ### sbatch /scratch/aob2x/DESTv2/snpCalling/scatter_gather_annotate/manual_gather.sh
 ### sacct -j 49570825
 ### cat /scratch/aob2x/DESTv2_output_26April2023/logs/manual_gather.49570749*.err
 ### cat /scratch/aob2x/DESTv2_output_SNAPE/logs/runSnakemake.49369837*.err
 
-
-
-
-
-
 module purge
 module load htslib/1.10.2 bcftools/1.9 intel/18.0 intelmpi/18.0 parallel/20200322 vcftools/0.1.16
 
-
-
-
-
-
-
-
 concatVCF() {
 
-  popSet=all
+  popSet=PoolSeq
   method=PoolSNP
   maf=001
   mac=50
-  version=26April2023
-  wd=/scratch/aob2x/DESTv2_output_26April2023
-
+  version=25Sept2023
+  wd=/scratch/aob2x/compBio_SNP_25Sept2023
+  # chr=mitochondrion
 
   chr=${1}
 
@@ -63,8 +46,8 @@ concatVCF() {
 
 
   ls -d ${outdir}/*.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz | \
-  rev | cut -f1 -d '/' |rev | grep "^${chr}_"| sort -t"_" -k2n,2 -k4g,4 | \
-  sed "s|^|$outdir|g" > $outdir/vcfs_order.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.sort
+  rev | cut -f1 -d '/' |rev | grep -E "^${chr}_" | sort -t"_" -k2n,2 -k4g,4 | \
+  sed "s|^|$outdir/|g" > $outdir/vcfs_order.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.sort
 
 
   echo "Concatenating"
