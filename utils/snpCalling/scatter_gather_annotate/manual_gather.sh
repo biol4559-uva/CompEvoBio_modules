@@ -8,11 +8,11 @@
 #SBATCH -o /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_gather.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_gather.%A_%a.err # Standard error
 #SBATCH -p standard
-#SBATCH --account berglandlab_standard
+#SBATCH --account biol4559-aob2x
 
 ### sbatch /scratch/aob2x/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_gather.sh
-### sacct -j 49570825
-### cat /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_gather.49570749*.err
+### sacct -j 53544098
+### cat /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_gather.53544098.err
 ### cat /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_gather
 
 module purge
