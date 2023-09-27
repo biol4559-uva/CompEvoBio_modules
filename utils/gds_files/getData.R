@@ -1,13 +1,13 @@
-# ijob -A berglandlab_standard -c1 -p dev --mem=4G
+# ijob -A berglandlab -c20 -p largemem --mem=120G
+### module load gcc/7.1.0  openmpi/3.1.4 R/4.1.1; R
 
-# module load intel/18.0 intelmpi/18.0 R/3.6.3; R
 
 ### libraries
   library(data.table)
   library(SeqArray)
 
 ### load meta-data file
-  samps <- fread("/scratch/aob2x/DESTv2/populationInfo/dest_v2.samps_26April2023.csv")
+  samps <- fread("/scratch/aob2x/CompEvoBio_modules/utils/gds_files/biol4559_sampleMetadata.csv")
 
 ### open GDS for common SNPs (PoolSNP)
   genofile <- seqOpen("/scratch/aob2x/compBio_SNP_25Sept2023/dest.expevo.PoolSNP.001.50.25Sept2023.norep.ann.gds", allow.duplicate=T)
@@ -16,6 +16,7 @@
   table(samps$sampleId%in%seqGetData(genofile, "sample.id"))
   samps$sampleId[!samps$sampleId%in%seqGetData(genofile, "sample.id")]
   seqGetData(genofile, "sample.id")[!seqGetData(genofile, "sample.id")%in%samps$sampleId]
+  samps[grepl("PRJNA304655", sampleId)]
 
 ### common SNP.dt
   seqResetFilter(genofile)
@@ -29,20 +30,12 @@
 
   snp.dt[,af:=seqGetData(genofile, "annotation/info/AF")$data]
 
-### samples
-  newSamps <- seqGetData(genofile, "sample.id")
-  dim(samps)
-  newSamps[grepl("AU_Que_Inn_-1_2014-02-15", newSamps)]
-
 ### function
-  getData <- function(chr="2L", start=14617051, end=14617051) {
+  getData <- function(snps=snp.dt[pos==14617051 & chr=="2L"], samples=samps) {
     # chr="2L"; start=14617051; end=14617051
 
     ### filter to target
-      snp.tmp <- data.table(chr=chr, pos=start:end)
-      setkey(snp.tmp, chr, pos)
-      setkey(snp.dt, chr, pos)
-      seqSetFilter(genofile, variant.id=snp.dt[J(snp.tmp), nomatch=0]$id)
+      seqSetFilter(genofile, variant.id=snps$id)
 
     ### get annotations
       message("Annotations")
@@ -52,7 +45,7 @@
 
       snp.dt1 <- data.table(len=rep(len1, times=len1),
                             ann=len2,
-                            id=rep(snp.dt[J(snp.tmp), nomatch=0]$id, times=len1))
+                            id=rep(snps$id, times=len1))
 
     # Extract data between the 2nd and third | symbol
       snp.dt1[,class:=tstrsplit(snp.dt1$ann,"\\|")[[2]]]
@@ -71,6 +64,11 @@
       ad <- seqGetData(genofile, "annotation/format/AD")
       dp <- seqGetData(genofile, "annotation/format/DP")
 
+      if(class(dp)[1]!="SeqVarDataList") {
+        dp <- list(data=dp)
+      }
+
+
       af <- data.table(ad=expand.grid(ad$data)[,1],
                        dp=expand.grid(dp$data)[,1],
                        sampleId=rep(seqGetData(genofile, "sample.id"), dim(ad$data)[2]),
@@ -84,9 +82,13 @@
       afi[,af:=ad/dp]
 
     ### calculate effective read-depth
-      afis <- merge(afi, samps, by="sampleId")
+      afis <- merge(afi, samples[,c("sampleId", "nFlies", "locality",
+                                    "lat", "long", "continent", "country", "province", "city",
+                                    "min_day", "max_day", "min_month", "max_month", "year", "jday",
+                                    "bio_rep", "tech_rep", "exp_rep", "loc_rep", "subsample", "sampling_strategy",
+                                    "SRA_Accession"), with=F], by="sampleId")
 
-      afis[chr=="X", nEff:=round((dp*nFlies - 1)/(dp+nFlies))]
+      afis[chr=="X|Y", nEff:=round((dp*nFlies - 1)/(dp+nFlies))]
       afis[chr!="X", nEff:=round((dp*2*nFlies - 1)/(dp+2*nFlies))]
       afis[,af_nEff:=round(af*nEff)/nEff]
 
@@ -95,5 +97,5 @@
   }
 
 ### test
-  data <- getData(start=14617051, end=14617051, chr="2L")
+  data <- getData(snps=snp.dt[pos==14617051 & chr=="2L"])
   data[sampleId=="AU_Que_Inn_-1_2014-02-15"]

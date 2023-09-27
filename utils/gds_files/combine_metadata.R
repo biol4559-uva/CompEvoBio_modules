@@ -16,4 +16,4 @@
   table(samps$set)
 
 ### export
-  write.csv(samps, file="/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/utils/gds_files/biol4559_sampleMetadata.csv")
+  write.csv(samps, quote=F, row.names=F, file="/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/utils/gds_files/biol4559_sampleMetadata.csv")
