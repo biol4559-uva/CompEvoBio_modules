@@ -115,6 +115,7 @@
 
 ### YOUR TURN:
 ### use FlyBase to find the full coordinate range of Adh, and extract all SNPs in the region
+### Go to https://flybase.org. Type "AdH" into the "Jump to Gene" / "J2G" field.
 ### make a plot of allele frequencies across your samples. Hint: to connect a line for each SNP use the `group=variant.id` parameter in the `aes` command
 ### Make sure to rotate the x-axis annotations. Unsure how to do this? Ask Google: "rotate the x-axis annotations ggplot2"\
 ### Hint: to extract a range of SNPs from snp.dt, you can use `pos>X & pos<Y` inside the hard-brackets
