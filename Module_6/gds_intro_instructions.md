@@ -24,4 +24,4 @@ Objective:
 
 ## Instructions
 1. Start an Rstudio job. Request 10 cores and 20Gb of RAM for 4 hours on the Standard partition.
-2. Copy the [instructions](/Module_5/gds_intro_instructions.R) and work through the script. You'll have to draw on techniques that we have developed over the class to make the figure.
+2. Copy the [template](/Module_5/gds_intro_template.R) and work through the script. You'll have to draw on techniques that we have developed over the class to make the figure.
