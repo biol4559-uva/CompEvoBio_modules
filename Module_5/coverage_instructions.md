@@ -17,8 +17,7 @@ Objective:
 ## Instructions
 1. Open a terminal window and run the following commands:
 ```
-mkdir /scratch/COMPUTEID/coverage
-cp -R /standard/vol186/bergland-lab/biol4559-aob2x/ /scratch/COMPUTEID/coverage/.
+cp -R /standard/vol186/bergland-lab/biol4559-aob2x/biol4559-R-packages /scratch/aob2x/.
 ```
 
 2. Open an Rstudio job, make sure to request 4 cores and 30Gb of RAM.

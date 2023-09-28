@@ -97,5 +97,7 @@
   }
 
 ### test
-  data <- getData(snps=snp.dt[pos==14617051 & chr=="2L"])
+  data <- getData(snps=snp.dt[pos==14617051 & chr=="2L"], samples=samps[grepl("SRP002024", sampleId)])
+  data <- getData(snps=snp.dt[1:10], samples=samps[grepl("SRP002024", sampleId)])
+
   data[sampleId=="AU_Que_Inn_-1_2014-02-15"]
