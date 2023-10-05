@@ -128,9 +128,10 @@ if(bioproj=="SRP002024") {
 samps.new <- rbind(samps[sampleId %like% bioproj])
 
 # Restrict to well-known populations across D. melanogaster
+# Remove D. simulans sample in dgn dataset
 samps <- rbind(samps[set=="DrosRTEC"],
                samps[set=="DrosEU"],
-               samps[set=="dgn"],
+               samps[set=="dgn"][!sampleId=="SIM_SIM_w501_1_NA-MM-DD"],
                samps.new)
 
 # Reset and extract full dataset 
@@ -219,16 +220,14 @@ pca.snps1 <- data.table(sample=gsub(rownames(pca.snps$x),
 # To accomplish this, you will have to merge your samples with the metadata object "samps" and:
 # 1) plot the PCA using data.table, ggplot2, and ggrepel to show your different experimental treatment groups within the species
 
-
-
 # This section will find the closest sample in PC space:
 
 # Function to find the closest sample by distance
-dist.samp <- function(sampsToKeep, bioProject) {
+dist.samp <- function(sampsToKeep, bioproj) {
   # sampsToKeep="ExpEvo_SRP002024_ACO_1_1975-MM-DD"; bioProject="SRP002024"
   print(sampsToKeep)
   
-  dt.temp <- data.table(rbind(pca.snps1[!sample %like% bioProject],
+  dt.temp <- data.table(rbind(pca.snps1[!sample %like% bioproj],
                               pca.snps1[sample==sampsToKeep]))
   
   # Calculate PCA scores for all samples
@@ -254,7 +253,7 @@ dist.samp <- function(sampsToKeep, bioProject) {
                                  by.x="closestSample", by.y="sampleId"))
   
   # progress message
-  print(paste("Closest continent:", result_df2$continent))
+  print(paste("Closest continental population:", result_df2$continent))
   
   # finis
   return(result_df2)
@@ -262,7 +261,7 @@ dist.samp <- function(sampsToKeep, bioProject) {
 
 # Apply dist.samp to each input value using lapply
 results_list <- lapply(samps.new$sampleId, function(sampsToKeep) {
-  dist.samp(sampsToKeep, bioProject)
+  dist.samp(sampsToKeep, bioproj)
 })
 
 # Combine the results into a single data.table
