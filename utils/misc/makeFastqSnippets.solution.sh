@@ -7,12 +7,17 @@ sranum=SRR036932
 fastq-dump \
 -Z \
 -Q 64 \
-/scratch/aob2x/compBio/sra/${sranum}.sra | head -n1000 > /project/biol4559-aob2x/data/qual_encoding/sample_1.fastq
+/scratch/aob2x/compBio/sra/${sranum}.sra | head -n1000 | tail -n10 > /scratch/aob2x/setone.fastq
+ls -lh /scratch/aob2x/setone.fastq
 
+sranum=SRR036939
 fastq-dump \
 -Z \
--Q 33 \
-/scratch/aob2x/compBio/sra/${sranum}.sra | head -n2000 | tail -n1000  > /project/biol4559-aob2x/data/qual_encoding/sample_2.fastq
+-Q 64 \
+/scratch/aob2x/compBio/sra/${sranum}.sra | head -n1000 | tail -n10 > /scratch/aob2x/settwo.fastq
+cat  /scratch/aob2x/settwo.fastq
+
+cat /scratch/aob2x/setone.fastq /scratch/aob2x/settwo.fastq
 
 
 mkdir /project/biol4559-aob2x/data/mixed_up_pairs
