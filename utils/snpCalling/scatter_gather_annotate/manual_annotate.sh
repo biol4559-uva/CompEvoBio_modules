@@ -13,8 +13,9 @@
 ### cat /scratch/aob2x/DESTv2_output_SNAPE/logs/runSnakemake.49369837*.err
 
 ### sbatch /scratch/aob2x/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_annotate.sh
-### sacct -j 53998641
+### sacct -j 53998649
 ### cat /scratch/aob2x/DESTv2_output_26April2023/logs/manual_annotate.49572492*.out
+# # ijob -A biol4559-aob2x -c10 -p largemem --mem=40G
 
 module purge
 
@@ -25,7 +26,7 @@ popSet=PoolSeq
 method=PoolSNP
 maf=001
 mac=50
-version=25Sept2023
+version=11Oct2023
 wd=/scratch/aob2x/compBio_SNP_25Sept2023
 
 snpEffPath=~/snpEff
@@ -50,7 +51,7 @@ cd ${wd}
    # ${wd}/sub_bcf/dest.*.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz \
    # -o ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.new.vcf.gz
 
-   ls -d ${wd}/sub_bcf/dest.*.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz > \
+   ls -d ${wd}/sub_bcf/dest.*.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz | grep -E "2L|2R|3L|3R|X" > \
    ${wd}/sub_bcf/vcf_order.genome
 
 
@@ -61,6 +62,7 @@ cd ${wd}
    bgzip -c > ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
 
    tabix -p vcf ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+
 
  echo "convert to vcf & annotate"
    bcftools view \
