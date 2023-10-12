@@ -17,6 +17,10 @@ Inversions also hold a special place in evolutionary biology, especially for Dro
 
 Most species harbor inversion polymorphisms, and these inversions have been implicated in a variety of important functional, phenotypic variation. This is because inversions link together genetic variation by "supressing" recombination. During meiosis in an inverted/standard heterozygote, the chromosomes will pair and form loops (just like the polytene chromosomes). When cross-overs (recombination) happen between the inverted and standard chromosomes, the recombinant produces can have large deletions, large duplications, loose centromeres, or pick up a second cetromere. These events almost always lead to the selective death of the recombinant chromosomes and prevent them from being passed onto the next generation. Thus, inversions do not supress recombination in the physical sense, they supress recombination in the population sense.
 
+<p align="center">
+  <img src="/Module_8/images/inversion_consequences.png" width="500"/>
+</p>
+
 The consequence of supressed recombination between inverted and standard chromosomes means that the genes between the inversion breakpoints co-evolve. Say, for instance, that for some special new adaptation to occur mutations must happen in two genes and that those genes are near the inversion breakpoints. Because the inversion supresses recombination, those mutations are always trasmitted together during meisosis and the special new adaptation will always manifest. Sometimes, inversions are referred to as 'supergenes' or 'co-adapted gene complexes' because of this feature.
 
 Detecting inversion polymorphisms from short-read data can be a challenging endeavor. Fortunately, we know specific mutations that are tightly linked to the inversion. We can calculate the frequency of these mutations from the GDS file to get a sense of their frequency. You can find that file [here](/Module_8/inversion_markers_v6.txt).
