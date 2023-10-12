@@ -116,3 +116,13 @@
   mod <- lm(freq~exp_rep, dat.ag[inversion=="In(2L)t"])
   summary(mod)
   anova(mod)
+
+
+### extracting the p-value
+ str(anova(mod))
+
+### plotting together
+ pvals <- data.table(inversion="In(2L)t", p=anova(mod)$Pr[1])
+ ggplot(data=dat.ag[!is.na(freq)], aes(x=exp_rep, y=freq, color=inversion)) +
+   geom_jitter(width=.15) + facet_grid(~inversion) +
+   geom_text(data=pvals, aes(x=1.5, y=.5, label=paste("p=", round(p, 10), collapse="")))
