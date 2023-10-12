@@ -127,11 +127,16 @@
   anova(mod)
 
 ### extracting the p-value
-  str(anova(mod))
-
-  pvals <- data.table(inversion="In(2L)t", p=anova(mod)$Pr[1])
-  ggplot(data=dat.ag[!is.na(freq)], aes(x=exp_rep, y=freq, color=inversion)) +
-    geom_jitter(width=.15) + facet_grid(~inversion) +
-    geom_text(data=pvals, aes(x=1.5, y=.5, label=paste("p=", round(p, 10), collapse="")))
-
   
+    pvals <- foreach(inv=c("In(2L)t", "In(3R)C", "In(3R)K", "In(3R)Mo", "In(3R)Payne"), .combine="rbind")%do%{
+      mod <- lm(freq~exp_rep, dat.ag[inversion==inv])
+      data.table(inversion=inv, p=anova(mod)$Pr[1])
+    }
+
+
+      pvals <- data.table(inversion="In(2L)t", p=anova(mod)$Pr[1])
+
+    ggplot(data=dat.ag[!is.na(freq)], aes(x=exp_rep, y=freq, color=inversion)) +
+      geom_jitter(width=.15) +
+      geom_text(data=pvals, aes(x=1.5, y=.5, label=paste("p=", round(p, 10))))+
+      facet_grid(~inversion)
