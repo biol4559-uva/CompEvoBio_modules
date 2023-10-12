@@ -55,6 +55,6 @@ bcftools merge -0 \
 ### first, convert ExpEvo file
   seqParallelSetup(cluster=10, verbose=TRUE)
 
-  vcf.fn="/scratch/aob2x/compBio_SNP_25Sept2023/dest.expevo.PoolSNP.001.50.25Sept2023.norep.ann.vcf.gz"
-  gds.fn="/scratch/aob2x/compBio_SNP_25Sept2023/dest.expevo.PoolSNP.001.50.25Sept2023.norep.ann.gds"
+  vcf.fn="/scratch/aob2x/compBio_SNP_25Sept2023/dest.expevo.PoolSNP.001.50.11Oct2023.norep.ann.vcf"
+  gds.fn="/scratch/aob2x/compBio_SNP_25Sept2023/dest.expevo.PoolSNP.001.50.11Oct2023.norep.ann.gds"
   seqVCF2GDS(vcf.fn, gds.fn, storage.option="ZIP_RA", parallel=10, verbose=T, optimize=T)

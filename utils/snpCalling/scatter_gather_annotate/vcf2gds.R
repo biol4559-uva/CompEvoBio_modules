@@ -1,5 +1,5 @@
-# ijob -A berglandlab_standard -c10 -p standard --mem=40G
-#module load gcc/7.1.0 openmpi/3.1.4 R/3.6.3; R
+# ijob -A biol4559-aob2x -c10 -p largemem --mem=40G
+# module load gcc/7.1.0 openmpi/3.1.4 R/3.6.3; R
 
 library(SeqArray)
 
@@ -16,5 +16,5 @@ seqVCF2GDS(vcf.fn, gds.fn, storage.option="ZIP_RA", parallel=10, verbose=T, opti
 
 
 
-#seqVCF2GDS("/project/berglandlab/DEST/vcf/dest.all.PoolSNP.001.50.8Jun2023.norep.AT_EScorrect.ann.vcf.gz",
-#            "/project/berglandlab/DEST/gds/dest.all.PoolSNP.001.50.8Jun2023.norep.AT_EScorrect.ann.vgds", storage.option="ZIP_RA", verbose=T, parallel=10, optimize=T)
+seqVCF2GDS("/scratch/aob2x/compBio_SNP_25Sept2023/dest.expevo.PoolSNP.001.50.11Oct2023.norep.ann.vcf",
+            "/scratch/aob2x/compBio_SNP_25Sept2023/dest.expevo.PoolSNP.001.50.11Oct2023.norep.ann.gds", storage.option="ZIP_RA", verbose=T, parallel=10, optimize=T)
