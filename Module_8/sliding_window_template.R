@@ -134,4 +134,12 @@
   out <- merge(out, wins)
   ggplot(data=out, aes(x=window, y=mean_delta_contsysl_virsys, color=chr)) + geom_line()
 
-         
+
+### another version
+   out[,mid:=start/2 + end/2]
+
+
+   inversion.bp <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/main/Module_8/InversionsMap_hglft_v6_inv_startStop.txt")
+   ggplot(data=out, aes(x=mid, y=mean_delta_contsysl_virsys, color=chr)) + geom_line() + facet_grid(~chr, scales="free_x") +
+     geom_vline(data=inversion.bp, aes(xintercept=start )) +
+     geom_vline(data=inversion.bp, aes(xintercept=stop ))
