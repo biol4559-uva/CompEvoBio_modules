@@ -1,5 +1,6 @@
 ### libraries
   install.packages("curl")
+
   library(curl)
   library(SeqArray)
   library(data.table)
@@ -7,7 +8,7 @@
   library(patchwork)
   library(foreach)
   library(doMC)
-  registerDoMC(10)
+  registerDoMC(5)
 
 ### load this function
   getData <- function(snps=snp.dt[pos==14617051 & chr=="2L"], samples=samps) {
@@ -102,27 +103,35 @@
 ### That way we can query our GDS object for allele frequencies.
 ### you will need to use the "merge" command from the data.table package
 ### how many of the inversion markers do not intersect with our set? Do you feel comfortable with that level of intersection?
+  markers <- merge(snp.dt, inv.markers, by=c("chr", "pos"))
 
 ### get the allele frequencies
-  dat <- getData(snps=markers, samples=samps[grepl("PRJNA185744", sampleId)])
+  dat <- getData(snps=markers, samples=samps[grepl("PRJNA194129", sampleId)])
+
+### your turn: write a figure legend for this figure.
+  ggplot(data=dat, aes(x=inversion, y=af_nEff)) + geom_point() + facet_wrap(~sampleId)
 
 ### your turn:
 ### calculate the frequency of the inversion for each of your samples by averaging the frequency of all SNPs associated with the inversion
+  dat.ag <- dat[,list(freq=mean(af_nEff, na.rm=T)),
+                 list(inversion, exp_rep, sampleId, bio_rep)]
 
 ### your turn:
 ### plot the estimated allele frequency of each inversion across treatments
+  ggplot(data=dat.ag[!is.na(freq)], aes(x=exp_rep, y=freq, color=inversion)) +
+    geom_jitter(width=.15) + facet_grid(~inversion)
 
-### some simple models
+### some simple models to test for differences in frequency between the treatment groups
   mod <- lm(freq~exp_rep, dat.ag[inversion=="In(2L)t"])
   summary(mod)
   anova(mod)
 
-
 ### extracting the p-value
- str(anova(mod))
+  str(anova(mod))
 
-### plotting together
- pvals <- data.table(inversion="In(2L)t", p=anova(mod)$Pr[1])
- ggplot(data=dat.ag[!is.na(freq)], aes(x=exp_rep, y=freq, color=inversion)) +
-   geom_jitter(width=.15) + facet_grid(~inversion) +
-   geom_text(data=pvals, aes(x=1.5, y=.5, label=paste("p=", round(p, 10), collapse="")))
+  pvals <- data.table(inversion="In(2L)t", p=anova(mod)$Pr[1])
+  ggplot(data=dat.ag[!is.na(freq)], aes(x=exp_rep, y=freq, color=inversion)) +
+    geom_jitter(width=.15) + facet_grid(~inversion) +
+    geom_text(data=pvals, aes(x=1.5, y=.5, label=paste("p=", round(p, 10), collapse="")))
+
+  
