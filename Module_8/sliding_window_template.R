@@ -128,6 +128,24 @@
       tmp1 <- tmp.data[,list(delta_contsysl_virsys=mean(af_nEff[exp_rep=="contsys"], na.rm=T) - mean(af_nEff[exp_rep=="virsys"], na.rm=T)), list(variant.id, window)]
       tmp1[,list(mean_delta_contsysl_virsys=mean(delta_contsysl_virsys, na.rm=T)), list(window)]
 
+    ### merge with polymorphic sites
+      tmp.data <- merge(tmp.data, bps, all.y=T, by=c("chr","pos"))
+      tmp.data[is.na(af_nEff), af_nEff:=0]
+
+    ### Now we summarize. Examples of summary statistics include: missing data per sample; average coverage; average frequency of mutations; average difference in allele frequency between treatments? What else?
+    ### Try something simple first. Then, try to calculate differences in allele frequency between two groups, averaged within a window.
+     # tmp.data[,list(coverge=mean(dp, na.rm=T), missing=mean(is.na(dp)), het=mean(2*af*(1-af), na.rm=T)), list(sampleId, window)]
+
+      tmp.data[,list(coverge=mean(dp, na.rm=T), missing=mean(is.na(dp)),
+                     het=mean(2*af*(1-af), na.rm=T),
+                     het_correct=mean(2*af_nEff*(1-af_nEff))), list(sampleId, window)]
+
+
+
+      tmp1 <- tmp.data[,list(delta_contsysl_virsys=mean(af_nEff[exp_rep=="contsys"], na.rm=T) - mean(af_nEff[exp_rep=="virsys"], na.rm=T)),
+                       list(variant.id, window)]
+
+
   })
   out <- rbindlist(out)
   setkey(out, window)
