@@ -5,6 +5,8 @@
   BiocManager::install("SeqArray", lib="/scratch/aob2x/biol4559-R-packages-newer", force=T)
 
 ### libraries
+  .libPaths(c("/scratch/aob2x/biol4559-R-packages-newer")); .libPaths()
+
   library(SeqArray)
   library(data.table)
   library(ggplot2)
