@@ -1,3 +1,5 @@
+# ijob -A berglandlab -c5 -p largemem --mem=250G
+### module load gcc/7.1.0  openmpi/3.1.4 R/4.0.3; R
 
 ### libraries
   .libPaths(c("/scratch/aob2x/biol4559-R-packages-newer")); .libPaths()
@@ -19,6 +21,7 @@
   source("https://raw.githubusercontent.com/whitlock/OutFLANK/master/R/Fst%20Diploids.R")
   source("https://raw.githubusercontent.com/whitlock/OutFLANK/master/R/FST%20functions.R")
 
+
 ### collect
   fl <- list.files("/scratch/aob2x/fstoutput/", "window.Rdata", full.names=T)
   out <- foreach(fl.i=fl)%dopar%{
@@ -29,16 +32,20 @@
 
 ### save big object
   save(out, file="/scratch/aob2x/fstoutput/fstOutput.Radta")
-  
-### outlier detection
-  of <- OutFLANK(out[!is.na(FST)], LeftTrimFraction=0.05, RightTrimFraction=0.05, Hmin=0.1, NumberOfSamples=11, qthreshold=0.05)
 
+### for RITA
+  load("/scratch/aob2x/fstOutput.Radta")
+  out[,nPops:=6]
+
+### outlier detection
+  of <- OutFLANK(out[!is.na(FST)][FST>0 & FST<1], LeftTrimFraction=0.05, RightTrimFraction=0.05, Hmin=0.1, NumberOfSamples=6, qthreshold=0.05)
+  save(of, file="/standard/biol4559-aob2x/RitaW_fstoutput/outFLANK_output.Rdata")
 ### how many outliers?
   str(of)
-  
+
 ### make output plot
   ggplot(data=out, aes(FST)) + geom_histogram()
-  
+
 ### your turn (you can choose):
   1) make a Manhattan plot of fst or PBS
   2) make a sliding window average Fst plot
