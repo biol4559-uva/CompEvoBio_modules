@@ -21,7 +21,7 @@ Goals:
 </p>
 
 
-3. Once your repository is created, click on it. Then click on "Manage Access". You might be asked for your GitHub password again. Click "Add People" and type in Alan's id ("alanbergland") and Connor's id ("connor122721"). Give us "Write" privileges.
+3. Once your repository is created, click on it. Then click on "Manage Access". You might be asked for your GitHub password again. Click "Add People" and type in Alan's id ("alanbergland") and Andrew's id ("andrewmcroitoru"). Give us "Write" privileges.
 
 4. Next you will need to set up an `ssh-key`. This is a way that GitHub can verify your identity when you are pushing and pulling scripts. You will be setting up your `ssh-key` on Rivanna, although you might also want to set it up on your own computer. Follow the steps listed [here](https://jdblischak.github.io/2014-09-18-chicago/novice/git/05-sshkeys.html). You will be using OpenOnDemand's shell access to complete these steps:
 <p align="center">
