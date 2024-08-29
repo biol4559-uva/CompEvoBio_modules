@@ -19,7 +19,7 @@ https://ucsbcarpentry.github.io/2021-01-21-SWC-Bash-online/02-filedir/
 <img src="/Module_1/images/create_new_repo8.jpeg" width="500"/>
 </p>
 
-2. One of the first steps in using `bash` is to learn how to navigate the file structure. Just like your computer, unix has a nested file structure and directory structures. One basic command is `pwd`. This gives you the **Present Working Directory**; this is the directory that you are currently in. You can see the files and folders of the directory that you are in by typing `ls`. This **lists* the files and folders. You can change the directory that you are in by typing `cd ___` where the blank is filled into the directory that you want. For instance, you can move to your scratch directory by typing `cd /scratch/aob2x`
+2. One of the first steps in using `bash` is to learn how to navigate the file structure. Just like your computer, unix has a nested file structure and directory structures. One basic command is `pwd`. This gives you the **Present Working Directory**; this is the directory that you are currently in. You can see the files and folders of the directory that you are in by typing `ls`. This **lists* the files and folders. You can change the directory that you are in by typing `cd ___` where the blank is filled into the directory that you want. For instance, you can move to your scratch directory by typing `cd /scratch/aob2x`. Of course, you'll need to use your computing ID.
 
 3. Programs and commands like `ls` take arguments. For instance `ls -l` reports the output as a list. `ls -lh` reports the file sizes in human readable numbers. `ls -lha` reports all hidden files and folders too. Try `ls -lha ~/`. The files and folders starting wiht a `.` are hidden but you can still access them. They usually contain the settings for various programs.
 
@@ -33,6 +33,6 @@ https://ucsbcarpentry.github.io/2021-01-21-SWC-Bash-online/02-filedir/
 
 6. You have three main places to go on Rivanna:
 • `~/`: this is your home directory. How many files are there in your home directory?
-• `/scratch/USERNAME`: this is your scratch directory. How much space do you have on it?
-• `/project/biol4559-aob2x`: this is our shared project directory. Are there hidden files there? If so, what does the hidden file say?
+• `/scratch/USERNAME`: this is your scratch directory. How much space have you used on it?
+
  
