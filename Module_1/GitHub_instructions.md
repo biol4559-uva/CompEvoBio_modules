@@ -3,7 +3,7 @@
 ## Overview
 Once you have created a GitHub account and shared your username with me, you will be added to a GitHub Organization called [biol4559-uva](https://github.com/biol4559-uva). As you have already seen, this organization contains repositories such as the (CompEvoBio_modules)[https://github.com/biol4559-uva/CompEvoBio_modules] which contains scripts that we will use scripts that we will use throughout the course.
 
-As a member of this GitHub Organization, you can create your own repositories. In today's class, you will create your own repository and use it to store scripts that you write for assignmenbts. This will be a private repository that you own and that you share with me and the TA. Down the road, you will create a repository for your team during the analysis of the data-set that you are working on. Using GitHub will allow us to more easily share code and also to get feedback and help when things go awry.
+As a member of this GitHub Organization, you can create your own repositories. In today's class, you will create your own repository and use it to store scripts that you write for assignmenbts. This will be a private repository that you own and that you share with me and the TA. Down the road, you might share your repository with your team during the analysis of the data-set that you are working on. Using GitHub will allow us to more easily share code and also to get feedback and help when things go awry.
 
 Objective:
 1. Learn how to use Github for cloning, pushing and pulling

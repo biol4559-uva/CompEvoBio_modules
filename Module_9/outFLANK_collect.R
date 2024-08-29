@@ -50,3 +50,17 @@
   1) make a Manhattan plot of fst or PBS
   2) make a sliding window average Fst plot
   3) does Fst vary between chromosomes? What about inside inverted regions?
+
+
+
+  outliers <- out[FSTNoCorr>...][annotation==...]
+  setkey(outliers, id)
+  outliers_nodup <- outliers[!duplicated(id)]
+
+  dim(outliers)
+  dim(outliers_nodup)
+
+  setkey(out, id)
+  randomIds <- sample(out$id, 45)
+  out[J(randomIds)]
+  

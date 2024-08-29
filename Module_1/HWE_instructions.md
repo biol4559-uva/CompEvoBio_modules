@@ -1,7 +1,7 @@
 # **Instructions for HWE in-class assignment**
 
 ## Overview
-In this exercise, you will examine the features of Hardy-Weinberg equilibrium to gain a better understanding of some aspects of allele frequency change, and to learn technical skills used throughout this class.
+In this exercise, you will examine the features of Hardy-Weinberg equilibrium to gain a better understanding of some aspects of allele frequences, and to learn technical skills used throughout this class.
 
 Objectives:
 1. Use Rstudio on Rivanna for basic scripting.
@@ -23,11 +23,11 @@ Goals:
 ### 2. Select the options below. Why do these options matter? (we’ll discuss but here is the notes)
 
 >a.	Version = which libraries to use<br>
->b.	Partition = what sort of computer your job gets given to, constraints, SU<br>
+>b.	Partition = Rivanna has different computing nodes that can be requested by specifying the appropriate partition. **Instructional** is what we will typically use. But, sometimes, those nodes become full and so you might find yourself waiting a long time for a new job. In that case, just select **standard**. <br>
 >c.	Hours = Your Rstudio session will terminate after this amount of time<br>
 >d. Cores = billable SU (service unit)<br>
 >e. Memory = for small jobs like this lesson we only need >Gb<br>
->f. Allocation = the account to bill SUs to. The instructional allocation prioritizes our jobs during our class-time so that we don’t have to wait. bio4559-aob2x<br>
+>f. Allocation = the account to bill SUs to. You will be using biol4020-aob2x<br>
 
 <p align="center">
 <img src="/Module_1/images/OOD2.png" width="750"/>
