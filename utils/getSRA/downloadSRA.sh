@@ -11,12 +11,12 @@
 #SBATCH --account berglandlab_standard
 
 wd=/scratch/aob2x/compBio
-### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs.csv )%1 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
+### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs_v2.csv )%10 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
 ### sacct -j 52367522
 ### cat /scratch/aob2x/compBio/logs/prefetch.52222298_*.out | grep -B1 "do not"
 ### cat /scratch/aob2x/compBio/logs/prefetch.52222298_52.out
 
-module load sratoolkit/2.10.5
+module load gcc/11.4.0 sratoolkit/3.0.3 aspera-connect/4.2.4
 
 #SLURM_ARRAY_TASK_ID=194
 # cat /home/aob2x/CompEvoBio_modules/data/runs.csv | nl | grep "SRR1988514"
@@ -44,7 +44,6 @@ else
   prefetch \
   -o /scratch/aob2x/compBio/sra/${sranum}.sra \
   -p \
-  -f \
   ${sranum}
 
 
