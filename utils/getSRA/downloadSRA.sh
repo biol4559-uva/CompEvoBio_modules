@@ -7,7 +7,7 @@
 #SBATCH --mem 10G
 #SBATCH -o /scratch/aob2x/compBio/logs/prefetch.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/compBio/logs/prefetch.%A_%a.err # Standard error
-#SBATCH -p largemem
+#SBATCH -p standard
 #SBATCH --account berglandlab_standard
 
 wd=/scratch/aob2x/compBio
