@@ -42,16 +42,15 @@ PATH_to_your_version_of_mapping_script.sh \
 PATH_to_your_small_file
 ```
 
-Here is my example
+my example
 ```
 sbatch --array=1-$( cat /scratch/aob2x/small_file.csv  | wc -l  ) \
-/scratch/aob2x/mapping_script.sh \
-/scratch/aob2x/dest_v2.6.1_latest.sif \
-/scratch/aob2x/compBio/fastq/SRP002024/ \
+~/CompEvoBio_modules/Module_3/old/mapping_script.aob2x.sh \
+/scratch/aob2x/dest_freeze2.6.1_latest.sif \
+/scratch/aob2x/compBio/fastq/SRP002024 \
 /standard/BerglandTeach/mapping_output \
-PATH_to_your_small_file
+/scratch/aob2x/small_file.csv
 ```
-
 
 3. Confirm your job is successfully running by running the command `sacct -j JOBID`
 
