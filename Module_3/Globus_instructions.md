@@ -20,3 +20,4 @@ Objective:
 =<p align="center">
   <img src="/Module_3/images/globus2.png" width="1000"/>
 </p>
+5. Clisk the "Transfer button" (the arrows) and repeat steps 3 & 4
