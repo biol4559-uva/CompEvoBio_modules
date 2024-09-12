@@ -5,13 +5,13 @@
 #SBATCH -N 1 # on one node
 #SBATCH -t 72:00:00
 #SBATCH --mem 90G
-#SBATCH -o /project/biol4559-aob2x/mapping_scripts/aob2x/logs/RunDest.%A_%a.out # Standard output
-#SBATCH -e /project/biol4559-aob2x/mapping_scripts/aob2x/logs/RunDest.%A_%a.err # Standard error
+#SBATCH -o /scratch/COMPUTEID/logs/RunDest.%A_%a.out # Standard output
+#SBATCH -e /scratch/COMPUTEID/logs/RunDest.%A_%a.err # Standard error
 #SBATCH -p instructional
-#SBATCH --account biol4559-aob2x
+#SBATCH --account biol4020-aob2x
 
 ### modules
-  module load singularity
+  module load apptainer
 
 ###################################
 # Part  1. Get Sample information #
@@ -29,12 +29,12 @@
 
 
 ###################################
-# Part  2. Run Docker             #
+# Part  2. Run the Container      #
 ###################################
 
 ### If your reads are Paired End use this version (and delete the other)
   singularity run \
-  $1/dest_v2.6_latest.sif \
+  $1 \
   $2/${srr}_1.fastq.gz \
   $2/${srr}_2.fastq.gz \
   ${sampleId} \
@@ -49,7 +49,7 @@
 
 ### If your reads are Single End use this version (and delete the other)
   singularity run \
-  $1/dest_v2.6_latest.sif \
+  $1 \
   $2/${srr}.fastq.gz \
   ${sampleId} \
   $3 \

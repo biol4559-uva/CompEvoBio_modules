@@ -1,9 +1,9 @@
-# ijob -A berglandlab_standard -c1 -p dev --mem=6G
-### module load gcc/7.1.0  openmpi/3.1.4 R/4.1.1; R
+# ijob -A berglandlab_standard -c1 -p standard --mem=6G
+### module load gcc/11.4.0  openmpi/4.1.4 R/4.3.1; R
 
 
 ### necessary libraries
-  .libPaths(c("~/biol4559-R-packages/", .libPaths()))
+  #.libPaths(c("~/biol4559-R-packages/", .libPaths()))
   library(foreach)
   library(ggplot2)
   library(readxl)
@@ -34,8 +34,8 @@
 
 
 ### double check that all the files downloaded
-  dl <- foreach(prj=sras$accession, .combine="rbind", .errorhandling="remove")%do%{
-    #prj <- sras$accession[2]
+  dl <- foreach(prj=runs$V1, .combine="rbind", .errorhandling="remove")%do%{
+    #prj <- runs$V1[2]
     fl <- list.files(paste("/scratch/aob2x/compBio/fastq/", prj, sep=""))
     dl <- data.table(proj=prj, run=fl)
     dl[,run:=gsub(".fastq.gz", "", run)]
@@ -46,12 +46,14 @@
   }
 
 ### merge
-  dl.ag <- dl[,list(N=length(unique(run))),proj]
+  dl.ag <- dl[,list(N=length(unique(run)), run=unique(run)),proj]
 
-  rdl <- merge(sras, dl.ag, by.x="accession", by.y="proj", all.x=T)
-  rdl.ag <- rdl[,list(missing=mean(is.na(N))), list(project)]
+  rdl <- merge(runs, dl.ag, by.x="V1", by.y="proj", all.x=T)
+  rdl.ag <- rdl[,list(missing=mean(is.na(N))), list(V1)]
   table(is.na(rdl$N))
 
+  missing <- merge(runs[V1=="PRJNA657615"], dl.ag[proj=="PRJNA657615"], by.x="V2", by.y="run", all.x=T)[is.na(proj)]
+  write.table(missing, file="~/CompEvoBio_modules/data/runs_missing.csv", quote=F, row.names=F, col.names=F, sep=",")
 
 #### sras
   runs <- fread("~/CompEvoBio_modules/data/runs.csv", header=F)

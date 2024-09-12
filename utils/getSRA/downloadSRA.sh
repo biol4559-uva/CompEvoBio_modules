@@ -11,8 +11,8 @@
 #SBATCH --account berglandlab_standard
 
 wd=/scratch/aob2x/compBio
-### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs_v2.csv )%10 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
-### sacct -j 63850346
+### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs_missing.csv )%10 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
+### sacct -j 64052181
 ### cat /scratch/aob2x/compBio/logs/prefetch.52222298_*.out | grep -B1 "do not"
 ### cat /scratch/aob2x/compBio/logs/prefetch.52222298_52.out
 

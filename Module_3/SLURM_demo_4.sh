@@ -16,7 +16,7 @@
 
 module load fastqc
 
-proj=SRP002024 ### YOU'LL NEED TO REPLACE THIS
+proj=SRP002024 ### YOU'LL NEED TO REPLACE THIS with your file
 file=$( ls -d /project/biol4559-aob2x/data/fastq/${bioproj}/* | tr '\t' '\n' | sed "${SLURM_ARRAY_TASK_ID}q;d" )
 
 if [ ! -d /scratch/COMPUTEID/fastq_QC_Out/ ]; then

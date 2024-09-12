@@ -5,10 +5,10 @@
 #SBATCH -N 1 # on one node
 #SBATCH -t 72:00:00
 #SBATCH --mem 90G
-#SBATCH -o /project/biol4559-aob2x/mapping_scripts/COMPUTEID/logs/RunDest.%A_%a.out # Standard output
-#SBATCH -e /project/biol4559-aob2x/mapping_scripts/COMPUTEID/logs/RunDest.%A_%a.err # Standard error
+#SBATCH -o /standard/BerglandTeach/logs/RunDest.%A_%a.out # Standard output
+#SBATCH -e /standard/BerglandTeach/logs/RunDest.%A_%a.err # Standard error
 #SBATCH -p instructional
-#SBATCH --account biol4559-aob2x
+#SBATCH --account biol4020-aob2x
 
 ### modules
   module load singularity
@@ -37,7 +37,7 @@ if [ -f /project/biol4559-aob2x/mapping_output/${sampleId}.sync.gz ]; then
   exit
 fi
 
-if [ ! -f /project/biol4559-aob2x/mapping_output/${sampleId}.sync.gz ]; then
+if [ ! -f /project/biol4559-aob2x/mapping_output/${sampleId}/${sampleId}.sync.gz ]; then
   echo "Running job now"
 
   ### If your reads are Paired End use this version (and delete the other)
