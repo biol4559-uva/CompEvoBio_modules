@@ -25,13 +25,11 @@ Objective:
 1. Map your data using the DEST docker. Send the output of your samples to our shared project folder
 
 ## Instructions
-1. Using the [csv table](/Module_3/sras.txt)that you and your group constructed, divide up the samples roughly evenly. Copy your lines to a new file and save in your scratch folder.
+1. Using the [csv table](/Module_3/mapping_v2/sras.txt) that you and your group constructed, divide up the samples roughly evenly. Copy your lines to a new file and save in your scratch folder.
 
-2. Make a new directory in your scratch directory called `/scratch/COMPUTEID/mapping_output`
+2. Using Globus, copy `/standard/BerglandTeach/dest_freeze2.6.1_latest.sif` to your scratch directory
 
-3. Using Globus, copy `/standard/BerglandTeach/dest_freeze2.6.1_latest.sif` to your scratch directory
-
-2. Copy the `mapping_script.sh` to a new file using Rstudio. Modify that file to have the proper paths and decide if you need PE or SE. Copy the lines below to a dummy text file, and modify `PATH_to_your_small_file` to point it to the small csv file you made in the previous step. Also modify the `PROJECTID` to include the proper SRA project ID. Record the job number.
+3. Copy the [mapping_script.sh](/Module_3/mapping_script.sh) to a new file using Rstudio. Modify that file to have the proper paths and decide if you need PE or SE. Copy the lines below to a dummy text file, and modify `PATH_to_your_small_file` to point it to the small csv file you made in the previous step. Also modify the `PROJECTID` to include the proper SRA project ID. Record the job number.
 
 ```
 sbatch --array=1-$( cat PATH_to_your_small_file  | wc -l  ) \

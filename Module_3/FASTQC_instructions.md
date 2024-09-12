@@ -20,4 +20,4 @@ fastqc -o /scratch/COMPUTEID/fastq_QC_Out --noextract /standard/BerglandTeach/da
 
 ```
 
-4. Down-load the contents of `/scratch/COMPUTEID/fastq_QC_Out` to your computer using the OpenOnDemand file transfer tool and open the html file. What do you see?
+4. Download the contents of `/scratch/COMPUTEID/fastq_QC_Out` to your computer using the OpenOnDemand file transfer tool and open the html file. What do you see?
