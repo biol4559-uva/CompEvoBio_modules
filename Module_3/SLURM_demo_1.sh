@@ -7,7 +7,7 @@
 #SBATCH --mem 2G
 #SBATCH -o /scratch/COMPUTE_ID/logs/demo_1.%A_%a.out # Standard output
 #SBATCH -e /scratch/COMPUTE_ID/logs/demo_1.%A_%a.err # Standard error
-#SBATCH -p instructional
+#SBATCH -p standard
 #SBATCH --account biol4020-aob2x
 
 ### run as: sbatch PATH_TO_THIS_FILE

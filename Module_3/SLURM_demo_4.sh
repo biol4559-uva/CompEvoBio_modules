@@ -7,7 +7,7 @@
 #SBATCH --mem 10G
 #SBATCH -o /scratch/COMPUTE_ID/logs/runFASTQC.%A_%a.out # Standard output
 #SBATCH -e /scratch/COMPUTE_ID/logs/runFASTQC.%A_%a.err # Standard error
-#SBATCH -p instructional
+#SBATCH -p standard
 #SBATCH --account biol4559-aob2x
 
 ### run as: sbatch --array=1-NUMBER_OF_FILES PATH_TO_THIS_FILE
@@ -16,7 +16,7 @@
 
 module load fastqc
 
-proj=SRP002024 ### YOU'LL NEED TO REPLACE THIS with your file
+proj=SRP002024 ### YOU'LL NEED TO REPLACE THIS with your bio-project number.
 file=$( ls -d /project/biol4559-aob2x/data/fastq/${bioproj}/* | tr '\t' '\n' | sed "${SLURM_ARRAY_TASK_ID}q;d" )
 
 if [ ! -d /scratch/COMPUTEID/fastq_QC_Out/ ]; then

@@ -7,7 +7,7 @@
 #SBATCH --mem 90G
 #SBATCH -o /scratch/COMPUTEID/logs/RunDest.%A_%a.out # Standard output
 #SBATCH -e /scratch/COMPUTEID/logs/RunDest.%A_%a.err # Standard error
-#SBATCH -p instructional
+#SBATCH -p standard
 #SBATCH --account biol4020-aob2x
 
 ### modules
