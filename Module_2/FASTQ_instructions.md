@@ -21,7 +21,7 @@ Objective:
 ## Instructions
 0. Open a terminal window using OpenOnDemand
 
-1. Navigate to `/project/biol4559-aob2x/data/qual_encoding`.
+1. Navigate to `/standard/BerglandTeach/data/qual_encoding`.
 
 2. Look at the contents of the two sample files. Wow! That is a lot of lines. What are strategies for not overloading your terminal window with TMI? Here are some commands to try:
 

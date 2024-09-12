@@ -20,11 +20,11 @@ module load gcc/11.4.0 sratoolkit/3.0.3 aspera-connect/4.2.4
 
 #SLURM_ARRAY_TASK_ID=194
 # cat /home/aob2x/CompEvoBio_modules/data/runs.csv | nl | grep "SRR1988514"
-# SLURM_ARRAY_TASK_ID=61
+# SLURM_ARRAY_TASK_ID=1
 
-sranum=$( sed "${SLURM_ARRAY_TASK_ID}q;d" /home/aob2x/CompEvoBio_modules/data/runs.csv | cut -f2 -d' ' )
-sampName=$( sed "${SLURM_ARRAY_TASK_ID}q;d" /home/aob2x/CompEvoBio_modules/data/runs.csv | cut -f2 -d' ' )
-proj=$( sed "${SLURM_ARRAY_TASK_ID}q;d" /home/aob2x/CompEvoBio_modules/data/runs.csv | cut -f1 -d' ' )
+sranum=$( sed "${SLURM_ARRAY_TASK_ID}q;d" ~/CompEvoBio_modules/data/runs_missing.csv | cut -f1 -d',' )
+sampName=$( sed "${SLURM_ARRAY_TASK_ID}q;d" ~/CompEvoBio_modules/data/runs_missing.csv | cut -f1 -d',' )
+proj=$( sed "${SLURM_ARRAY_TASK_ID}q;d" ~/CompEvoBio_modules/data/runs_missing.csv | cut -f2 -d',' )
 
 echo $sampName " / " $sranum " / " $proj
 
