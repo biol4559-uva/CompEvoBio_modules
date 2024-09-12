@@ -14,10 +14,13 @@ Objective:
 2. Log in
 3. Click the Search box
 <p align="center">
-  <img src="/Module_3/images/globus.png" width="1000"/>
+  <img src="/Module_3/images/globus1.png" width="1000"/>
 </p>
 4. Type in "UVA Standard"
-=<p align="center">
+<p align="center">
   <img src="/Module_3/images/globus2.png" width="1000"/>
 </p>
 5. Clisk the "Transfer button" (the arrows) and repeat steps 3 & 4
+6. <p align="center">
+  <img src="/Module_3/images/globus3.png" width="1000"/>
+</p>
