@@ -41,7 +41,7 @@ Some of these field should be familiar. What is the first column? The columns wi
 samtools tview ExpEvo_SRP002024_CO_4_1975-MM-DD.original.bam /project/biol4559-aob2x/data/refGenome/holo_dmel_6.12.fa
 ```
 
-If your sample has low coverage, like mine, the screen will look quite blank. This is because we are looking at the very tip of the chromosome and mapping is difficult there. If your sample has a ton of reads, you might see something.  We are going to navigate to our famous Adh F/S polymorphism that we discussed on the first day of class. To do this, type `g` in the `tview` window and then type: `2L:14617051`. Your cursor shoudl be pointed right over the site. Is there a polymorphism at your site? What is its frequency? How many reads cover the site (to exit tview press `q`)
+If your sample has low coverage, like mine, the screen will look quite blank. This is because we are looking at the very tip of the chromosome and mapping is difficult there. If your sample has a ton of reads, you might see something.  We are going to navigate to our famous Adh F/S polymorphism. To do this, type `g` in the `tview` window and then type: `2L:14617051`. Your cursor should be pointed right over the site. Is there a polymorphism at your site? What is its frequency? How many reads cover the site (to exit tview press `q`)
 <p align="center">
   <img src="/Module_4/images/adh.jpeg" width="500"/>
 </p>
@@ -56,7 +56,7 @@ If your sample has low coverage, like mine, the screen will look quite blank. Th
 tail -n4 ExpEvo_SRP002024_CO_4_1975-MM-DD.mark_duplicates_report.txt | head -n2
 ```
 
-You shoudl get something like this; the 9th column should be the duplication rate (3.6% in my case):
+You should get something like this; the 9th column should be the duplication rate (3.6% in my case):
 <p align="center">
   <img src="/Module_4/images/dupRate.jpeg" width="1000"/>
 </p>

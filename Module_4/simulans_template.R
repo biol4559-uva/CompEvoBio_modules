@@ -1,5 +1,10 @@
+### install a new package; you only need to do this once.
+  if (!require("BiocManager", quietly = TRUE))
+      install.packages("BiocManager")
+
+  BiocManager::install("Rsamtools")
+
 ### libraries
-  .libPaths(c("/project/biol4559-aob2x/biol4559-R-packages/", .libPaths()))
   library(ggplot2)
   library(data.table)
   library(foreach)
@@ -7,8 +12,9 @@
   registerDoMC(2)
   library(Rsamtools)
 
+### this
 ### specify the bam file
-  fl <- system("ls -d /project/biol4559-aob2x/data/Contamination_test/mapping_output/*/*.srt.flt.bam", intern=T)
+  fl <- system("ls -d /standard/BerglandTeach/data/Contamination_test/mapping_output/*/*.srt.flt.bam", intern=T)
 
 ### How many reads map to each chromosome?
   rd <- foreach(bamFile=fl, .combine="rbind")%dopar%{
