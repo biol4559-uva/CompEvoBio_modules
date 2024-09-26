@@ -6,3 +6,5 @@ sbatch --array=1-$( cat /scratch/aob2x/small_file.csv  | wc -l  ) \
 /scratch/aob2x/small_file.csv
 
 sacct -j 64059651
+
+apptainer

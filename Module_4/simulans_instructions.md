@@ -7,7 +7,8 @@ The data we are using comes from "pool-seq" where many individual flies are comb
 
 Goals:
 1. Practice using R.
-2. Learn how to interact with BAM files using R.
+2. Learn how to install packages from Bioconductor.
+3. Learn how to interact with BAM files using R.
 
 Objective:
 1. Estimate contamination, and make a version of this figure for your data. In this figure, the points represent an relationship between the estimated contamination rate from the mapping approach and the true contamination rate (more on that below). The horizontal colored lines are the contamination estiamtes from samples in my study. In general, the contamination rates are estimated at ~1-2%. Given that there are 25 flies in my pool, this represents <1 fly and therefore these samples should not be considered suspect for contamination.
@@ -17,7 +18,7 @@ Objective:
 </p>
 
 ## Instructions
-1. Open a new Rstudio job. Select 2 cores. We will utilize a little bit of multicore computing in this example.
+1. Open a new Rstudio job. Select 5 cores. We will utilize a little bit of multicore computing in this example.
 
 2. Copy the contents of [simulans_template.R](/Module_4/simulans_template.R) into a new file in your GitHub folder.
 

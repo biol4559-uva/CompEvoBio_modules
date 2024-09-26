@@ -32,3 +32,11 @@
                 sheet=proj.i,
                 output[proj==proj.i])
   }
+
+
+
+
+  cat -v file.txt
+  sed -i 's/[^[:print:]\t]//g' file.txt
+  cat -v file.txt
+  nano file.txt

@@ -1,7 +1,7 @@
 # **Coverage instructions**
 
 ## Overview
-In our last class, you used the number of reads that map back to each chromosome to test if your samples were contaminated by the sister species, D. simulans and to test the sex ratio of your samples. Both of these calculations "coverage" as a metric. Coverage referrs to the number of reads that map to a region of the genome. You were calculating the average coverage across a chromosome. In this exercise, we will be calculating the actual coverage at every position in the genome.
+In our last class, you used the number of reads that map back to each chromosome to test if your samples were contaminated by the sister species, D. simulans and to test the sex ratio of your samples. Both of these calculations used "coverage" as a metric. Coverage refers to the number of reads that map to a region of the genome. You were calculating the average coverage across a chromosome. In this exercise, we will be calculating the actual coverage at every position in the genome.
 
 Goals:
 1. Practice data-table and string manipulation.
@@ -15,16 +15,12 @@ Objective:
 </p>
 
 ## Instructions
-1. Open a terminal window and run the following commands:
-```
-cp -R /standard/vol186/bergland-lab/biol4559-aob2x/biol4559-R-packages /scratch/aob2x/.
-```
 
-2. Open an Rstudio job, make sure to request 4 cores and 30Gb of RAM.
+1. Open an Rstudio job, make sure to request 5 cores.
 
-3. Make a new script, and copy the contents of [coverage_template.R](/Module_5/coverate_template.R) to a new script.
+2. Make a new script, and copy the contents of [coverage_template.R](/Module_5/coverage_template.R) to a new script.
 
-4. Work through lines 45 of the script. You'll have to come up with your own solution at one stage of the script to generate this figure:
+3. Work through lines 45 of the script. You'll have to come up with your own solution at one stage of the script to generate this figure:
 
 <p align="center">
   <img src="/Module_5/images/coverage_boxwhisker.jpeg" width="1000"/>

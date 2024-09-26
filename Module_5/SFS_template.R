@@ -45,7 +45,7 @@
   ggplot(data=sync.poly, aes(alt_freq, group=chr, color=chr)) + geom_density() + facet_grid(~chr)
 
 ### load in Gene definition
-  genes <- fread("/scratch/aob2x/coverage/genes.bed")
+  genes <- fread("/standard/BerglandTeach//genes.bed")
   setnames(genes, names(genes), c("chr", "start", "stop", "gene"))
   genes[,stop:=as.numeric(stop)]
   genes <- na.omit(genes)

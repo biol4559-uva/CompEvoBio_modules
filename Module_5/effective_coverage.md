@@ -11,7 +11,7 @@ Take an extreme case of a pool of four flies sequenced to 1000X coverage. Clearl
 
 Fortunately, there is an easy formula to esimate a statistic that we call "effective coverage." Effective coverage accounts for both types of sampling (flies + reads):
 
-$$EC={(nReads * nChrom)/(nReads + nChrom)}$$
+$$EC={(nReads * nChrom)/(nReads + nChrom -1 )}$$
 
 where $nReads$ is the number of reads at any site, and $nChrom$ is the number of chromosomes (2*N for the autosomes.
 

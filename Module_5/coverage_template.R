@@ -1,16 +1,19 @@
+### install two packages - R.utils & patchwork
 
 ### libraries
-c  library(ggplot2)
+  library(ggplot2)
   library(data.table)
   library(R.utils)
   library(patchwork)
 
 ### read the SYNC file
-  sync <- fread("/scratch/COMPUTEID/coverage/ExpEvo_PRJEB5713_ancestral1_1_2007-MM-DD.tab.gz", sep2=":")
+  system("zcat /standard/BerglandTeach/mapping_output/ExpEvo_SRP002024_CO_3_1975-MM-DD/ExpEvo_SRP002024_CO_3_1975-MM-DD.sync.gz | sed 's/:/\t/g' > /scratch/aob2x/ExpEvo_SRP002024_CO_3_1975-MM-DD.tab")
+  sync <- fread("/scratch/aob2x/ExpEvo_SRP002024_CO_3_1975-MM-DD.tab", nrows=100)
 
   setnames(sync, names(sync), c("chr", "pos", "ref", "A", "T", "C", "G", "N","del"))
   sync <- sync[,-"del",]
   sync[,id:=1:dim(sync)[1]]
+
 
 ### what is the total read depth?
   sync[,depth:=A+T+C+G+N]
@@ -71,7 +74,7 @@ c  library(ggplot2)
 
 ### flag repetitive regions
     ### first load in the repeat data. This data comes as a bed file, with chromosome, start, stop and the type
-      rep <- fread("/scratch/aob2x/coverage/repeats.sort.merge.clean.bed")
+      rep <- fread("/standard/BerglandTeach/repeats.sort.merge.bed")
       setnames(rep, names(rep), c("chr", "start", "stop", "type"))
       rep[,rep_region:=T]
 

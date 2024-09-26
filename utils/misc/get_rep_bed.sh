@@ -1,10 +1,10 @@
 cd /scratch/aob2x/biol4559/
 
-curl https://hgdownload.soe.ucsc.edu/goldenPath/dm6/database/windowmaskerSdust.txt.gz  >  repeat_bed/windowmaskerSdust.txt.gz
-curl https://hgdownload.soe.ucsc.edu/goldenPath/dm6/database/microsat.txt.gz  >           repeat_bed/microsat.txt.gz
-curl https://hgdownload.soe.ucsc.edu/goldenPath/dm6/database/simpleRepeat.txt.gz >        repeat_bed/simpleRepeat.txt.gz
-curl https://hgdownload.soe.ucsc.edu/goldenPath/dm6/database/nestedRepeats.txt.gz >       repeat_bed/nestedRepeats.txt.gz
-curl https://hgdownload.soe.ucsc.edu/goldenPath/dm6/database/rmsk.txt.gz >                repeat_bed/rmsk.txt.gz
+curl https://hgdownload.soe.ucsc.edu/goldenPath/dm6/database/windowmaskerSdust.txt.gz  >  windowmaskerSdust.txt.gz
+curl https://hgdownload.soe.ucsc.edu/goldenPath/dm6/database/microsat.txt.gz  >           microsat.txt.gz
+curl https://hgdownload.soe.ucsc.edu/goldenPath/dm6/database/simpleRepeat.txt.gz >        simpleRepeat.txt.gz
+curl https://hgdownload.soe.ucsc.edu/goldenPath/dm6/database/nestedRepeats.txt.gz >       nestedRepeats.txt.gz
+curl https://hgdownload.soe.ucsc.edu/goldenPath/dm6/database/rmsk.txt.gz >                rmsk.txt.gz
 
 cd /scratch/aob2x/biol4559//repeat_bed/
 gunzip *
@@ -32,14 +32,14 @@ cat rmsk.txt | cut -f6,7,8,12 | sed 's/$/;reapeatMasker/g' | sed 's/chr//g' > rm
 ### concatenate
 cat windowmaskerSdust.bed microsat.bed simpleRepeat.bed nestedRepeats.bed rmsk.bed > repeats.bed
 
-module load gcc/9.2.0 bedtools/2.29.2
+module load bedtools/2.30.0
 bedtools sort -i repeats.bed > repeats.sort.bed
 bedtools merge -c 4 -o collapse -i repeats.sort.bed > repeats.sort.merge.bed
 
 ### copy
 
 
-cp repeats.sort.merge.clean.bed /standard/vol186/bergland-lab/biol4559-aob2x/.
+cp repeats.sort.merge.clean.bed /standard/BerglandTeach/.
 cp repeats.sort.merge.clean.bed /scratch/aob2x/coverage/.
 
 
