@@ -1,6 +1,5 @@
 
 ### libraries
-  .libPaths(c("/scratch/COMPUTEID/coverage/biol4559-R-packages", .libPaths())); .libPaths()
   library(ggplot2)
   library(data.table)
   library(R.utils)
