@@ -17,5 +17,5 @@
 #module load gcc/9.2.0 openmpi/3.1.6 python/3.7.7 snakemake/6.0.5
 module load gcc/11.4.0  openmpi/4.1.4 python/3.11.4 snakemake/7.24.2
 
-cd /scratch/aob2x/DESTv2/snpCalling
-snakemake --profile /scratch/aob2x/CompEvoBio_modules/utils/snpCalling/slurm --ri
+cd ~/CompEvoBio_modules/utils/snpCalling/
+snakemake --profile ~/CompEvoBio_modules/utils/snpCalling/slurm --ri
