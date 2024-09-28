@@ -37,11 +37,11 @@ add to path
 First, do a dry run with snakemake. This outputs the jobs which will be submitted, checks that everything snakemake needs for initialization is present, checks for syntax issues, etc. From `DEST_freeze1/snpCalling`, run
 
 ```bash
-module load gcc/9.2.0 openmpi/3.1.6 python/3.7.7 snakemake/6.0.5
-cd /scratch/aob2x/CompEvoBio_modules/utils/snpCalling
-snakemake -f --profile /scratch/aob2x/CompEvoBio_modules/utils/snpCalling/slurm -n
+module load gcc/11.4.0  openmpi/4.1.4 python/3.11.4 snakemake/7.24.2
+cd ~/CompEvoBio_modules/utils/snpCalling
+snakemake -f --profile ~/CompEvoBio_modules/utils/snpCalling/slurm -n
 
-snakemake --profile /scratch/aob2x/CompEvoBio_modules/utils/snpCalling/slurm --unlock
+snakemake --profile ~/CompEvoBio_modules/utils/snpCalling/slurm --unlock
 snakemake -Sf
 ```
 
