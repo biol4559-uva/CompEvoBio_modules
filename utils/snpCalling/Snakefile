@@ -26,7 +26,7 @@ if config["jobs_file"] == "NA":
 
     chr_lens = dict()
     #with open(config["script_directory"] + "/scatter_gather_annotate/holo_dmel_6.12.fa.fai") as src:
-    with open("~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/holo_dmel_6.12.fa.fai") as src:
+    with open("/scratch/aob2x/holo_dmel_6.12.fa.fai") as src:
         for line in src.readlines():
             line = line.split()
             if line[0] in CHRS:
