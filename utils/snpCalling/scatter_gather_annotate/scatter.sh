@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
 module purge
-module load gcc/7.1.0 openmpi/3.1.4
+#module load gcc/7.1.0 openmpi/3.1.4
+load gcc/11.4.0  openmpi/4.1.4 python/3.11.4
+
 #module load htslib bcftools parallel intel/18.0 intelmpi/18.0 mvapich2/2.3.1 R/3.6.3 python/3.6.6 vcftools/0.1.16
-module load htslib/1.10.2 bcftools/1.9 parallel/20200322 intel/18.0 intelmpi/18.0 R/3.6.3 python/3.6.6 vcftools/0.1.16
+#module load htslib/1.10.2 bcftools/1.9 parallel/20200322 intel/18.0 intelmpi/18.0 R/3.6.3 python/3.6.6 vcftools/0.1.16
+module load htslib/1.17  bcftools/1.17 parallel/20200322 gcc/11.4.0 openmpi/4.1.4 python/3.11.4 vcftools/0.1.16
+module load bedtools/2.30.0
 
 ### r, mvapch, parallel
 
@@ -128,8 +132,6 @@ module load htslib/1.10.2 bcftools/1.9 parallel/20200322 intel/18.0 intelmpi/18.
 
   tabix -p vcf ${outdir}/${jobid}.${popSet}.${method}.${maf}.${mac}.${version}.vcf.gz
 
-
-  module load gcc/9.2.0 bedtools/2.29.2
 
   bedtools intersect -sorted -v -header \
   -b ${script_dir}/scatter_gather_annotate/repeat_bed/repeats.sort.bed.gz \
