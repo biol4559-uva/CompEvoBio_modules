@@ -7,8 +7,8 @@
 #SBATCH --mem 80G
 #SBATCH -o /scratch/aob2x/compBio_SNP_28Sept2024/manual_annotate.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/compBio_SNP_28Sept2024/manual_annotate.%A_%a.err # Standard error
-#SBATCH -p instructional
-#SBATCH --account biol4559-aob2x
+#SBATCH -p standard
+#SBATCH --account biol4020-aob2x
 
 ### cat /scratch/aob2x/DESTv2_output_SNAPE/logs/runSnakemake.49369837*.err
 

@@ -54,21 +54,26 @@ cd ${wd}
    ls -d ${wd}/sub_bcf/dest.*.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz | grep -E "2L|2R|3L|3R|X" > \
    ${wd}/sub_bcf/vcf_order.genome
 
-
-   vcf-concat \
+   bcftools concat \
    -f ${wd}/sub_bcf/vcf_order.genome \
-   -s \
-   |  \
-   bgzip -c > ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+   -O z \
+   -o ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+
+   # vcf-concat \
+   # -f ${wd}/sub_bcf/vcf_order.genome \
+   # -s \
+   # |  \
+   # bgzip -c > ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
 
    tabix -p vcf ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
 
+   # ijob -A berglandlab -c20 -p standard --mem=60G
 
  echo "convert to vcf & annotate"
    bcftools view \
-   --threads 10 \
+   --threads 20 \
    ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz | \
-   java -jar ${snpEffPath}/snpEff.jar \
+   java -jar ~/snpEff/snpEff.jar \
    eff \
    BDGP6.86 - > \
    ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf
