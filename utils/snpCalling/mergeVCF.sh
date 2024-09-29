@@ -37,14 +37,19 @@ wd=/scratch/aob2x/compBio_SNP_28Sept2024
 # eff \
 # BDGP6.86 - > \
 # ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf
-# 
-# 
+#
+#
 # echo "bgzip & tabix"
 #   bgzip -@20 -c ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf > ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf.gz
 #   tabix -f -p vcf ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf.gz
-# 
+#
 
 bcftools merge -0 --threads 20 \
 -o /scratch/aob2x/compBio_SNP_25Sept2023/dest.expevo.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
 ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf.gz \
 /project/berglandlab/DEST/dest.all.PoolSNP.001.50.3May2024.ann.vcf.gz
+
+
+
+Rscript --vanilla ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/vcf2gds.R \
+/scratch/aob2x/compBio_SNP_25Sept2023/dest.expevo.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
