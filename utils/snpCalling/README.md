@@ -52,17 +52,19 @@ Then, if everything looks OK, run:
 mkdir /scratch/aob2x/compBio_SNP_25Sept2023
 mkdir /scratch/aob2x/compBio_SNP_25Sept2023/logs
 
-module load gcc/9.2.0 openmpi/3.1.6 python/3.7.7 snakemake/6.0.5
-cd /scratch/aob2x/CompEvoBio_modules/utils/snpCalling
+module load gcc/11.4.0  openmpi/4.1.4 python/3.11.4 snakemake/7.24.2
+cd ~/CompEvoBio_modules/utils/snpCalling
 
 #cp jobs_genome.csv /scratch/aob2x/DESTv2_output/jobs.csv
 
+snakemake --profile ~/CompEvoBio_modules/utils/snpCalling/slurm --unlock
 
-sbatch /scratch/aob2x/CompEvoBio_modules/utils/snpCalling/runSnakemake.sh
-sacct -j 53533042
+sbatch ~/CompEvoBio_modules/utils/snpCalling/runSnakemake.sh
+sacct -j 64522247
 sacct -u aob2x
-cat /scratch/aob2x/mapping_output/compBio_F2023/logs
-```
+cd /scratch/aob2x/compBio_SNP_28Sept2024
+ls -lh /scratch/aob2x/compBio_SNP_28Sept2024/logs
+``ls -lh`
 
 
 
