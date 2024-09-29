@@ -13,13 +13,14 @@
 ### cat /scratch/aob2x/DESTv2_output_SNAPE/logs/runSnakemake.49369837*.err
 
 ### sbatch ~/CompEvoBio_modules/utils/snpCalling/mergeVCF.sh
-### sacct -j 64525400
-### cat /scratch/aob2x/compBio_SNP_28Sept2024/manual_annotate.64525400
+### sacct -j 64525401
+### cat /scratch/aob2x/compBio_SNP_28Sept2024/manual_annotate.64525401
 
 module load gcc/11.4.0  openmpi/4.1.4 python/3.11.4
 
 module load htslib/1.17  bcftools/1.17 parallel/20200322 gcc/11.4.0 openmpi/4.1.4 python/3.11.4 vcftools/0.1.16 R/4.3.1
 module load bedtools/2.30.0
+echo "R_LIBS_USER=~/R/goolf/4.3" > ~/.Renviron
 
 
 ### annotate
@@ -47,7 +48,7 @@ wd=/scratch/aob2x/compBio_SNP_28Sept2024
 bcftools merge -0 --threads 20 \
 -o ${wd}/dest.expevo.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz \
 ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf.gz \
-/project/berglandlab/DEST/dest.all.PoolSNP.001.50.3May2024.ann.vcf.gz
+/project/berglandlab/DEST/vcf/dest.all.PoolSNP.001.50.3May2024.ann.vcf.gz
 
 Rscript --vanilla ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/vcf2gds.R \
 ${wd}/dest.expevo.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
