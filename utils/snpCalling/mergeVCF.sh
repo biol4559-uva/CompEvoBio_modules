@@ -13,7 +13,7 @@
 ### cat /scratch/aob2x/DESTv2_output_SNAPE/logs/runSnakemake.49369837*.err
 
 ### sbatch ~/CompEvoBio_modules/utils/snpCalling/mergeVCF.sh
-### sacct -j 64525401
+### sacct -j 64525405
 ### cat /scratch/aob2x/compBio_SNP_28Sept2024/manual_annotate.64525401
 
 module load gcc/11.4.0  openmpi/4.1.4 python/3.11.4
