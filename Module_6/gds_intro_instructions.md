@@ -1,7 +1,6 @@
 # **Intro to GDS files & metadata**
 
 ## Overview
-Phew. Rivanna is at least operational, and we've been able to pull most of your samples off of the problematic drive. It is always a drag when tools fail in the middle of a project. But, we're on the right track and have a strategy for moving forward!
 
 At this point, you have mapped your short reads and compiled your metadata. I've taken the output of your mapping jobs, and combined them all into what is called a [VCF](https://en.wikipedia.org/wiki/Variant_Call_Format) file. A VCF file is a text file that contains information about the read depth and allele frequencies for SNPs that are polymorphic in any particular sample. VCF files were originally built to handle individual sequencing data, where each entry represents a single fly (or person or cat or carp or whatever). The basic structure of a VCF file is as follows:
 
@@ -16,7 +15,7 @@ Goals:
 1. Learn how to interface with the GDS object using R
 
 Objective:
-1. Make a plot that shows the amount of "missing data" in your sample and test speed improvements with parallelization.
+1. Make a plot that shows: A) the allele frequency spectrum across the genome; B) the allele frequencies of SNPs at AdH in your samples; C) the frequency of SNPs with different genomic classifications
 <p align="center">
   <img src="/Module_6/images/gds_plot.jpeg" width="1000"/>
 </p>
