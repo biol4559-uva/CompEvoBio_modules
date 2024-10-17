@@ -8,7 +8,6 @@
   library(ggplot2)
   library(patchwork)
   library(SeqArray)
-  library(poolfstat)
   library(ggforce)
   library(zoo)
   library(ggrepel)
@@ -132,4 +131,3 @@
 
 
 ### goal is to make a plot that plots PC1 and PC2, PC2 and PC3 for your samples plus the world-wide dataset. The steps above will largley get you there but you will have to modify things a little bit.
-  
