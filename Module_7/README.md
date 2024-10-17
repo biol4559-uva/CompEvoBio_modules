@@ -18,13 +18,16 @@ Objective:
   <img src="/Module_7/images/Iris.comp.PCA.png" width="600"/>
 </p>
 
+2. Use PCA to distill your PoolSeq data and plot it against PCA of the world-wide samples
+
 ## Instructions
-1. Open a new Rstudio job. 
+
+1. Open a new Rstudio job.
 
 2. Copy the contents of [1.IrisPrincipalComponentAnalysis.R](/Module_7/1.IrisPrincipalComponentAnalysis.R) into a new file in your GitHub folder.
 
 3. Run the code to generate the base figures of the Iris floral phenotypes and run the PCA.
 
-4. Add to your version of [2.PCADrosophila.R](/Module_7/2.PCADrosophila.R) to use PCA on the genome-wide SNPs within your samples. You will have to merge the PCA results with the metadata and use ggplot to graph how your samples group according to experimental treatment. 
+4. Add to your version of [2.PCADrosophila.R](/Module_7/2.PCADrosophila.R) to use PCA on the genome-wide SNPs within your samples. You will have to merge the PCA results with the metadata and use ggplot to graph how your samples group according to experimental treatment.
 
 5. To complete this assignment, upload your script and figures to GitHub. In the Canvas assignment, upload your figure and the path to your github folder.

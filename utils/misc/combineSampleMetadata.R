@@ -15,4 +15,7 @@
   ee[continent=="North_America", long:=long*-1]
   ee <- ee[,-"subsample", with=F]
 
-  
+  samps <- rbind(dest, ee, fill=T)
+
+### output
+  write.csv(samps, file="/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.28Sept2024_ExpEvo.csv", quote=F, row.names=F)
