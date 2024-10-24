@@ -1,6 +1,4 @@
 ### libraries
-  .libPaths(c("/scratch/aob2x/biol4559-R-packages-newer")); .libPaths()
-  install.packages("curl")
   library(curl)
   library(SeqArray)
   library(data.table)
@@ -8,81 +6,17 @@
   library(patchwork)
   library(foreach)
   library(doMC)
-  registerDoMC(4)
+  registerDoMC(20)
 
 ### load this function
-  getData <- function(snps=snp.dt[pos==14617051 & chr=="2L"], samples=samps) {
-    # snps=snp.dt[pos==14617051 & chr=="2L"]; samples=samps[grepl("SRP002024", sampleId)]$sampleId
-
-    ### filter to target
-    seqSetFilter(genofile, variant.id=snps$id, sample.id=samples$sampleId)
-
-    ### get annotations
-    message("Annotations")
-    tmp <- seqGetData(genofile, "annotation/info/ANN")
-    len1 <- tmp$length
-    len2 <- tmp$data
-
-    snp.dt1 <- data.table(len=rep(len1, times=len1),
-                          ann=len2,
-                          id=rep(snps$id, times=len1))
-
-    # Extract data between the 2nd and third | symbol
-    snp.dt1[,class:=tstrsplit(snp.dt1$ann,"\\|")[[2]]]
-    snp.dt1[,gene:=tstrsplit(snp.dt1$ann,"\\|")[[4]]]
-
-    # Collapse additional annotations to original SNP vector length
-    snp.dt1.an <- snp.dt1[,list(n=length(class), col= paste(class, collapse=","), gene=paste(gene, collapse=",")),
-                          list(variant.id=id)]
-
-    snp.dt1.an[,col:=tstrsplit(snp.dt1.an$col,"\\,")[[1]]]
-    snp.dt1.an[,gene:=tstrsplit(snp.dt1.an$gene,"\\,")[[1]]]
-
-    ### get frequencies
-    message("Allele Freqs")
-
-    ad <- seqGetData(genofile, "annotation/format/AD")
-    dp <- seqGetData(genofile, "annotation/format/DP")
-
-    if(class(dp)[1]!="SeqVarDataList") {
-      dp <- list(data=dp)
-    }
-
-
-    af <- data.table(ad=expand.grid(ad$data)[,1],
-                     dp=expand.grid(dp$data)[,1],
-                     sampleId=rep(seqGetData(genofile, "sample.id"), dim(ad$data)[2]),
-                     variant.id=rep(seqGetData(genofile, "variant.id"), each=dim(ad$data)[1]))
-
-    ### tack them together
-    message("merge")
-    afi <- merge(af, snp.dt1.an, by="variant.id")
-    afi <- merge(afi, snps, by.x="variant.id", by.y="id")
-
-    afi[,af:=ad/dp]
-
-    ### calculate effective read-depth
-    afis <- merge(afi, samples[,c("sampleId", "set", "nFlies", "locality",
-                                  "lat", "long", "continent", "country", "province", "city",
-                                  "min_day", "max_day", "min_month", "max_month", "year", "jday",
-                                  "bio_rep", "tech_rep", "exp_rep", "loc_rep", "subsample", "sampling_strategy",
-                                  "SRA_Accession"), with=F], by="sampleId")
-
-    afis[chr=="X|Y", nEff:=round((dp*nFlies - 1)/(dp+nFlies))]
-    afis[chr!="X", nEff:=round((dp*2*nFlies - 1)/(dp+2*nFlies))]
-    afis[,af_nEff:=round(af*nEff)/nEff]
-    setnames(afis, "col", "annotation")
-    ### return
-    afis[,-c("n"), with=F]
-  }
+  source("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/utils/misc/getData_function.R")
 
 ### open GDS file
-  genofile <- seqOpen("/scratch/aob2x/GDS/dest.expevo.PoolSNP.001.50.25Sept2023.norep.ann.gds")
+  genofile <- seqOpen("/scratch/aob2x/dest.expevo.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.gds")
   genofile
 
 ### load meta-data file
-  samps <- fread("/scratch/aob2x/GDS/biol4559_sampleMetadata.csv")
-  samps[is.na(set), set:="ExpEvo"]
+  samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/full_sample_metadata.28Sept2024_ExpEvo.csv")
 
 ### common SNP.dt
   seqResetFilter(genofile)
@@ -117,48 +51,22 @@
 
   system.time(out <- foreach(i=1:dim(wins)[1], .errorhandling="remove")%dopar%{
     #i <- 100
-   # message(i)
+    message(i)
     ### get data for your sample for this window
       focalSNPs <-snp.dt[J(wins[i]$chr)][pos>=wins[i]$start & pos<=wins[i]$end]
       tmp.data <- getData(snps=focalSNPs, samples=samps[grepl("PRJEB5713", sampleId)])
       tmp.data[,window:=i]
 
-    ### Now we summarize. Examples of summary statistics include: missing data per sample; average coverage; average frequency of mutations; averge difference in allele frequency between treatments? What else?
-    ### your turn
+    ### Now we summarize.
+    ### Some summary statistics include: missing data per sample; average coverage; average frequency of mutations; averge difference in allele frequency between treatments? What else?
+    ### the example below shows coverage and missing data rate.
       tmp.data[,list(coverge=mean(dp, na.rm=T), missing=mean(is.na(dp))), list(sampleId, window)]
-      tmp1 <- tmp.data[,list(delta_contsysl_virsys=mean(af_nEff[exp_rep=="contsys"], na.rm=T) - mean(af_nEff[exp_rep=="virsys"], na.rm=T)), list(variant.id, window)]
-      tmp1[,list(mean_delta_contsysl_virsys=mean(delta_contsysl_virsys, na.rm=T)), list(window)]
 
-    ### merge with polymorphic sites
-      tmp.data <- merge(tmp.data, bps, all.y=T, by=c("chr","pos"))
-      tmp.data[is.na(af_nEff), af_nEff:=0]
-
-    ### Now we summarize. Examples of summary statistics include: missing data per sample; average coverage; average frequency of mutations; average difference in allele frequency between treatments? What else?
-    ### Try something simple first. Then, try to calculate differences in allele frequency between two groups, averaged within a window.
-     # tmp.data[,list(coverge=mean(dp, na.rm=T), missing=mean(is.na(dp)), het=mean(2*af*(1-af), na.rm=T)), list(sampleId, window)]
-
-      tmp.data[,list(coverge=mean(dp, na.rm=T), missing=mean(is.na(dp)),
-                     het=mean(2*af*(1-af), na.rm=T),
-                     het_correct=mean(2*af_nEff*(1-af_nEff))), list(sampleId, window)]
-
-
-
-      tmp1 <- tmp.data[,list(delta_contsysl_virsys=mean(af_nEff[exp_rep=="contsys"], na.rm=T) - mean(af_nEff[exp_rep=="virsys"], na.rm=T)),
-                       list(variant.id, window)]
-
+    ### your turn You'll have to figure out how to return the object you want from each iteration of your foreach loop. 
 
   })
   out <- rbindlist(out)
   setkey(out, window)
   out <- merge(out, wins)
-  ggplot(data=out, aes(x=window, y=mean_delta_contsysl_virsys, color=chr)) + geom_line()
 
-
-### another version
-   out[,mid:=start/2 + end/2]
-
-
-   inversion.bp <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/main/Module_8/InversionsMap_hglft_v6_inv_startStop.txt")
-   ggplot(data=out, aes(x=mid, y=mean_delta_contsysl_virsys, color=chr)) + geom_line() + facet_grid(~chr, scales="free_x") +
-     geom_vline(data=inversion.bp, aes(xintercept=start )) +
-     geom_vline(data=inversion.bp, aes(xintercept=stop ))
+### your turn to plot
