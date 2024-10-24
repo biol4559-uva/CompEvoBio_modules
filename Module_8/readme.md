@@ -8,4 +8,4 @@ Before we begin today, you all need to copy an updated version of the GDS. This 
 
 1. [Inversions](/Module_8/inversions_instructions.md)
 2. [Sliding Window](/Module_8/sliding_window_instructions.md)
-3. 
+3. [Simple Scatter-Gather](/Module_8/scatter_gather.md)
