@@ -26,4 +26,4 @@ Goals:
 Objective:
 1. Figure out how to divide up your `windows.to.use` object so that 100 jobs run across ~2.1K windows.
 
-Here is an example [gather script](/CompEvoBio_modules/Module_8/gather.R)
+Here is an example [gather script](https://github.com/biol4559-uva/CompEvoBio_modules/blob/main/Module_8/gather.R)
