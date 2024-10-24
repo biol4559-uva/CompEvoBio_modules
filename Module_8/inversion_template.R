@@ -1,5 +1,4 @@
 ### libraries
-  install.packages("curl")
 
   library(curl)
   library(SeqArray)
@@ -8,7 +7,7 @@
   library(patchwork)
   library(foreach)
   library(doMC)
-  registerDoMC(5)
+  registerDoMC(20)
 
 ### load this function
   getData <- function(snps=snp.dt[pos==14617051 & chr=="2L"], samples=samps) {
@@ -18,63 +17,63 @@
       seqSetFilter(genofile, variant.id=snps$id, sample.id=samples$sampleId)
 
     ### get annotations
-    message("Annotations")
-    tmp <- seqGetData(genofile, "annotation/info/ANN")
-    len1 <- tmp$length
-    len2 <- tmp$data
+      message("Annotations")
+      tmp <- seqGetData(genofile, "annotation/info/ANN")
+      len1 <- tmp$length
+      len2 <- tmp$data
 
-    snp.dt1 <- data.table(len=rep(len1, times=len1),
-                          ann=len2,
-                          id=rep(snps$id, times=len1))
+      snp.dt1 <- data.table(len=rep(len1, times=len1),
+                            ann=len2,
+                            id=rep(snps$id, times=len1))
 
   # Extract data between the 2nd and third | symbol
-  snp.dt1[,class:=tstrsplit(snp.dt1$ann,"\\|")[[2]]]
-  snp.dt1[,gene:=tstrsplit(snp.dt1$ann,"\\|")[[4]]]
+    snp.dt1[,class:=tstrsplit(snp.dt1$ann,"\\|")[[2]]]
+    snp.dt1[,gene:=tstrsplit(snp.dt1$ann,"\\|")[[4]]]
 
   # Collapse additional annotations to original SNP vector length
-  snp.dt1.an <- snp.dt1[,list(n=length(class), col= paste(class, collapse=","), gene=paste(gene, collapse=",")),
-                        list(variant.id=id)]
+    snp.dt1.an <- snp.dt1[,list(n=length(class), col= paste(class, collapse=","), gene=paste(gene, collapse=",")),
+                          list(variant.id=id)]
 
-  snp.dt1.an[,col:=tstrsplit(snp.dt1.an$col,"\\,")[[1]]]
-  snp.dt1.an[,gene:=tstrsplit(snp.dt1.an$gene,"\\,")[[1]]]
+    snp.dt1.an[,col:=tstrsplit(snp.dt1.an$col,"\\,")[[1]]]
+    snp.dt1.an[,gene:=tstrsplit(snp.dt1.an$gene,"\\,")[[1]]]
 
   ### get frequencies
-  message("Allele Freqs")
+    message("Allele Freqs")
 
-  ad <- seqGetData(genofile, "annotation/format/AD")
-  dp <- seqGetData(genofile, "annotation/format/DP")
+    ad <- seqGetData(genofile, "annotation/format/AD")
+    dp <- seqGetData(genofile, "annotation/format/DP")
 
-  if(class(dp)[1]!="SeqVarDataList") {
-    dp <- list(data=dp)
-  }
+    if(class(dp)[1]!="SeqVarDataList") {
+      dp <- list(data=dp)
+    }
 
 
-  af <- data.table(ad=expand.grid(ad$data)[,1],
-                   dp=expand.grid(dp$data)[,1],
-                   sampleId=rep(seqGetData(genofile, "sample.id"), dim(ad$data)[2]),
-                   variant.id=rep(seqGetData(genofile, "variant.id"), each=dim(ad$data)[1]))
+    af <- data.table(ad=expand.grid(ad$data)[,1],
+                     dp=expand.grid(dp$data)[,1],
+                     sampleId=rep(seqGetData(genofile, "sample.id"), dim(ad$data)[2]),
+                     variant.id=rep(seqGetData(genofile, "variant.id"), each=dim(ad$data)[1]))
 
   ### tack them together
-  message("merge")
-  afi <- merge(af, snp.dt1.an, by="variant.id")
-  afi <- merge(afi, snps, by.x="variant.id", by.y="id")
+    message("merge")
+    afi <- merge(af, snp.dt1.an, by="variant.id")
+    afi <- merge(afi, snps, by.x="variant.id", by.y="id")
 
-  afi[,af:=ad/dp]
+    afi[,af:=ad/dp]
 
   ### calculate effective read-depth
-  afis <- merge(afi, samples[,c("sampleId", "set", "nFlies", "locality",
-                                "lat", "long", "continent", "country", "province", "city",
-                                "min_day", "max_day", "min_month", "max_month", "year", "jday",
-                                "bio_rep", "tech_rep", "exp_rep", "loc_rep", "subsample", "sampling_strategy",
-                                "SRA_Accession"), with=F], by="sampleId")
+    afis <- merge(afi, samples[,c("sampleId", "set", "nFlies", "locality",
+                                  "lat", "long", "continent", "country", "province", "city",
+                                  "min_day", "max_day", "min_month", "max_month", "year", "jday",
+                                  "bio_rep", "tech_rep", "exp_rep", "loc_rep", "subsample", "sampling_strategy",
+                                  "SRA_Accession"), with=F], by="sampleId")
 
-  afis[chr=="X|Y", nEff:=round((dp*nFlies - 1)/(dp+nFlies))]
-  afis[chr!="X", nEff:=round((dp*2*nFlies - 1)/(dp+2*nFlies))]
-  afis[,af_nEff:=round(af*nEff)/nEff]
-  setnames(afis, "col", "annotation")
+    afis[chr=="X|Y", nEff:=round((dp*nFlies - 1)/(dp+nFlies))]
+    afis[chr!="X", nEff:=round((dp*2*nFlies - 1)/(dp+2*nFlies))]
+    afis[,af_nEff:=round(af*nEff)/nEff]
+    setnames(afis, "col", "annotation")
   ### return
-  afis[,-c("n"), with=F]
-}
+    afis[,-c("n"), with=F]
+  }
 
 ### open GDS file
   genofile <- seqOpen("/scratch/aob2x/compBio_SNP_25Sept2023/dest.expevo.PoolSNP.001.50.11Oct2023.norep.ann.gds")
@@ -103,13 +102,11 @@
 ### That way we can query our GDS object for allele frequencies.
 ### you will need to use the "merge" command from the data.table package
 ### how many of the inversion markers do not intersect with our set? Do you feel comfortable with that level of intersection?
-  markers <- merge(snp.dt, inv.markers, by=c("chr", "pos"))
 
 ### get the allele frequencies
-  dat <- getData(snps=markers, samples=samps[grepl("PRJNA194129", sampleId)])
+  dat <- getData(snps=markers, samples=samps.new$sampleId)
 
 ### your turn: write a figure legend for this figure.
-  ggplot(data=dat, aes(x=inversion, y=af_nEff)) + geom_point() + facet_wrap(~sampleId)
 
 ### your turn:
 ### calculate the frequency of the inversion for each of your samples by averaging the frequency of all SNPs associated with the inversion
@@ -118,25 +115,17 @@
 
 ### your turn:
 ### plot the estimated allele frequency of each inversion across treatments
-  ggplot(data=dat.ag[!is.na(freq)], aes(x=exp_rep, y=freq, color=inversion)) +
-    geom_jitter(width=.15) + facet_grid(~inversion)
 
 ### some simple models to test for differences in frequency between the treatment groups
   mod <- lm(freq~exp_rep, dat.ag[inversion=="In(2L)t"])
   summary(mod)
   anova(mod)
 
-### extracting the p-value
-  
-    pvals <- foreach(inv=c("In(2L)t", "In(3R)C", "In(3R)K", "In(3R)Mo", "In(3R)Payne"), .combine="rbind")%do%{
-      mod <- lm(freq~exp_rep, dat.ag[inversion==inv])
-      data.table(inversion=inv, p=anova(mod)$Pr[1])
-    }
+### your turn: write a foreach loop that implements the linear model above for all inversions and returns the p-value associated with the treatment effect
 
+  inversion.names <- c("In(2L)t", "In(3R)C", "In(3R)K", "In(3R)Mo", "In(3R)Payne")
 
-      pvals <- data.table(inversion="In(2L)t", p=anova(mod)$Pr[1])
+  ## hint
+    anova(mod)$Pr[1] ### this gets the pvalue. But, double check that this p-value is the one associated with your model
 
-    ggplot(data=dat.ag[!is.na(freq)], aes(x=exp_rep, y=freq, color=inversion)) +
-      geom_jitter(width=.15) +
-      geom_text(data=pvals, aes(x=1.5, y=.5, label=paste("p=", round(p, 10))))+
-      facet_grid(~inversion)
+### your turn: add those p-values to your plot of the frequency.
