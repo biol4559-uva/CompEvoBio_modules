@@ -40,7 +40,7 @@
 ### how many of the inversion markers do not intersect with our set? Do you feel comfortable with that level of intersection?
 
 ### get the allele frequencies
-  dat <- getData(snps=markers, samples=samps.new$sampleId)
+  dat <- getData(snps=markers, samples=samps.new)
 
 ### your turn: write a figure legend for this figure.
 
