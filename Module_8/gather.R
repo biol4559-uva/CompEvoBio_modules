@@ -17,7 +17,7 @@
     # fl.i <- fl[1]
     message(paste(which(fl.i==fl), length(fl), sep=" / "))
 
-    load(fl.i) ### what did you save your objects as?
+    load(fl.i) ### what did you save your objects as? the line below uses the placeholder of oo
 
     oo[,invName:=case_when(
           chr=="2L" & pos >	2225744	 & pos < 13154180	 ~ "2Lt",
@@ -31,10 +31,6 @@
     #oo[perm==0]
 
   }
-  o <- rbindlist(o, fill=T)
-  o <- o[nObs>100][af>.05 & af<.95][neff>20]
-  o.perm.quan <- o[,list(q999=quantile(-log10(p_lrt), .999)), list(perm)]
 
 
-  o <- o[perm==0][nObs>100][af>.05 & af<.95][neff>20][,list(chr,pos,invName,variant.id,p_lrt)]
-  save(o, file="/standard/vol186/bergland-lab/DEST_v2/GLMER_output_EuropeSeasonality.Rdata")
+### plot your sliding window
