@@ -1,3 +1,7 @@
+args = commandArgs(trailingOnly=TRUE)
+jobId=as.numeric(args[1])
+
+
 ### libraries
 
   library(SeqArray)
@@ -6,7 +10,7 @@
   library(patchwork)
   library(foreach)
   library(doMC)
-  registerDoMC(4)
+  registerDoMC(10)
 
 ### load this function
   source("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/utils/misc/getData_function.R")
@@ -53,46 +57,13 @@
     #i <- 100
     # message(i)
     ### get data for your sample for this window
-    focalSNPs <-snp.dt[J(wins[i]$chr)][pos>=wins[i]$start & pos<=wins[i]$end]
+    focalSNPs <- snp.dt[J(wins[i]$chr)][pos>=wins[i]$start & pos<=wins[i]$end]
     tmp.data <- getData(snps=focalSNPs, samples=samps[grepl("PRJEB5713", sampleId)])
     tmp.data[,window:=i]
 
-    ### Now we summarize. Examples of summary statistics include: missing data per sample; average coverage; average frequency of mutations; averge difference in allele frequency between treatments? What else?
-    ### your turn
-    tmp.data[,list(coverge=mean(dp, na.rm=T), missing=mean(is.na(dp))), list(sampleId, window)]
-    tmp1 <- tmp.data[,list(delta_contsysl_virsys=mean(af_nEff[exp_rep=="contsys"], na.rm=T) - mean(af_nEff[exp_rep=="virsys"], na.rm=T)), list(variant.id, window)]
-    tmp1[,list(mean_delta_contsysl_virsys=mean(delta_contsysl_virsys, na.rm=T)), list(window)]
-
-    ### merge with polymorphic sites
-    tmp.data <- merge(tmp.data, bps, all.y=T, by=c("chr","pos"))
-    tmp.data[is.na(af_nEff), af_nEff:=0]
-
-    ### Now we summarize. Examples of summary statistics include: missing data per sample; average coverage; average frequency of mutations; average difference in allele frequency between treatments? What else?
-    ### Try something simple first. Then, try to calculate differences in allele frequency between two groups, averaged within a window.
-    # tmp.data[,list(coverge=mean(dp, na.rm=T), missing=mean(is.na(dp)), het=mean(2*af*(1-af), na.rm=T)), list(sampleId, window)]
-
-    tmp.data[,list(coverge=mean(dp, na.rm=T), missing=mean(is.na(dp)),
-                   het=mean(2*af*(1-af), na.rm=T),
-                   het_correct=mean(2*af_nEff*(1-af_nEff))), list(sampleId, window)]
-
-
-
-    tmp1 <- tmp.data[,list(delta_contsysl_virsys=mean(af_nEff[exp_rep=="contsys"], na.rm=T) - mean(af_nEff[exp_rep=="virsys"], na.rm=T)),
-                     list(variant.id, window)]
+    ### Implement the Fst function based on your data
 
 
   })
   out <- rbindlist(out)
-  setkey(out, window)
-  out <- merge(out, wins)
-  ggplot(data=out, aes(x=window, y=mean_delta_contsysl_virsys, color=chr)) + geom_line()
-
-
-### another version
-out[,mid:=start/2 + end/2]
-
-
-inversion.bp <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/main/Module_8/InversionsMap_hglft_v6_inv_startStop.txt")
-ggplot(data=out, aes(x=mid, y=mean_delta_contsysl_virsys, color=chr)) + geom_line() + facet_grid(~chr, scales="free_x") +
-  geom_vline(data=inversion.bp, aes(xintercept=start )) +
-  geom_vline(data=inversion.bp, aes(xintercept=stop ))
+  
