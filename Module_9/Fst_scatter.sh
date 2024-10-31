@@ -10,13 +10,13 @@
 #SBATCH -p standard
 #SBATCH --account biol4559-aob2x
 
-### run as: sbatch --array=1-NUMBER_OF_FILES PATH_TO_THIS_FILE
+### run as: sbatch --array=1-NUMBER_OF_WINDOWS PATH_TO_THIS_FILE
 ### sacct -j XXXXXXXXX
 ### cat /scratch/COMPUTE_ID/logs/fst.*.err
 
 
 ### modules
-  module load intel/18.0 intelmpi/18.0 R/4.0.3
+module load gcc/11.4.0 openmpi/4.1.4 R/4.3.1; echo "R_LIBS_USER=~/R/goolf/4.3" > ~/.Renviron
 
 ### run window
 

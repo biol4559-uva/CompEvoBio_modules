@@ -77,7 +77,3 @@
   out <- rbindlist(out)
   setkey(out, window)
   out <- merge(out, wins)
-
-  
-
-### your turn to plot
