@@ -1,5 +1,4 @@
 ### libraries
-  .libPaths(c("/scratch/aob2x/biol4559-R-packages-newer")); .libPaths()
   library(data.table)
   library(foreach)
   library(ggplot2)

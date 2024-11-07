@@ -16,8 +16,8 @@
 
 
 ### modules
-module load gcc/11.4.0 openmpi/4.1.4 R/4.3.1; echo "R_LIBS_USER=~/R/goolf/4.3" > ~/.Renviron
+  module load gcc/11.4.0 openmpi/4.1.4 R/4.3.1; echo "R_LIBS_USER=~/R/goolf/4.3" > ~/.Renviron
 
 ### run window
 
-  Rscript --vanilla FULL_PATH_TO-outFLANK_Fst.R ${SLURM_ARRAY_TASK_ID}
+  Rscript --vanilla FULL_PATH_TO-Fst_template.R ${SLURM_ARRAY_TASK_ID}
