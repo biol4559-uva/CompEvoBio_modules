@@ -36,10 +36,13 @@
 ### outlier detection
   tmp <- out[!is.na(FST)][FST>0 & FST<1][!is.na(FSTNoCorr)]
 
-  of <- OutFLANK(as.data.frame(tmp), LeftTrimFraction=0.05, RightTrimFraction=0.05, Hmin=0.01, NumberOfSamples=2, qthreshold=0.05)
+  of <- OutFLANK(as.data.frame(tmp), LeftTrimFraction=0.05, RightTrimFraction=0.05,
+                  Hmin=0.01, NumberOfSamples=2, qthreshold=0.05)
   of <- as.data.table(of)
 
 ### summarize
+  ggplot(data=of, aes(results.pvaluesRightTail)) + geom_histogram()
+
   table(of$results.OutlierFlag)
   of[which.min(results.pvaluesRightTail)]
 
@@ -49,7 +52,7 @@
   ggplot(data=of, aes(x=results.pos, y=results.FST, color=results.chr)) + geom_point() + facet_grid(~results.chr)
 
 ### a basic enrichment test for non-synonymoyus SNPs. What other types of categories are enriched?
-  tab.ns <- table(of$results.pvaluesRightTail<.05, of$results.annotation=="missense_variant")
+  tab.ns <- table(of$results.pvaluesRightTail<.1, of$results.annotation=="missense_variant")
   fisher.test(tab.ns)
   tab.ns
 
@@ -97,6 +100,7 @@
 
     ggplot(data=worldwide, aes(x=lat, y=af_nEff, color=continent)) + geom_point() + facet_wrap(~variant.id)
     ggplot(data=worldwide, aes(x=jday, y=af_nEff)) + geom_point()  + facet_wrap(~variant.id)
+    ggplot(data=worldwide, aes(x=jday, y=af_nEff)) + geom_point()  + facet_wrap(~variant.id)
 
 
 ### you can also pretty up the genome-wide Fst result by doing a sliding window summarization of the Fst & p-values.
@@ -124,7 +128,7 @@
     wZa.fun <- function(p, h, ret="wZa") {
       Z <- qnorm(p, 0, 1)
       wZa=sum(h*Z, na.rm=T)/(sqrt(sum(h^2, na.rm=T)))
-      wZa.p=pnorm(sum(h*Z)/(sqrt(sum(h^2))), lower.tail=T)
+      wZa.p=pnorm(sum(h*Z, na.rm=T)/(sqrt(sum(h^2, na.rm=T))), lower.tail=T)
       if(ret=="wZa") return(wZa)
       if(ret=="wZa.p") return(wZa.p)
     }
