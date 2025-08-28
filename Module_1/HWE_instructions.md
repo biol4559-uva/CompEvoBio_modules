@@ -15,7 +15,7 @@ Goals:
 ---
 
 ## Steps
-### 1.	Log into [OpenOneDemand](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard) and start an interactive Rstudio job.
+### 1.	Log into [OpenOneDemand](https://ood.hpc.virginia.edu) and start an interactive Rstudio job.
 <p align="center">
   <img src="/Module_1/images/OOD1.png" width="750"/>
 </p>
