@@ -31,8 +31,9 @@ https://ucsbcarpentry.github.io/2021-01-21-SWC-Bash-online/02-filedir/
 • `wc -l`: How many lines are in an text input stream<br>
 • `|`: this is a pipe. It lets you direct the output of one program into the input of another. For instance, to determine how many files are in a directory type: `ls -lh | wc -l`
 
-6. You have three main places to go on Rivanna:
-• `~/`: this is your home directory. How many files are there in your home directory?
-• `/scratch/USERNAME`: this is your scratch directory. How much space have you used on it?
+6. You have three main places to go on Rivanna:<br>
+• `~/`: this is your home directory. How many files are there in your home directory?<br>
+• `/scratch/USERNAME`: this is your scratch directory. How much space have you used on it?<br>
+• `/standard/BerglandTeach`: this is a shared repository for our class. <br>
 
  
