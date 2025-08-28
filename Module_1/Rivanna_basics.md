@@ -33,7 +33,7 @@ https://ucsbcarpentry.github.io/2021-01-21-SWC-Bash-online/02-filedir/
 
 6. You have three main places to go on Rivanna:<br>
 • `~/`: this is your home directory. How many files are there in your home directory?<br>
-• `/scratch/USERNAME`: this is your scratch directory. How much space have you used on it?<br>
-• `/standard/BerglandTeach`: this is a shared repository for our class. <br>
+• `/scratch/USERNAME`: this is your scratch directory. Keep in mind that files in `/scratch` get deleted every 90 days. How much space have you used on it?<br>
+• `/standard/BerglandTeach`: this is a shared directory that will be the data repository for our class. <br>
 
  
