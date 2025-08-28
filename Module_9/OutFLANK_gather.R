@@ -155,3 +155,34 @@
     }
 
   ### your turn - plot it
+    -log10(wZa.p)
+
+    library(rgbif)
+    coords <- data.frame(decimalLatitude = 54.481084,
+                         decimalLongitude = -3.220625)
+
+    elevation(coords, username = "biol4020")
+
+    ll <- samps[,c("long", "lat", "sampleId")]
+    setnames(ll, c("long", "lat"), c("x", "y"))
+    ll <- na.omit(ll)
+    df_elev_epqs <- get_elev_point(as.data.frame(ll), prj = 4326, src = "aws")
+    sampse <- merge(samps, df_elev_epqs, by="sampleId")
+    sampse[elevation<0, elevation:=0]
+
+    write.csv(sampse, quote=F, row.names=F, file="~/samps_with_elevation.csv")
+
+
+    set.seed(65.7)
+examp_df <- data.frame(x = runif(3, min = -73, max = -72.5), y = runif(3, min = 42,
+    max = 43))
+crs_dd <- 4326
+
+# Create and example data.frame with additional columns
+cats <- data.frame(category = c("H", "M", "L"))
+
+examp_df2 <- data.frame(examp_df, cats)
+
+# Create an example
+examp_sf <- sf::st_as_sf(examp_df2, coords = c("x", "y"), crs = crs_dd)
+df_elev_epqs <- get_elev_point(examp_df, prj = crs_dd, src = "epqs")
