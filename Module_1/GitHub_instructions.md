@@ -63,4 +63,4 @@ You'll need to enter the password that you set when you generated an `ssh-key`.
 </p>
 <br>
 
-8. There is a lot more to Git than that, and some of those other aspects might come up later on in the course. If you are curious, check out this lesson on Git from [Sofwware Carpentry](https://swcarpentry.github.io/git-novice/)
+8. There is a lot more to Git than that, and some of those other aspects might come up later on in the course. If you are curious, check out this lesson on Git from [Software Carpentry](https://swcarpentry.github.io/git-novice/)
