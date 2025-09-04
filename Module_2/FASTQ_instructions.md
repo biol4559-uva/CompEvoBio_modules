@@ -39,6 +39,6 @@ head
 
 3. Most modern Illumina data comes as "paired-end" data as described in the video that we watched. Paried end reads represent DNA sequence at either end of the DNA insert. Paired end data is represented by two files, often with file names that include `_1` or `_2` to designate the first and second of the paired read. When the reads are mapped back to the reference genome, both pairs of a read are treated as a single unit and the mapping programs need to be able to know which reads belong together. How do we tell the program that the reads are linked?
 
-4. One of your friends generated some short-read sequence data and wants your help analyzing it. But, they messed up by naming their files poorly. They need your help. Can you figure out which samples are the proper `Read1` and `Read2` pairs? What clues did you use? You can find your friend's data here: `/project/biol4559-aob2x/data/mixed_up_pairs/`
+4. One of your friends generated some short-read sequence data and wants your help analyzing it. But, they messed up by naming their files poorly. They need your help. Can you figure out which samples are the proper `Read1` and `Read2` pairs? What clues did you use? You can find your friend's data here: `/standard/BerglandTeach/data/mixed_up_pairs/`
 
 4. To complete this assignment submit your answers on Canvas.

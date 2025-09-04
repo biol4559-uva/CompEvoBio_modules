@@ -1,9 +1,9 @@
 ### libraries
-  .libPaths(c("/project/biol4559-aob2x/biol4559-R-packages/", .libPaths()))
+  .libPaths(c("~/USERNAME", .libPaths())) ### <- you'll need to change this to your username
   library(ggplot2)
   library(data.table)
-  library(foreach)
-  library(doMC)
+  library(foreach)  ### you will probably need to install this package
+  library(doMC)     ### you will probably need to install this package
   registerDoMC(2)
 
 ## A first attempt.
@@ -40,7 +40,7 @@
   tmp <- data.table(gen=c(1:nGens), af=-1, popSize=popSize) ### we set `af` equal to -1 because it is just a placeholder. We include popSize for bookkeeping
   tmp[gen==1]$af <- startingAlleleFreq ### we need to initialize the very first generation at the specified allele frequency
 
-### we run the for loop. We start at generation two because we need to use generation 1 as the stargin
+### we run the for loop. We start at generation two because we need to use generation 1 as the starting generation
   for(i in 2:nGens) {
     tmp[gen==i]$af <- rbinom(1, popSize, tmp[gen==(i-1)]$af)/popSize
   }

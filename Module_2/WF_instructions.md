@@ -1,7 +1,7 @@
 # **A Wright-Fisher simulation**
 
 ## Overview
-In this exercise we will learn how to model drift. Drift is the random change in allele frequencies due to finite population size. Drift in small populations can be a strong evolutionary force, but in large populations is a weak force. When drift is a strong force (and thus when population sizes are small) allele frequencies will change quickly. Eventually drift will cause allele frequencies to go to 0% (lost) or 100% (fixed), and in small populations this happens faster. In large populations, this happens very slowly. This is why populations that have more individuals have more genetic diversity. By simulating the drift process using a Wright-Fisher simulation, we can begin to gain insight into the role of population size on genetic diversity.
+In this exercise we will learn how to model drift. Drift is the random change in allele frequencies due to finite population size. Drift in small populations can be a strong evolutionary force, but in large populations is a weak force. When drift is a strong force (and thus when population sizes are small) allele frequencies will change quickly. Eventually drift will cause allele frequencies to go to 0% (lost) or 100% (fixed), and in small populations this happens quickly. In large populations, this happens very slowly. This is why populations that have more individuals have more genetic diversity, and is how we can estimate historical population size in a species by studying levels of genetic diversity. By simulating the drift process using a Wright-Fisher simulation, we can begin to gain insight into the role of population size on genetic diversity.
 
 Goals:
 1. Practice more with R & Github & functions
@@ -143,7 +143,7 @@ Using all the tools above, your goal is now to build the objective figure below.
 
 
 ## Your objective:
-Population size (the sample size) will determine the speed of drift. You can see this property by observing that allele frequencies change more, per generation when population size is small compared to when it is large. Using the information provided above, write a script that generates this basic figure. This figure includes multiple loci, and various population sizes. You are free to add your own artistic flair. Satisfactory submissions will write the WF simulator as a function and will use for-loops & foreach. Unsatisfactory submissions will iterate out each step manually (as in the sample above). Exceptional submissions will first use a for-loops & foreach to generate the figure, and then will develop another method that is faster and document the speed improvement. The improved method cannot simply use more cores to existing code!
+Population size (the sample size) will determine the speed of drift. You can see this property by observing that allele frequencies change more, per generation when population size is small compared to when it is large. Using the information provided above, write a script that generates this basic figure. This figure includes multiple loci, and various population sizes. You are free to add your own artistic flair. 
 
 To complete this project, user GitHub to upload your script and figure to a new folder in your repo and submit the link.
 
