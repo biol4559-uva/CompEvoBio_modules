@@ -1,5 +1,5 @@
 ### specify your library path
-  .libPaths(c("~/USERNAME", .libPaths())) ### <- you'll need to change this to your username
+  .libPaths(c("~/USERNAME", .libPaths())) ### <- you'll need to change USERNAME to your computing ID
 
 ### install packages; you only need to this once (ever)
   install.packages("ggplot2", "data.table")
@@ -41,8 +41,8 @@
 
 ### there are a few basic data types in R:
   a <- "alan" ### this is vector of length 1
-  b <- c("alan", "andrew") ### this is a vector of length 2. We need to use the "c" function to concatenate the two single values
-  c <- data.table(name=c("alan", "andrew"), role=c("teacher", "TA"), number=c(2,1)) ### this is a data.table/data.frame. It is a 2 dimensional array, with two columns and two rows. Each column can take a different type of data, like a character string, a number, etc
+  b <- c("alan", "robert") ### this is a vector of length 2. We need to use the "c" function to concatenate the two single values
+  c <- data.table(name=c("alan", "robert"), role=c("teacher", "TA"), number=c(2,1)) ### this is a data.table/data.frame. It is a 2 dimensional array, with two columns and two rows. Each column can take a different type of data, like a character string, a number, etc
   
 ### This function performs two operations on the input value and returns a WIDE table. We can plot y1 and y2 on the same graph in a few differnet ways
     out2 <- test_fun3(x=c(1:100))

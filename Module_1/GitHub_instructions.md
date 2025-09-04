@@ -3,7 +3,7 @@
 ## Overview
 Once you have created a GitHub account and shared your username with me, you will be added to a GitHub Organization called [biol4559-uva](https://github.com/biol4559-uva). As you have already seen, this organization contains repositories such as the (CompEvoBio_modules)[https://github.com/biol4559-uva/CompEvoBio_modules] which contains scripts that we will use scripts that we will use throughout the course.
 
-As a member of this GitHub Organization, you can create your own repositories. In today's class, you will create your own repository and use it to store scripts that you write for assignmenbts. This will be a private repository that you own and that you share with me and the TA. Down the road, you might share your repository with your team during the analysis of the data-set that you are working on. Using GitHub will allow us to more easily share code and also to get feedback and help when things go awry.
+As a member of this GitHub Organization, you can create your own repositories. In today's class, you will create your own repository and use it to store scripts that you write for assignments. This will be a private repository that you own and that you share with me and the TA. Down the road, you might share your repository with your team during the analysis of the data-set that you are working on. Using GitHub will allow us to more easily share code and also to get feedback and help when things go awry.
 
 Objective:
 1. Learn how to use Github for cloning, pushing and pulling
@@ -21,9 +21,9 @@ Goals:
 </p>
 
 
-3. Once your repository is created, click on it. Then click on "Manage Access". You might be asked for your GitHub password again. Click "Add People" and type in Alan's id ("alanbergland") and Andrew's id ("andrewmcroitoru"). Give us "Write" privileges.
+3. Once your repository is created, click on it. Then click on "Manage Access". You might be asked for your GitHub password again. Click "Add People" and type in Alan's id ("alanbergland") and Robert's id (________). Give us "Write" privileges.
 
-4. Next you will need to set up an `ssh-key`. This is a way that GitHub can verify your identity when you are pushing and pulling scripts. You will be setting up your `ssh-key` on Rivanna, although you might also want to set it up on your own computer. Follow the steps listed [here](https://jdblischak.github.io/2014-09-18-chicago/novice/git/05-sshkeys.html). You will be using OpenOnDemand's shell access to complete these steps:
+4. Next you will need to set up an `ssh-key`. This is a way that GitHub can verify your identity when you are pushing and pulling scripts from your computer or Rivanna. You will be setting up your `ssh-key` on Rivanna, although you might also want to set it up on your own computer. Follow the steps listed [here](https://jdblischak.github.io/2014-09-18-chicago/novice/git/05-sshkeys.html). You will be using OpenOnDemand's shell access to complete these steps:
 <p align="center">
 <img src="/Module_1/images/create_new_repo8.jpeg" width="500"/>
 </p>
@@ -63,4 +63,4 @@ You'll need to enter the password that you set when you generated an `ssh-key`.
 </p>
 <br>
 
-8. There is a lot more to Git than that, and some of those other aspects might come up later on in the course. If you are curious, check out this lesson on Git from [Sofwware Carpentry](https://swcarpentry.github.io/git-novice/)
+8. There is a lot more to Git than that, and some of those other aspects might come up later on in the course. If you are curious, check out this lesson on Git from [Software Carpentry](https://swcarpentry.github.io/git-novice/)
