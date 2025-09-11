@@ -19,4 +19,5 @@ echo ${SLURM_ARRAY_TASK_ID}
 
 bioproj="SRP002024"
 # SLURM_ARRAY_TASK_ID=1
-file=$( ls -d /project/biol4559-aob2x/data/fastq/${bioproj}/* | tr '\t' '\n' | sed "${SLURM_ARRAY_TASK_ID}q;d" )
+file=$( ls -d /standard/BerglandTeach/data/fastq/${bioproj}/* | tr '\t' '\n' | sed "${SLURM_ARRAY_TASK_ID}q;d" )
+echo $file

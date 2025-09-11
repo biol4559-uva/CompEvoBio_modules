@@ -12,7 +12,7 @@ Objective:
 ## Instructions
 1. Working with your group, fill in your samples using the [CompEvoBio_modules/Module_3/SampleMetatdata_template.xlsx](/Module_3/SampleMetatdata_template.xlsx) file as your template.
 
-2. You can find more information about each sample in this file [CompEvoBio_modules/Module_3/SampleMetaData.pptx](/Module_3/SampleMetaData.pptx).
+2. You can find more information about each sample in this file [CompEvoBio_modules/Module_3/SampleMetaData.pptx](/Module_3/SRA_metadata.pptx).
 
 3. Once you have filled out that sheet, make a simple table like [CompEvoBio_modules/Module_3/sras.txt](/Module_3/mapping_v2/sras.txt). It is a comma separated file with no spaces, that has 3 columns: the SRR number, the number of flies, the sample names.
 
