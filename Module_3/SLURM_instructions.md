@@ -13,7 +13,7 @@ Objective:
 
 ## Instructions -
 ### Basics of a SLURM script
-1. Open a new Rstudio job. For this exercise, we are only going to RStudio to work as a script editor and to use GitHub. Once you have Rstudio open, load your GitHub Repo project, and create a new script. Copy the contents of the contents of `SLURM_demo_1.sh` into the script. Save the file in your GitHub folder in a new folder called "SLURM_assignment". Make sure to save the file name as "SLURM_demo_1.sh"
+1. Open a new Rstudio job. For this exercise, we are only going to use RStudio to work as a script editor and to use GitHub. Once you have Rstudio open, load your GitHub Repo project, and create a new script. Copy the contents of the contents of `SLURM_demo_1.sh` into the script. Save the file in your GitHub folder in a new folder called "SLURM_assignment". Make sure to save the file name as "SLURM_demo_1.sh"
 
 2. Open a terminal window and make a new "log" directory in your scratch directory. To do this, nagivate to your scratch directory (`/scratch/COMPUTE_ID`). Then, make a new directory (`mkdir logs`)
 

@@ -1,7 +1,7 @@
 # **Short Read Mapping & Pipelines**
 
 ## Overview
-Well, we are going to have to try this again. In this second version of the mapping script, we are going to be working out of the `/project` directory. That means that all of your scripts, input files, and error logs will be put on `/project` in  folders that I have made for you. The benefit of this approach is that Connor and I can see all of your files easily in one place and can help debug things if they arise. I'm fairly certain that most of the issues that people are having are with path names to files plus some oddball formatting issues.
+Well, we are going to have to try this again. In this second version of the mapping script, we are going to be working out of the `/standard/BerglandTeach/data/fastq` directory. That means that all of your scripts, input files, and error logs will be put on `/project` in  folders that I have made for you. The benefit of this approach is that Connor and I can see all of your files easily in one place and can help debug things if they arise. I'm fairly certain that most of the issues that people are having are with path names to files plus some oddball formatting issues.
 
 Please follow the instructions as carefully as you can! If you run into issues, drop me a line and I will try to debug.
 

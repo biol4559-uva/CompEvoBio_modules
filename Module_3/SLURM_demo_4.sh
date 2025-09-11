@@ -17,7 +17,7 @@
 module load fastqc
 
 proj=SRP002024 ### YOU'LL NEED TO REPLACE THIS with your bio-project number.
-file=$( ls -d /standard/BerglandTeach/data/fastq/fastq/${bioproj}/* | tr '\t' '\n' | sed "${SLURM_ARRAY_TASK_ID}q;d" )
+file=$( ls -d /standard/BerglandTeach/data/fastq/${bioproj}/* | tr '\t' '\n' | sed "${SLURM_ARRAY_TASK_ID}q;d" )
 
 if [ ! -d /scratch/COMPUTEID/fastq_QC_Out/ ]; then
   mkdir   /scratch/COMPUTEID/fastq_QC_Out/
