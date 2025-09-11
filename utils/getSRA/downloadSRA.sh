@@ -11,20 +11,20 @@
 #SBATCH --account berglandlab_standard
 
 wd=/scratch/aob2x/compBio
-### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/data/runs_missing.csv )%10 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
+### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/utils/getSRA/sras_2025.csv )%20 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
 ### sacct -j 64052181
 ### cat /scratch/aob2x/compBio/logs/prefetch.52222298_*.out | grep -B1 "do not"
 ### cat /scratch/aob2x/compBio/logs/prefetch.52222298_52.out
 
-module load gcc/11.4.0 sratoolkit/3.0.3 aspera-connect/4.2.4
+module load gcc/11.4.0 sratoolkit/3.1.1 aspera-connect/4.2.8
 
-#SLURM_ARRAY_TASK_ID=194
+#SLURM_ARRAY_TASK_ID=2
 # cat /home/aob2x/CompEvoBio_modules/data/runs.csv | nl | grep "SRR1988514"
 # SLURM_ARRAY_TASK_ID=1
 
-sranum=$( sed "${SLURM_ARRAY_TASK_ID}q;d" ~/CompEvoBio_modules/data/runs_missing.csv | cut -f1 -d',' )
-sampName=$( sed "${SLURM_ARRAY_TASK_ID}q;d" ~/CompEvoBio_modules/data/runs_missing.csv | cut -f1 -d',' )
-proj=$( sed "${SLURM_ARRAY_TASK_ID}q;d" ~/CompEvoBio_modules/data/runs_missing.csv | cut -f2 -d',' )
+sranum=$( sed "${SLURM_ARRAY_TASK_ID}q;d" ~/CompEvoBio_modules/utils/getSRA/sras_2025.csv | cut -f1 -d',' )
+sampName=$( sed "${SLURM_ARRAY_TASK_ID}q;d" ~/CompEvoBio_modules/utils/getSRA/sras_2025.csv | cut -f1 -d',' )
+proj=$( sed "${SLURM_ARRAY_TASK_ID}q;d" ~/CompEvoBio_modules/utils/getSRA/sras_2025.csv | cut -f2 -d',' )
 
 echo $sampName " / " $sranum " / " $proj
 
@@ -45,7 +45,6 @@ else
   -o /scratch/aob2x/compBio/sra/${sranum}.sra \
   -p \
   ${sranum}
-
 
   fasterq-dump \
   --split-files \
