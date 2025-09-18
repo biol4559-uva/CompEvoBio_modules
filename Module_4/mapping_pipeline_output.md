@@ -38,7 +38,7 @@ Some of these field should be familiar. What is the first column? The columns wi
 
 5. To make better sense of this file, we can use a more visual approach. We will use the program `tview` in samtools to accomplish this. Modify the command below for your file:
 ```
-samtools tview ExpEvo_SRP002024_CO_4_1975-MM-DD.original.bam /project/biol4559-aob2x/data/refGenome/holo_dmel_6.12.fa
+samtools tview ExpEvo_SRP002024_CO_4_1975-MM-DD.original.bam /standard/BerglandTeach/data/holo_dmel_6.12.fa
 ```
 
 If your sample has low coverage, like mine, the screen will look quite blank. This is because we are looking at the very tip of the chromosome and mapping is difficult there. If your sample has a ton of reads, you might see something.  We are going to navigate to our famous Adh F/S polymorphism. To do this, type `g` in the `tview` window and then type: `2L:14617051`. Your cursor should be pointed right over the site. Is there a polymorphism at your site? What is its frequency? How many reads cover the site (to exit tview press `q`)
