@@ -15,6 +15,7 @@
 ### this
 ### specify the bam file
   fl <- system("ls -d /standard/BerglandTeach/data/Contamination_test/mapping_output/*/*.srt.flt.bam", intern=T)
+  fl2 <- system("ls -d /standard/BerglandTeach/mapping_output/*SRP002024*/*.original.bam", intern=T)
 
 ### How many reads map to each chromosome?
   rd <- foreach(bamFile=fl, .combine="rbind")%dopar%{
