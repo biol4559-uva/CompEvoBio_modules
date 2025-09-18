@@ -59,3 +59,5 @@
   runs <- fread("~/CompEvoBio_modules/data/runs.csv", header=F)
   sras <- gsub(".sra", "", list.files("/scratch/aob2x/compBio/sra/"))
   runs[!runs$V2%in%sras]
+
+### 
