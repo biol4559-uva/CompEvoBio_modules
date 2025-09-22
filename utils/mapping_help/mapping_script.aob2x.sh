@@ -28,6 +28,54 @@
   echo ${numFlies}
   echo ${proj}
 
+
+#####
+# download missing data
+
+  if [ ! -d "/scratch/aob2x/compBio/fastq/${proj}" ]; then
+    mkdir ${2}/${proj}
+  fi
+
+
+  if ls /scratch/aob2x/compBio/fastq/${proj}/${sranum}*fastq.gz 1> /dev/null 2>&1; then
+      echo "files do exist"
+  else
+    echo "files do not exist"
+
+    echo "force re-download"
+    prefetch \
+    -o /scratch/aob2x/compBio/sra/${sranum}.sra \
+    -p \
+    ${sranum}
+
+    fasterq-dump \
+    --split-files \
+    --split-3 \
+    --outfile ${2}/${proj}/${sranum} \
+    -e 10 \
+    -p \
+    --temp /scratch/aob2x/tmp \
+    /scratch/aob2x/compBio/sra/${sranum}.sra
+
+    ls -lh /scratch/aob2x/compBio/fastq/${proj}/${sranum}*
+
+  fi
+
+  if [ -f "${2}/${proj}/${sranum}_1.fastq" ]; then
+    gzip ${2}/${proj}/${sranum}_1.fastq
+    gzip ${2}/${proj}/${sranum}_2.fastq
+  fi
+
+  if [ -f "/scratch/aob2x/compBio/fastq/${proj}/${sranum}" ]; then
+    gzip -c ${2}/${proj}/${sranum} > ${2}/${proj}/${sranum}.fastq.gz
+    rm ${2}/${proj}/${sranum}
+  fi
+
+  #rm /scratch/aob2x/fastq/${sranum}.sra
+  #cat /home/aob2x/CompEvoBio_modules/data/runs.csv | nl | grep "SRR12463313"
+
+
+
 ###################################
 # Part  2. Run the Container      #
 ###################################
