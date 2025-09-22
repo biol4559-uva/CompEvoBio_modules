@@ -31,12 +31,12 @@
 ###################################
 # Part  2. Run the Container      #
 ###################################
+### If your reads are Paired End use this version (and delete the other)
 
-
-### If your reads are Single End use this version (and delete the other)
   singularity run \
   $1 \
-  $2/${proj}/${srr}.fastq.gz \
+  $2/${proj}/${srr}_1.fastq.gz \
+  $2/${proj}/${srr}_2.fastq.gz \
   ${sampleId} \
   $3 \
   --cores $SLURM_CPUS_PER_TASK \
@@ -44,5 +44,4 @@
   --min-cov 4 \
   --base-quality-threshold 25 \
   --num-flies ${numFlies} \
-  --do_poolsnp \
-  --single_end
+  --do_poolsnp
