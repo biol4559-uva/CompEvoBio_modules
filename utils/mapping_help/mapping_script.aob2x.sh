@@ -29,6 +29,11 @@
   echo ${numFlies}
   echo ${proj}
 
+  sampleId=ExpEvo_PRJNA657615_H_pop1_gen180_1999-10-01
+  srr=SRR12463318
+  numFlies=200
+  proj=PRJNA657615
+  sranum=${srr}
 
 #####
 # download missing data
