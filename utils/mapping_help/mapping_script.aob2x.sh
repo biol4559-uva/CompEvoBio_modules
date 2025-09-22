@@ -50,6 +50,7 @@
 
     echo "force re-download"
     prefetch \
+    -f ALL \
     -o /scratch/aob2x/compBio/sra/${sranum}.sra \
     -p \
     ${sranum}
