@@ -36,7 +36,7 @@
 ### If your reads are Single End use this version (and delete the other)
   singularity run \
   $1 \
-  $2/${srr}.fastq.gz \
+  $2/${proj}/${srr}.fastq.gz \
   ${sampleId} \
   $3 \
   --cores $SLURM_CPUS_PER_TASK \
