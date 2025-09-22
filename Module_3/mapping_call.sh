@@ -1,6 +1,6 @@
-sbatch --array=1-$( cat /scratch/aob2x/small_file.csv  | wc -l  ) \
-~/CompEvoBio_modules/Module_3/old/mapping_script.aob2x.sh \
-/scratch/aob2x/dest_freeze2.6.1_latest.sif \
-/scratch/aob2x/compBio/fastq/SRP002024 \
+sbatch --array=1-$( cat /standard/BerglandTeach/misc/aob_small_file.csv | wc -l  ) \
+~/CompEvoBio_modules/utils/mapping_help/mapping_script.aob2x.sh \
+/standard/BerglandTeach/dest_freeze2.6.1_latest.sif \
+/scratch/aob2x/compBio/fastq/ \
 /standard/BerglandTeach/mapping_output \
-/scratch/aob2x/sras.txt
+/standard/BerglandTeach/aob_small_file.csv

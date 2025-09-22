@@ -21,6 +21,7 @@
   rd <- foreach(bamFile=fl, .combine="rbind")%dopar%{
     ### tell me what file we are working on
       message(bamFile)
+
     ### get the information about number of reads for each chromosome
       stats <- as.data.table(idxstatsBam(bamFile))
 
