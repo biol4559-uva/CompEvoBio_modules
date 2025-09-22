@@ -8,7 +8,7 @@
 #SBATCH -o /scratch/aob2x/logs/RunDest.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/logs/RunDest.%A_%a.err # Standard error
 #SBATCH -p standard
-#SBATCH --account biol4020-aob2x
+#SBATCH --account berglandlab
 
 ### modules
   module load gcc/11.4.0 sratoolkit/3.1.1 aspera-connect/4.2.8
