@@ -3,7 +3,7 @@
 #SBATCH -J dockerMap # A single job name for the array
 #SBATCH -c 11 ### 11 cores
 #SBATCH -N 1 # on one node
-#SBATCH -t 72:00:00
+#SBATCH -t 48:00:00
 #SBATCH --mem 90G
 #SBATCH -o /scratch/aob2x/logs/RunDest.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/logs/RunDest.%A_%a.err # Standard error
