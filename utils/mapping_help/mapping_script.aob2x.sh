@@ -11,6 +11,7 @@
 #SBATCH --account biol4020-aob2x
 
 ### modules
+  module load gcc/11.4.0 sratoolkit/3.1.1 aspera-connect/4.2.8
   module load apptainer
 
 ###################################
