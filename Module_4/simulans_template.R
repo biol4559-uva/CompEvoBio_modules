@@ -19,10 +19,13 @@
 
 ### How many reads map to each chromosome?
   rd <- foreach(bamFile=fl, .combine="rbind")%dopar%{
+    ## bamFile=fl2[1]
+
     ### tell me what file we are working on
       message(bamFile)
 
     ### get the information about number of reads for each chromosome
+      if(!file.exists(paste(bamFile, ".bai", sep=""))) indexBam(bamFile)
       stats <- as.data.table(idxstatsBam(bamFile))
 
     ### we need to subset to the main autosomal arms of melanogaster and simulans

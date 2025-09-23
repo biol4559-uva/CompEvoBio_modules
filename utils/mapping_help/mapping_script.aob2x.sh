@@ -4,7 +4,7 @@
 #SBATCH -c 11 ### 11 cores
 #SBATCH -N 1 # on one node
 #SBATCH -t 48:00:00
-#SBATCH --mem 90G
+#SBATCH --mem 150G
 #SBATCH -o /scratch/aob2x/logs/RunDest.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/logs/RunDest.%A_%a.err # Standard error
 #SBATCH -p standard
