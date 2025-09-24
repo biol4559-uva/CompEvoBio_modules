@@ -7,7 +7,7 @@ popSet: all #Population to use: "all" or "PoolSeq"
 method: PoolSNP #Method to use for variant calling: "PoolSNP" or "SNAPE"; SNAPE only works for PoolSeq
 maf: "001" #Minimum allele frequency (only used with PoolSNP method) "001" for PO
 mac: 50 #50 #Minmum allele count (only used with PoolSNP method)
-version: 24Sept2025_ExpEvo
+version: 23Sept2025_ExpEvo
 poolsnp_jobs: 999 #Number of jobs to break the run_poolsnp.sh step into
 snpEff_path: ~/snpEff #Where to find the .jar for snpEff and the config file to use
 jobs_file: NA #path to filename, if NA it will run the full genome automatically. If premade, put it in the working directory
