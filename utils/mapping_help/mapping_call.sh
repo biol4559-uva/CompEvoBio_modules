@@ -33,7 +33,7 @@ sbatch --array=18-31 \
 /standard/BerglandTeach/misc/aob_small_file.csv
 
 sacct -j 3954329
-cat /scratch/aob2x/logs/RunDest.3947144_19.err
+cat /scratch/aob2x/logs/RunDest.3954329_18.out
 
 cd ExpEvo_PRJNA657615_H_pop3_gen12_1999-10-01
 
