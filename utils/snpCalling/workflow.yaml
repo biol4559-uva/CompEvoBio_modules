@@ -1,6 +1,6 @@
 #To run the example, exchange '/scratch/jho5ze/DEST_snakemake with your path to the DEST_freeze1 in all relevant lines below'
 
-script_directory: /home/kjl5t/Bergland/snpCalling_v2/snpCalling #Location of the snpCalling scripts (from git repo)
+script_directory: ~/CompEvoBio_modules/utils/snpCalling #Location of the snpCalling scripts (from git repo)
 working_directory: /scratch/aob2x/compBio_Sept23_2025 #Directory where all the data will be processed and where output will be written
 pipeline_output: /standard/BerglandTeach/mapping_output #/project/berglandlab/DEST/dest_mapped/pipeline_output #Directory holding the masked SYNC files from the main pipeline output
 popSet: all #Population to use: "all" or "PoolSeq"
