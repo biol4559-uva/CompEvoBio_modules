@@ -10,8 +10,11 @@
 #SBATCH -p standard
 #SBATCH --account berglandlab
 
+### sbatch ~/CompEvoBio_modules/utils/snpCalling/runSnakemake.sh
+### sacct -j 3959296
+### cat /scratch/aob2x/DEST/logs/runSnakemake/3959296*.err
 #module load gcc/9.2.0 openmpi/3.1.6 python/3.7.7 snakemake/6.0.5
 module load gcc/11.4.0  openmpi/4.1.4 python/3.11.4 snakemake/9.8.1
 
 cd ~/CompEvoBio_modules/utils/snpCalling
-snakemake --profile ~/CompEvoBio_modules/utils/snpCallingslurm
+snakemake --profile ~/CompEvoBio_modules/utils/snpCalling/slurm
