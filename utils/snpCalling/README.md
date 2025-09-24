@@ -64,7 +64,8 @@ sacct -j 64522247
 sacct -u aob2x
 cd /scratch/aob2x/compBio_SNP_28Sept2024
 cat /scratch/aob2x/compBio_SNP_28Sept2024/logs/runSnakemake.64522247
-``ls -lh`
+```
+
 
 
 

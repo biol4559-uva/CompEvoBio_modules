@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+IFS=$'\n\t'
+
+trap 'rm -rf ${tmpdir}' EXIT
+
 module purge
 #module load gcc/7.1.0 openmpi/3.1.4
 module load gcc/11.4.0  openmpi/4.1.4 python/3.11.4
@@ -37,7 +42,7 @@ module load bedtools/2.30.0
 ### full list
   echo "foo: "${9}
   echo "pipeline_output: "${pipeline_output}
-  echo $( ls ${pipeline_output}/*/*.sync.gz )
+  echo $( ls ${pipeline_output}/*/*/*.sync.gz )
 
 ## get job
   cat ${wd}/jobs.csv
@@ -46,8 +51,8 @@ module load bedtools/2.30.0
   echo "jobid is " $jobid
   echo "job is " $job
 
-## set up RAM disk
-  [ ! -d /dev/shm/$USER/ ] && mkdir /dev/shm/$USER/
+## set up RAM disk  
+  [ ! -d /dev/shm/$USER/ ] && mkdir -p /dev/shm/$USER/  # added -p flag to avoid error when it isn't needed
   [ ! -d /dev/shm/$USER/${SLURM_JOB_ID} ] && mkdir /dev/shm/$USER/${SLURM_JOB_ID}
   tmpdir=/dev/shm/$USER/${SLURM_JOB_ID}
 
@@ -55,6 +60,7 @@ module load bedtools/2.30.0
 
 ## get sub section
   subsection () {
+    #set +e
     syncFile=${1}
     job=${2}
     jobid=$( echo ${job} | sed 's/,/_/g' )
@@ -71,21 +77,21 @@ module load bedtools/2.30.0
     tabix -b 2 -s 1 -e 2 \
     ${syncFile} \
     ${chr}:${start}-${stop} > ${tmpdir}/${pop}_${jobid}
+    #set -e
 
   }
   export -f subsection
 
-  echo "subset"
-
+  echo "subset" 
   if [[ "${method}" == "SNAPE" && "${popSet}" == "PoolSeq" ]]; then
     echo "SNAPE" ${method}
-    parallel -j 4 subsection ::: $( ls ${pipeline_output}/*/*.masked.sync.gz | tr '  ' '\n' | grep "SNAPE" | grep "monomorphic" | tr '\n' ' ' ) ::: ${job} ::: ${tmpdir}
+    parallel -j 4 subsection ::: $( ls ${pipeline_output}/*/*/*.masked.sync.gz | tr '  ' '\n' | grep "SNAPE" | grep "monomorphic" ) ::: ${job} ::: ${tmpdir}
   elif [[ "${method}" == "PoolSNP" && "${popSet}" == "all" ]]; then
     echo "PoolSNP" ${method}
-    parallel -j 4 subsection ::: $( ls ${pipeline_output}/*/*.masked.sync.gz | tr '  ' '\n' | grep -v "SNAPE" ) ::: ${job} ::: ${tmpdir}
+    parallel -j 4 subsection ::: $( ls ${pipeline_output}/*/*/*.masked.sync.gz | tr '  ' '\n' | grep -v "SNAPE" ) ::: ${job} ::: ${tmpdir}
   elif [[ "${method}" == "PoolSNP" && "${popSet}" == "PoolSeq" ]]; then
     echo "PoolSNP" ${method}
-    parallel -j 4 subsection ::: $( ls ${pipeline_output}/*/*.masked.sync.gz | tr '  ' '\n' | grep -v "SNAPE" | grep -v "DGN" ) ::: ${job} ::: ${tmpdir}
+    parallel -j 4 subsection ::: $( ls ${pipeline_output}/*/*/*.masked.sync.gz | tr '  ' '\n' | grep -v "SNAPE" | grep -v "DGN" ) ::: ${job} ::: ${tmpdir}
   fi
 
 
@@ -144,7 +150,7 @@ module load bedtools/2.30.0
   #echo "vcf -> bcf "
   #bcftools view -Ou ${tmpdir}/${jobid}.vcf.gz > ${outdir}/${jobid}.bcf
 
-  rm -fr ${tmpdir}
+  # rm -fr ${tmpdir} # used bash exit trap instead (line 6)   
 
 ### done
   echo "done"
