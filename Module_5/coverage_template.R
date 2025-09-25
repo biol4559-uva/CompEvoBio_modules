@@ -7,8 +7,10 @@
   library(patchwork)
 
 ### read the SYNC file
-  system("zcat /standard/BerglandTeach/mapping_output/ExpEvo_SRP002024_CO_3_1975-MM-DD/ExpEvo_SRP002024_CO_3_1975-MM-DD.sync.gz | sed 's/:/\t/g' > /scratch/aob2x/ExpEvo_SRP002024_CO_3_1975-MM-DD.tab")
-  sync <- fread("/scratch/aob2x/ExpEvo_SRP002024_CO_3_1975-MM-DD.tab", nrows=100)
+  ### you only need to run this line once
+    system("zcat /standard/BerglandTeach/mapping_output/ExpEvo_SRP002024_CO_3_1975-MM-DD/ExpEvo_SRP002024_CO_3_1975-MM-DD.sync.gz | sed 's/:/\t/g' > /scratch/aob2x/ExpEvo_SRP002024_CO_3_1975-MM-DD.tab")
+
+    sync <- fread("/scratch/aob2x/ExpEvo_SRP002024_CO_3_1975-MM-DD.tab")
 
   setnames(sync, names(sync), c("chr", "pos", "ref", "A", "T", "C", "G", "N","del"))
   sync <- sync[,-"del",]
@@ -74,7 +76,7 @@
 
 ### flag repetitive regions
     ### first load in the repeat data. This data comes as a bed file, with chromosome, start, stop and the type
-      rep <- fread("/standard/BerglandTeach/repeats.sort.merge.bed")
+      rep <- fread("/standard/BerglandTeach/data/repeats.sort.merge.clean.bed")
       setnames(rep, names(rep), c("chr", "start", "stop", "type"))
       rep[,rep_region:=T]
 

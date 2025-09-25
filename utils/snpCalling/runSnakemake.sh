@@ -18,11 +18,11 @@
 #module load gcc/9.2.0 openmpi/3.1.6 python/3.7.7 snakemake/6.0.5
 #module load gcc/11.4.0  openmpi/4.1.4 python/3.11.4 snakemake/9.8.1
 
-module load miniforge/24.11.3-py3.12
+module load miniforge/24.3.0-py3.11
 conda activate base
 mamba create -c conda-forge -c bioconda -n snakemake snakemake=7.24.2
 conda activate snakemake
 
-
+module load gcc/11.4.0  openmpi/4.1.4 python/3.11.4
 cd ~/CompEvoBio_modules/utils/snpCalling
-snakemake --profile ~/CompEvoBio_modules/utils/snpCalling/slurm
+snakemake -f --profile ~/CompEvoBio_modules/utils/snpCalling/slurm

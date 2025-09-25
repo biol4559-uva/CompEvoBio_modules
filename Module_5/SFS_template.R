@@ -7,7 +7,7 @@
   library(foreach)
 
 ### read the SYNC file
-  sync <- fread("/scratch/COMPUTEID/coverage/ExpEvo_PRJEB5713_ancestral1_1_2007-MM-DD.tab.gz", sep2=":")
+  sync <- fread("/scratch/aob2x/ExpEvo_SRP002024_CO_3_1975-MM-DD.tab")
 
   setnames(sync, names(sync), c("chr", "pos", "ref", "A", "T", "C", "G", "N","del"))
   sync <- sync[,-"del",]
@@ -44,7 +44,7 @@
   ggplot(data=sync.poly, aes(alt_freq, group=chr, color=chr)) + geom_density() + facet_grid(~chr)
 
 ### load in Gene definition
-  genes <- fread("/standard/BerglandTeach//genes.bed")
+  genes <- fread("/standard/BerglandTeach/data/genes.bed")
   setnames(genes, names(genes), c("chr", "start", "stop", "gene"))
   genes[,stop:=as.numeric(stop)]
   genes <- na.omit(genes)
