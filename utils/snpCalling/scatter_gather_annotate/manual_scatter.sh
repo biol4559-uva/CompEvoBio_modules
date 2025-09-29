@@ -12,8 +12,12 @@
 
 
 # ijob -A berglandlab -c10 -p standard --mem=50G
-# sbatch --array=2 ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_scatter.sh
-# sacct -j 4242244
+# sbatch --array=1-1002 ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_scatter.sh
+# sacct -j 4243100
+# cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.4243100_3.out
+
+
+
 
 module purge
 trap 'rm -rf ${tmpdir}' EXIT
@@ -86,7 +90,7 @@ module load bedtools/2.30.0
 
     echo ${pop}_${jobid}
 
-    touch ${syncFile}.tbi
+    #touch ${syncFile}.tbi
 
     tabix -b 2 -s 1 -e 2 \
     ${syncFile} \
