@@ -8,7 +8,7 @@
 #SBATCH -o /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.%A_%a.err # Standard error
 #SBATCH -p standard
-#SBATCH --account biol4020-aob2x
+#SBATCH --account berglandlab_standard
 
 
 # ijob -A berglandlab -c10 -p standard --mem=50G
