@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 #SBATCH -J manual_gather # A single job name for the array
-#SBATCH --ntasks-per-node=8 # one core
+#SBATCH --ntasks-per-node=1 # one core
 #SBATCH -N 1 # on one node
-#SBATCH -t 4:00:00 ### 1 hours
-#SBATCH --mem 64G
+#SBATCH -t 0:05:00 ### 1 hours
+#SBATCH --mem 1G
 #SBATCH -o /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.%A_%a.err # Standard error
 #SBATCH -p standard
