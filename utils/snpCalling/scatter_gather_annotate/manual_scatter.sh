@@ -34,7 +34,7 @@ module load bedtools/2.30.0
   version=29Sept2025_ExpEvo
   wd=/scratch/aob2x/compBio_SNP_29Sept2025
   script_dir=~/CompEvoBio_modules/utils/snpCalling/
-  pipeline_output=/standard/BerglandTeach/mapping_output
+  pipeline_output=/project/berglandlab/DEST/dest_mapped/
   job=${SLURM_ARRAY_TASK_ID}    # job=1
 
 
@@ -86,6 +86,8 @@ module load bedtools/2.30.0
 
     echo ${pop}_${jobid}
 
+    touch ${syncFile}.tbi
+
     tabix -b 2 -s 1 -e 2 \
     ${syncFile} \
     ${chr}:${start}-${stop} > ${tmpdir}/${pop}_${jobid}
@@ -103,7 +105,7 @@ module load bedtools/2.30.0
     parallel -j 4 subsection ::: $( ls ${pipeline_output}/*/*/*.masked.sync.gz | tr '  ' '\n' | grep -v "SNAPE" ) ::: ${job} ::: ${tmpdir}
   elif [[ "${method}" == "PoolSNP" && "${popSet}" == "PoolSeq" ]]; then
     echo "PoolSNP" ${method}
-    parallel -j 4 subsection ::: $( ls ${pipeline_output}/*/*.masked.sync.gz | tr '  ' '\n' | grep -v "SNAPE" | grep -v "DGN" ) ::: ${job} ::: ${tmpdir}
+    parallel -j 4 subsection ::: $( ls ${pipeline_output}/*/*/*.masked.sync.gz | tr '  ' '\n' | grep -v "SNAPE" | grep -v "DGN" ) ::: ${job} ::: ${tmpdir}
   fi
 
 
