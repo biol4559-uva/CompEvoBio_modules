@@ -1,9 +1,21 @@
 #!/usr/bin/env bash
 
+#SBATCH -J manual_gather # A single job name for the array
+#SBATCH --ntasks-per-node=8 # one core
+#SBATCH -N 1 # on one node
+#SBATCH -t 4:00:00 ### 1 hours
+#SBATCH --mem 64G
+#SBATCH -o /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.%A_%a.out # Standard output
+#SBATCH -e /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.%A_%a.err # Standard error
+#SBATCH -p standard
+#SBATCH --account biol4559-aob2x
+
+
 # ijob -A berglandlab -c10 -p standard --mem=50G
+# sbatch --array=2 ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_scatter.sh
 
 module purge
-
+trap 'rm -rf ${tmpdir}' EXIT
 
 #module load htslib bcftools parallel intel/18.0 intelmpi/18.0 mvapich2/2.3.1 R/3.6.3 python/3.6.6 vcftools/0.1.16
 #module load htslib/1.10.2 bcftools/1.9 parallel/20200322 intel/18.0 intelmpi/18.0 R/3.6.3 python/3.6.6 vcftools/0.1.16
@@ -20,7 +32,7 @@ module load bedtools/2.30.0
   mac=50
   version=29Sept2025_ExpEvo
   wd=/scratch/aob2x/compBio_SNP_29Sept2025
-  script_dir=/CompEvoBio_modules/utils/snpCalling/
+  script_dir=~/CompEvoBio_modules/utils/snpCalling/
   pipeline_output=/standard/BerglandTeach/mapping_output
   job=${SLURM_ARRAY_TASK_ID}    # job=1
 
@@ -39,12 +51,14 @@ module load bedtools/2.30.0
 ### full list
   echo "foo: "${job}
   echo "pipeline_output: "${pipeline_output}
-  echo $( ls ${pipeline_output}/*/*/*.sync.gz )
+  #echo $( ls -l ${pipeline_output}/*/*/*.sync.gz )
+  ls -d ${pipeline_output}/*/*.sync.gz
+
 
 ## get job
-  cat ${wd}/scatter_gather_annotate/jobs_genome.csv
-#job=$( cat ${wd}/jobs.txt | sed "${SLURM_ARRAY_TASK_ID}q;d" )
-#jobid=$( echo ${job} | sed 's/,/_/g' )
+  #cat ${script_dir}/scatter_gather_annotate/jobs_genome.csv
+  job=$( cat ${script_dir}/scatter_gather_annotate/jobs_genome.csv | sed "${job}q;d" )
+  jobid=$( echo ${job} | sed 's/,/_/g' )
   echo "jobid is " $jobid
   echo "job is " $job
 
@@ -88,7 +102,7 @@ module load bedtools/2.30.0
     parallel -j 4 subsection ::: $( ls ${pipeline_output}/*/*/*.masked.sync.gz | tr '  ' '\n' | grep -v "SNAPE" ) ::: ${job} ::: ${tmpdir}
   elif [[ "${method}" == "PoolSNP" && "${popSet}" == "PoolSeq" ]]; then
     echo "PoolSNP" ${method}
-    parallel -j 4 subsection ::: $( ls ${pipeline_output}/*/*/*.masked.sync.gz | tr '  ' '\n' | grep -v "SNAPE" | grep -v "DGN" ) ::: ${job} ::: ${tmpdir}
+    parallel -j 4 subsection ::: $( ls ${pipeline_output}/*/*.masked.sync.gz | tr '  ' '\n' | grep -v "SNAPE" | grep -v "DGN" ) ::: ${job} ::: ${tmpdir}
   fi
 
 
@@ -147,7 +161,7 @@ module load bedtools/2.30.0
   #echo "vcf -> bcf "
   #bcftools view -Ou ${tmpdir}/${jobid}.vcf.gz > ${outdir}/${jobid}.bcf
 
-  # rm -fr ${tmpdir} # used bash exit trap instead (line 6)
+  rm -fr ${tmpdir} # used bash exit trap instead (line 6)
 
 ### done
   echo "done"
