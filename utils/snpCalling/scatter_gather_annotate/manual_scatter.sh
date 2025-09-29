@@ -13,6 +13,7 @@
 
 # ijob -A berglandlab -c10 -p standard --mem=50G
 # sbatch --array=2 ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_scatter.sh
+# sacct -j 4242244
 
 module purge
 trap 'rm -rf ${tmpdir}' EXIT
