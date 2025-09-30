@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #SBATCH -J manual_gather # A single job name for the array
-#SBATCH --ntasks-per-node=8 # one core
+#SBATCH --ntasks-per-node=48 # one core
 #SBATCH -N 1 # on one node
 #SBATCH -t 14:00:00 ### 1 hours
 #SBATCH --mem 20G
@@ -11,8 +11,8 @@
 #SBATCH --account berglandlab
 
 ### sbatch ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_gather.sh
-### sacct -j 53544100
-### cat /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_gather.53544098.err
+### sacct -j 4264864
+### cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.4264864_*.err
 ### cat /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_gather
 ### cd /scratch/aob2x/compBio_SNP_25Sept2023
 
@@ -21,7 +21,7 @@ module load htslib/1.17  bcftools/1.17 parallel/20200322 gcc/11.4.0 openmpi/4.1.
 concatVCF() {
 
 
-  popSet=PoolSeq
+  popSet=all
   method=PoolSNP
   maf=001
   mac=50
@@ -63,7 +63,7 @@ concatVCF() {
   -f $outdir/vcfs_order.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.sort \
   -O z \
   -n \
-  --threads 20 \
+  --threads 48 \
   -o $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
 
   # vcf-concat \
@@ -77,5 +77,5 @@ concatVCF() {
 }
 export -f concatVCF
 
-parallel -j8 concatVCF ::: 2L 2R 3L 3R 4 mitochondrion X Y
+parallel -j1 concatVCF ::: 2L 2R 3L 3R 4 mitochondrion X Y
 #parallel -j8 concatVCF ::: 3L
