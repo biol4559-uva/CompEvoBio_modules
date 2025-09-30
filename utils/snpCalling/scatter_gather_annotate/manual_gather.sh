@@ -11,8 +11,8 @@
 #SBATCH --account berglandlab
 
 ### sbatch ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_gather.sh
-### sacct -j 4264864
-### cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.4264864_*.err
+### sacct -j 4308296
+### cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.4308296_*.err
 ### cat /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_gather
 ### cd /scratch/aob2x/compBio_SNP_25Sept2023
 
