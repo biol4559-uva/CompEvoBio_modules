@@ -5,8 +5,8 @@
 #SBATCH -N 1 # on one node
 #SBATCH -t 6:00:00 ### 1 hours
 #SBATCH --mem 40G
-#SBATCH -o /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_annotate.%A_%a.out # Standard output
-#SBATCH -e /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_annotate.%A_%a.err # Standard error
+#SBATCH -o /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_annotate.%A_%a.out # Standard output
+#SBATCH -e /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_annotate.%A_%a.err # Standard error
 #SBATCH -p largemem
 #SBATCH --account biol4559-aob2x
 
@@ -19,32 +19,35 @@
 
 module purge
 
-module load  htslib/1.10.2 bcftools/1.9 intel/18.0 intelmpi/18.0 parallel/20200322 R/3.6.3 samtools vcftools
+module load htslib/1.17 bcftools/1.17 parallel/20200322 gcc/11.4.0 openmpi/4.1.4 R/4.3.1 samtools vcftools
+
 
 
 popSet=PoolSeq
 method=PoolSNP
 maf=001
 mac=50
-version=11Oct2023
-wd=/scratch/aob2x/compBio_SNP_25Sept2023
+version=29Sept2025_ExpEvo
+wd=/scratch/aob2x/compBio_SNP_29Sept2025
+script_dir=~/CompEvoBio_modules/utils/snpCalling/
+pipeline_output=/project/berglandlab/DEST/dest_mapped/
 
 snpEffPath=~/snpEff
 
 cd ${wd}
 
 
-# echo "index"
-#   bcftools index -f ${wd}/sub_bcf/dest.2L.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-#   bcftools index -f ${wd}/sub_bcf/dest.2R.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-#   bcftools index -f ${wd}/sub_bcf/dest.3L.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-#   bcftools index -f ${wd}/sub_bcf/dest.3R.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-#   bcftools index -f  ${wd}/sub_bcf/dest.X.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-#   bcftools index -f  ${wd}/sub_bcf/dest.Y.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-#   bcftools index -f  ${wd}/sub_bcf/dest.4.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-#   bcftools index -f ${wd}/sub_bcf/dest.mitochondrion_genome.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-#
-#
+ echo "index"
+   bcftools index -f ${wd}/sub_bcf/dest.2L.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+   bcftools index -f ${wd}/sub_bcf/dest.2R.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+   bcftools index -f ${wd}/sub_bcf/dest.3L.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+   bcftools index -f ${wd}/sub_bcf/dest.3R.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+   bcftools index -f  ${wd}/sub_bcf/dest.X.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+   bcftools index -f  ${wd}/sub_bcf/dest.Y.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+   bcftools index -f  ${wd}/sub_bcf/dest.4.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+   bcftools index -f ${wd}/sub_bcf/dest.mitochondrion_genome.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+
+
  echo "concat"
    # bcftools concat \
    # -O z \
@@ -57,6 +60,7 @@ cd ${wd}
    bcftools concat \
    -f ${wd}/sub_bcf/vcf_order.genome \
    -O z \
+   --threads 10 \
    -o ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
 
    # vcf-concat \
@@ -71,7 +75,7 @@ cd ${wd}
 
  echo "convert to vcf & annotate"
    bcftools view \
-   --threads 20 \
+   --threads 10 \
    ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz | \
    java -jar ~/snpEff/snpEff.jar \
    eff \
@@ -90,10 +94,10 @@ cd ${wd}
 # #  bcftools reheader --threads 10 -h ${wd}/tmp.header -o ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.header.bcf ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.bcf
 #
 # echo "make GDS"
-   Rscript --vanilla /scratch/aob2x/DESTv2/snpCalling/scatter_gather_annotate/vcf2gds.R ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf
+   Rscript --vanilla /scratch/aob2x/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/gds2vcf.R ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf
 
 echo "bgzip & tabix"
-  bgzip -@20 -c ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf > ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf.gz
+  bgzip -@10 -c ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf > ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf.gz
   tabix -p vcf ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf.gz
 
 #  bgzip ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf.gz
