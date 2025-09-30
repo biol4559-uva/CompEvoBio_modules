@@ -63,7 +63,7 @@ cd ${wd}
 
  echo "convert to vcf & annotate"
    bcftools view \
-   --threads 10 \
+   --threads 48 \
    ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz | \
    java -jar ~/snpEff/snpEff.jar \
    eff \
