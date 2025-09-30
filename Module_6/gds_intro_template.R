@@ -77,7 +77,7 @@
   }
 
 ### open GDS file
-  genofile <- seqOpen("/scratch/aob2x/GDS/dest.expevo.PoolSNP.001.50.28Sept2024_ExpEvo.norep.ann.gds")
+  genofile <- seqOpen("/scratch/aob2x/compBio_SNP_29Sept2025/dest.PoolSeq.PoolSNP.001.50.29Sept2025_ExpEvo.norep.ann.gds")
   genofile
 
 ### load meta-data file

@@ -12,8 +12,9 @@
 
 
 # ijob -A berglandlab -c10 -p standard --mem=50G
-# sbatch --array=1-177 ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_scatter.sh
-# sacct -j 4242244
+# sbatch --array=1-177 ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_copy.sh
+# sacct -j 4287136
+# cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.4242823_1.out
 
 # SLURM_ARRAY_TASK_ID=1
 cd /standard/BerglandTeach/mapping_output/
@@ -25,4 +26,5 @@ if [[ ! -d "/project/berglandlab/DEST/dest_mapped/ExpEvo/$samp" ]]; then
 fi
 
 ls /standard/BerglandTeach/mapping_output/${samp}/*.masked.sync.gz*
-cp /standard/BerglandTeach/mapping_output/${samp}/*.masked.sync.gz* /project/berglandlab/DEST/dest_mapped/ExpEvo/$samp
+#cp /standard/BerglandTeach/mapping_output/${samp}/*.masked.sync.gz* /project/berglandlab/DEST/dest_mapped/ExpEvo/$samp
+touch /project/berglandlab/DEST/dest_mapped/ExpEvo/$samp/*.masked.sync.gz.tbi
