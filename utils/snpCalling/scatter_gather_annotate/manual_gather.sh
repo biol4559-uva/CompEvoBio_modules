@@ -8,7 +8,7 @@
 #SBATCH -o /scratch/aob2x/29Sept2025_ExpEvo/manual_gather.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.%A_%a.err # Standard error
 #SBATCH -p standard
-#SBATCH --account bergland
+#SBATCH --account berglandlab
 
 ### sbatch ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_gather.sh
 ### sacct -j 53544100
