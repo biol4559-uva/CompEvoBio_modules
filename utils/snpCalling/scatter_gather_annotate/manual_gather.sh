@@ -5,31 +5,32 @@
 #SBATCH -N 1 # on one node
 #SBATCH -t 14:00:00 ### 1 hours
 #SBATCH --mem 20G
-#SBATCH -o /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_gather.%A_%a.out # Standard output
-#SBATCH -e /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_gather.%A_%a.err # Standard error
+#SBATCH -o /scratch/aob2x/29Sept2025_ExpEvo/manual_gather.%A_%a.out # Standard output
+#SBATCH -e /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.%A_%a.err # Standard error
 #SBATCH -p standard
-#SBATCH --account biol4559-aob2x
+#SBATCH --account bergland
 
-### sbatch /scratch/aob2x/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_gather.sh
+### sbatch ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_gather.sh
 ### sacct -j 53544100
 ### cat /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_gather.53544098.err
 ### cat /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_gather
 ### cd /scratch/aob2x/compBio_SNP_25Sept2023
 
-load gcc/11.4.0  openmpi/4.1.4 python/3.11.4
-
-#module load htslib bcftools parallel intel/18.0 intelmpi/18.0 mvapich2/2.3.1 R/3.6.3 python/3.6.6 vcftools/0.1.16
-#module load htslib/1.10.2 bcftools/1.9 parallel/20200322 intel/18.0 intelmpi/18.0 R/3.6.3 python/3.6.6 vcftools/0.1.16
-module load htslib/1.17  bcftools/1.17 parallel/20200322 gcc/11.4.0 openmpi/4.1.4 python/3.11.4 perl/5.36.0 vcftools/0.1.16
+module load htslib/1.17  bcftools/1.17 parallel/20200322 gcc/11.4.0 openmpi/4.1.4 python/3.11.4 perl/5.40.2 vcftools/0.1.16
 
 concatVCF() {
+
 
   popSet=PoolSeq
   method=PoolSNP
   maf=001
   mac=50
-  version=28Sept2024_ExpEvo
-  wd=/scratch/aob2x/compBio_SNP_28Sept2024
+  version=29Sept2025_ExpEvo
+  wd=/scratch/aob2x/compBio_SNP_29Sept2025
+  script_dir=~/CompEvoBio_modules/utils/snpCalling/
+  pipeline_output=/project/berglandlab/DEST/dest_mapped/
+
+
   # chr=2L
 
   chr=${1}
@@ -62,6 +63,7 @@ concatVCF() {
   -f $outdir/vcfs_order.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.sort \
   -O z \
   -n \
+  --threads 20 \
   -o $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
 
   # vcf-concat \
@@ -76,4 +78,4 @@ concatVCF() {
 export -f concatVCF
 
 parallel -j8 concatVCF ::: 2L 2R 3L 3R 4 mitochondrion X Y
-parallel -j8 concatVCF ::: 3L
+#parallel -j8 concatVCF ::: 3L

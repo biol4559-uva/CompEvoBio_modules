@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#SBATCH -J manual_gather # A single job name for the array
+#SBATCH -J manual_scatter # A single job name for the array
 #SBATCH --ntasks-per-node=8 # one core
 #SBATCH -N 1 # on one node
 #SBATCH -t 4:00:00 ### 1 hours
@@ -13,7 +13,7 @@
 
 # ijob -A berglandlab -c10 -p standard --mem=50G
 # sbatch --array=1-1002 ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_scatter.sh
-# sacct -j 4243100
+# sacct -j 4244858
 # cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.4243100_3.out
 
 
