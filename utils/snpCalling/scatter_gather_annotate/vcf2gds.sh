@@ -11,10 +11,10 @@
 #SBATCH --account berglandlab_standard
 
 ### sbatch ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/vcf2gds.sh
-### sacct -j 4285190
+### sacct -j 4286489
 ### cat /scratch/aob2x/dest/slurmOutput/vcf2gds.22867938
 
 module load htslib/1.17 bcftools/1.17 parallel/20200322 gcc/11.4.0 openmpi/4.1.4 R/4.3.1 samtools vcftools
 
 Rscript --vanilla ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/vcf2gds.R \
-/scratch/aob2x/compBio_SNP_29Sept2025/dest.PoolSeq.PoolSNP.001.50.29Sept2025_ExpEvo.norep.ann.vcf.gz
+/scratch/aob2x/compBio_SNP_29Sept2025/dest.all.PoolSNP.001.50.29Sept2025_ExpEvo.norep.ann.vcf.gz

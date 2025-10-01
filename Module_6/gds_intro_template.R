@@ -79,7 +79,7 @@
 ### open GDS file
   genofile <- seqOpen("/scratch/aob2x/compBio_SNP_29Sept2025/dest.PoolSeq.PoolSNP.001.50.29Sept2025_ExpEvo.norep.ann.gds")
   genofile
-
+  table(grepl("ExpEvo", seqGetData(genofile, "sample.id")))
 ### load meta-data file
   samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/full_sample_metadata.28Sept2024_ExpEvo.csv")
 
