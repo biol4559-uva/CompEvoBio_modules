@@ -137,11 +137,11 @@
     dat ### The dimensions of the output should be 1000*(num samples). Are they?
 
   ### YOUR TURN:
-  ### take the average frequency across the samples and mutation annotations (the "annotation" column).
+  ### take the average frequency of SNPs averaging across the samples for each unique type of mutation annotation (the "annotation" column).
   ### Use an aggregation command and calculate the `mean(af_nEff, na.rm=T)` frequency
 
 
-  ### kinda slow, isn't it? And, 1000 SNPs is not that many out of 4.3M. That is going to make it hard to scale up to a larger number of SNPs.
+  ### 1000 SNPs is not that many out of 4.3M. If you were to subset, you'd be sitting here forever. That is going to make it hard to scale up to a larger number of SNPs.
   ### Does parallelization to make things go faster. Use a foreach() loop to iterate through your samples. use `%dopar%`
 
     system.time(dat <- getData(snps=snp.dt[J(subsamp)], samples=samps[grepl("SRP002024", sampleId)]))
