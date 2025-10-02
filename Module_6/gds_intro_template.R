@@ -77,16 +77,18 @@
   }
 
 ### open GDS file
-  genofile <- seqOpen("/scratch/aob2x/compBio_SNP_29Sept2025/dest.PoolSeq.PoolSNP.001.50.29Sept2025_ExpEvo.norep.ann.gds")
+  genofile <- seqOpen("/scratch/aob2x/compBio_SNP_29Sept2025/dest.all.PoolSNP.001.50.29Sept2025_ExpEvo.norep.ann.gds")
   genofile
   table(grepl("ExpEvo", seqGetData(genofile, "sample.id")))
+
 ### load meta-data file
-  samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/full_sample_metadata.28Sept2024_ExpEvo.csv")
+  samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/full_sample_metadata.90Sept2025_ExpEvo.csv")
 
 ### subset samps to only show records associated with your paper. One easy way to do this is to use the `grepl` command.
 ### This command returns a vector of TRUE or FALSE if the search pattern is found (or not)
 ### For example:
   samps[grepl("SRP002024", sampleId)]
+  samps[locality=="SRP002024"]
 
 ### First, we need to extract from our GDS file a dictionary that contains the position information for every SNP in the dataset
 ### common SNP.dt
