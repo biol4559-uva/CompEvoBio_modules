@@ -50,7 +50,7 @@ concatVCF() {
   #> $outdir/vcfs_order.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.sort
 
 
-  ls -d ${outdir}/*.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz | \
+  ls -d ${outdir}/*.${popSet}.${method}.${maf}.${mac}.${version}.vcf.gz | \
   rev | cut -f1 -d '/' |rev | grep -E "^${chr}_" | sort -t"_" -k2n,2 -k4g,4 | \
   sed "s|^|$outdir/|g" > $outdir/vcfs_order.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.sort
 
@@ -64,15 +64,20 @@ concatVCF() {
   -O z \
   -n \
   --threads 48 \
-  -o $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+  -o $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.vcf.gz
 
   # vcf-concat \
   # -f $outdir/vcfs_order.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.sort \
   # -s | \
   # bgzip -c > $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
 
-  tabix -p vcf $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+  tabix -p vcf $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.vcf.gz
 
+  bedtools intersect -sorted -v -header \
+  -b ${script_dir}/scatter_gather_annotate/repeat_bed/repeats.sort.bed.gz \
+  -a $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.vcf.gz |
+  bgzip -c > \
+  $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
 
 }
 export -f concatVCF

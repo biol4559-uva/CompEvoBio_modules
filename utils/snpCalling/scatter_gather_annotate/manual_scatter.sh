@@ -13,7 +13,7 @@
 
 # ijob -A berglandlab -c10 -p standard --mem=50G
 # sbatch --array=1-1002 ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_scatter.sh
-# sacct -j 4244858 | grep -v "COMPLE"
+# sacct -j 4287499 | grep -v "COMPLE"
 # cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.4243100_3.out
 
 
