@@ -13,8 +13,8 @@
 ### cat /scratch/aob2x/DESTv2_output_SNAPE/logs/runSnakemake.49369837*.err
 
 ### sbatch ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_annotate.sh
-### sacct -j 4308447
-### cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_annotate.4308447*.err
+### sacct -j 4423733
+### cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_annotate.4423733*.err
 # # ijob -A biol4559-aob2x -c10 -p largemem --mem=40G
 
 module purge
@@ -48,8 +48,8 @@ echo "no rep & index"
     wd=/scratch/aob2x/compBio_SNP_29Sept2025
     script_dir=~/CompEvoBio_modules/utils/snpCalling/
     pipeline_output=/project/berglandlab/DEST/dest_mapped/
-    chr=${1}
-
+    chr=${1} #chr=2L
+    bcf_outdir=${wd}/sub_bcf
 
     bedtools intersect -sorted -v -header \
     -b ${script_dir}/scatter_gather_annotate/repeat_bed/repeats.sort.bed.gz \
