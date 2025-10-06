@@ -19,7 +19,7 @@
 
 module purge
 
-module load htslib/1.17 bcftools/1.17 parallel/20200322 gcc/11.4.0 openmpi/4.1.4 R/4.3.1 samtools vcftools
+module load htslib/1.17 bcftools/1.17 parallel/20200322 gcc/11.4.0 openmpi/4.1.4 R/4.3.1 samtools vcftools bedtools/2.30.0
 
 
 
@@ -36,17 +36,32 @@ snpEffPath=~/snpEff
 
 cd ${wd}
 
+echo "no rep & index"
 
- echo "index"
-   # bcftools index -f ${wd}/sub_bcf/dest.2L.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-   # bcftools index -f ${wd}/sub_bcf/dest.2R.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-   # bcftools index -f ${wd}/sub_bcf/dest.3L.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-   # bcftools index -f ${wd}/sub_bcf/dest.3R.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-   # bcftools index -f  ${wd}/sub_bcf/dest.X.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-   # bcftools index -f  ${wd}/sub_bcf/dest.Y.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-   # bcftools index -f  ${wd}/sub_bcf/dest.4.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-   # bcftools index -f ${wd}/sub_bcf/dest.mitochondrion_genome.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+  noRepIndex () {
 
+    popSet=all
+    method=PoolSNP
+    maf=001
+    mac=50
+    version=29Sept2025_ExpEvo
+    wd=/scratch/aob2x/compBio_SNP_29Sept2025
+    script_dir=~/CompEvoBio_modules/utils/snpCalling/
+    pipeline_output=/project/berglandlab/DEST/dest_mapped/
+    chr=${1}
+
+
+    bedtools intersect -sorted -v -header \
+    -b ${script_dir}/scatter_gather_annotate/repeat_bed/repeats.sort.bed.gz \
+    -a $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.vcf.gz |
+    bgzip -c > \
+    $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+
+    bcftools index -f $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+  }
+  export -f noRepIndex
+
+  parallel -j5 noRepIndex ::: 2L 2R 3L 3R X
 
  echo "concat"
    ls -d ${wd}/sub_bcf/dest.*.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz | grep -E "2L|2R|3L|3R|X" > \
