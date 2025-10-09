@@ -1,0 +1,6 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: udc-ba37-32c1
+Building DAG of jobs...
+MissingRuleException:
+No rule to produce --cluster=sbatch --account berglandlab -p standard -o {resources.log_dir}/{rule}.%A.out -e {resources.log_dir}/{rule}.%A.err -J {rule} --ntasks-per-node={resources.ntasks_per_node} -N 1 -t {resources.time_limit} --mem {resources.memory_limit}G (if you use input functions make sure that they don't raise unexpected exceptions).

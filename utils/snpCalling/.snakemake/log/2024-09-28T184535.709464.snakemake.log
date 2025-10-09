@@ -1,0 +1,2534 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Job stats:
+job               count    min threads    max threads
+--------------  -------  -------------  -------------
+all                   1              1              1
+annotate              1              1              1
+gatherPoolSnp         8              1              1
+runSNP_calling      913              1              1
+total               923              1              1
+
+Select jobs to execute...
+
+[Sat Sep 28 18:45:38 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_6187861_6325368.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 48
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_6187861_6325368.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_6187861_6325368, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 48 with external jobid 'Submitted batch job 64521016'.
+
+[Sat Sep 28 18:45:38 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_13630321_13768000.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 665
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_13630321_13768000.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_13630321_13768000, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 665 with external jobid 'Submitted batch job 64521017'.
+
+[Sat Sep 28 18:45:38 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_11840051_11977725.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 862
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_11840051_11977725.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_11840051_11977725, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 862 with external jobid 'Submitted batch job 64521018'.
+
+[Sat Sep 28 18:45:38 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_18563581_18701088.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 138
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_18563581_18701088.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_18563581_18701088, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 138 with external jobid 'Submitted batch job 64521019'.
+
+[Sat Sep 28 18:45:38 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_29876561_30014240.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 783
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_29876561_30014240.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_29876561_30014240, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 783 with external jobid 'Submitted batch job 64521020'.
+
+[Sat Sep 28 18:45:38 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/Y_1222453_1358280.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 924
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/Y_1222453_1358280.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=Y_1222453_1358280, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 924 with external jobid 'Submitted batch job 64521021'.
+
+[Sat Sep 28 18:45:38 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_14430046_14567474.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 280
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_14430046_14567474.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_14430046_14567474, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 280 with external jobid 'Submitted batch job 64521022'.
+
+[Sat Sep 28 18:45:38 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_6884001_7021680.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 616
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_6884001_7021680.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_6884001_7021680, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 616 with external jobid 'Submitted batch job 64521023'.
+
+[Sat Sep 28 18:45:38 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_6734022_6871450.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 224
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_6734022_6871450.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_6734022_6871450, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 224 with external jobid 'Submitted batch job 64521024'.
+
+[Sat Sep 28 18:45:38 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_14594081_14731760.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 672
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_14594081_14731760.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_14594081_14731760, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 672 with external jobid 'Submitted batch job 64521025'.
+
+[Sat Sep 28 18:45:38 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_30014241_30151920.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 784
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_30014241_30151920.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_30014241_30151920, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 784 with external jobid 'Submitted batch job 64521026'.
+
+[Sat Sep 28 18:45:38 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_4387969_4525092.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 392
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_4387969_4525092.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_4387969_4525092, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 392 with external jobid 'Submitted batch job 64521027'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_12066913_12204036.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 448
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_12066913_12204036.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_12066913_12204036, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 448 with external jobid 'Submitted batch job 64521028'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_7287925_7425432.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 56
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_7287925_7425432.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_7287925_7425432, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 56 with external jobid 'Submitted batch job 64521029'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_22826329_22963836.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 169
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_22826329_22963836.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_22826329_22963836, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 169 with external jobid 'Submitted batch job 64521030'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_15125881_15263388.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 113
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_15125881_15263388.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_15125881_15263388, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 113 with external jobid 'Submitted batch job 64521031'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_22963837_23101344.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 170
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_22963837_23101344.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_22963837_23101344, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 170 with external jobid 'Submitted batch job 64521032'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_22400928_22538356.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 338
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_22400928_22538356.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_22400928_22538356, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 338 with external jobid 'Submitted batch job 64521033'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_27699049_27836172.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 562
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_27699049_27836172.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_27699049_27836172, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 562 with external jobid 'Submitted batch job 64521034'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_5920026_6057700.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 954
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_5920026_6057700.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_5920026_6057700, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 954 with external jobid 'Submitted batch job 64521035'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_22579521_22717200.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 730
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_22579521_22717200.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_22579521_22717200, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 730 with external jobid 'Submitted batch job 64521036'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_20020105_20157228.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 506
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_20020105_20157228.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_20020105_20157228, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 506 with external jobid 'Submitted batch job 64521037'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_23101345_23238852.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 171
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_23101345_23238852.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_23101345_23238852, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 171 with external jobid 'Submitted batch job 64521038'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_20157229_20294352.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 507
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_20157229_20294352.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_20157229_20294352, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 507 with external jobid 'Submitted batch job 64521039'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_22717201_22854880.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 731
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_22717201_22854880.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_22717201_22854880, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 731 with external jobid 'Submitted batch job 64521040'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_6057701_6195375.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 955
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_6057701_6195375.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_6057701_6195375, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 955 with external jobid 'Submitted batch job 64521041'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_27836173_27973296.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 563
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_27836173_27973296.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_27836173_27973296, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 563 with external jobid 'Submitted batch job 64521042'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_22538357_22675785.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 339
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_22538357_22675785.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_22538357_22675785, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 339 with external jobid 'Submitted batch job 64521043'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_22675786_22813214.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 340
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_22675786_22813214.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_22675786_22813214, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 340 with external jobid 'Submitted batch job 64521044'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_20294353_20431476.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 508
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_20294353_20431476.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_20294353_20431476, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 508 with external jobid 'Submitted batch job 64521045'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_22854881_22992560.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 732
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_22854881_22992560.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_22854881_22992560, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 732 with external jobid 'Submitted batch job 64521046'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_6195376_6333050.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 956
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_6195376_6333050.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_6195376_6333050, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 956 with external jobid 'Submitted batch job 64521047'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_27973297_28110227.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 564
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_27973297_28110227.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_27973297_28110227, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 564 with external jobid 'Submitted batch job 64521048'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_23238853_23376360.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 172
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_23238853_23376360.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_23238853_23376360, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 172 with external jobid 'Submitted batch job 64521049'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_22813215_22950643.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 341
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_22813215_22950643.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_22813215_22950643, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 341 with external jobid 'Submitted batch job 64521050'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_20431477_20568600.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 509
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_20431477_20568600.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_20431477_20568600, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 509 with external jobid 'Submitted batch job 64521051'.
+
+[Sat Sep 28 18:45:39 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_7159101_7296775.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 957
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_7159101_7296775.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_7159101_7296775, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 957 with external jobid 'Submitted batch job 64521052'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_23376361_23513712.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 173
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_23376361_23513712.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_23376361_23513712, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 173 with external jobid 'Submitted batch job 64521053'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_22950644_23088072.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 342
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_22950644_23088072.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_22950644_23088072, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 342 with external jobid 'Submitted batch job 64521054'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_20568601_20705724.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 510
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_20568601_20705724.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_20568601_20705724, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 510 with external jobid 'Submitted batch job 64521055'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_23130241_23267920.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 734
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_23130241_23267920.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_23130241_23267920, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 734 with external jobid 'Submitted batch job 64521056'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_7572126_7709800.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 958
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_7572126_7709800.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_7572126_7709800, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 958 with external jobid 'Submitted batch job 64521057'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_1_137680.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 566
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_1_137680.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_1_137680, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 566 with external jobid 'Submitted batch job 64521058'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_19412176_19549850.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 902
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_19412176_19549850.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_19412176_19549850, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 902 with external jobid 'Submitted batch job 64521059'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_23267921_23405600.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 735
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_23267921_23405600.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_23267921_23405600, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 735 with external jobid 'Submitted batch job 64521060'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_23088073_23225501.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 343
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_23088073_23225501.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_23088073_23225501, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 343 with external jobid 'Submitted batch job 64521061'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_1_137429.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 175
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_1_137429.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_1_137429, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 175 with external jobid 'Submitted batch job 64521062'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_20705725_20842848.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 511
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_20705725_20842848.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_20705725_20842848, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 511 with external jobid 'Submitted batch job 64521063'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_7985151_8122825.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 959
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_7985151_8122825.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_7985151_8122825, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 959 with external jobid 'Submitted batch job 64521064'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_137681_275360.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 567
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_137681_275360.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_137681_275360, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 567 with external jobid 'Submitted batch job 64521065'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_137430_274858.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 176
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_137430_274858.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_137430_274858, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 176 with external jobid 'Submitted batch job 64521066'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_20842849_20979972.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 512
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_20842849_20979972.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_20842849_20979972, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 512 with external jobid 'Submitted batch job 64521067'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_275361_413040.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 568
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_275361_413040.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_275361_413040, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 568 with external jobid 'Submitted batch job 64521068'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_23405601_23543280.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 736
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_23405601_23543280.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_23405601_23543280, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 736 with external jobid 'Submitted batch job 64521069'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_8122826_8260500.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 960
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_8122826_8260500.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_8122826_8260500, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 960 with external jobid 'Submitted batch job 64521070'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_23225502_23362930.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 344
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_23225502_23362930.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_23225502_23362930, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 344 with external jobid 'Submitted batch job 64521071'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_274859_412287.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 177
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_274859_412287.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_274859_412287, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 177 with external jobid 'Submitted batch job 64521072'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_413041_550720.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 569
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_413041_550720.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_413041_550720, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 569 with external jobid 'Submitted batch job 64521073'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_23543281_23680960.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 737
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_23543281_23680960.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_23543281_23680960, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 737 with external jobid 'Submitted batch job 64521074'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_8260501_8398175.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 961
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_8260501_8398175.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_8260501_8398175, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 961 with external jobid 'Submitted batch job 64521075'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_23362931_23500359.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 345
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_23362931_23500359.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_23362931_23500359, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 345 with external jobid 'Submitted batch job 64521076'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_20979973_21117096.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 513
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_20979973_21117096.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_20979973_21117096, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 513 with external jobid 'Submitted batch job 64521077'.
+
+[Sat Sep 28 18:45:40 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_12513229_12650736.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 94
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_12513229_12650736.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_12513229_12650736, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 94 with external jobid 'Submitted batch job 64521078'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_19825921_19963600.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 710
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_19825921_19963600.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_19825921_19963600, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 710 with external jobid 'Submitted batch job 64521079'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_23500360_23637788.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 346
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_23500360_23637788.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_23500360_23637788, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 346 with external jobid 'Submitted batch job 64521080'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_412288_549716.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 178
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_412288_549716.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_412288_549716, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 178 with external jobid 'Submitted batch job 64521081'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_21117097_21254220.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 514
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_21117097_21254220.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_21117097_21254220, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 514 with external jobid 'Submitted batch job 64521082'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_550721_688400.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 570
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_550721_688400.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_550721_688400, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 570 with external jobid 'Submitted batch job 64521083'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_8398176_8535850.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 962
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_8398176_8535850.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_8398176_8535850, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 962 with external jobid 'Submitted batch job 64521084'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_8535851_8673525.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 963
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_8535851_8673525.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_8535851_8673525, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 963 with external jobid 'Submitted batch job 64521085'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_549717_687145.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 179
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_549717_687145.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_549717_687145, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 179 with external jobid 'Submitted batch job 64521086'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_21254221_21391344.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 515
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_21254221_21391344.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_21254221_21391344, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 515 with external jobid 'Submitted batch job 64521087'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_688401_826080.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 571
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_688401_826080.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_688401_826080, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 571 with external jobid 'Submitted batch job 64521088'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_8938021_9075528.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 68
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_8938021_9075528.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_8938021_9075528, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 68 with external jobid 'Submitted batch job 64521089'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_24094001_24231680.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 741
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_24094001_24231680.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_24094001_24231680, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 741 with external jobid 'Submitted batch job 64521090'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_21528469_21665592.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 517
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_21528469_21665592.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_21528469_21665592, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 517 with external jobid 'Submitted batch job 64521091'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_9912601_10050275.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 965
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_9912601_10050275.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_9912601_10050275, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 965 with external jobid 'Submitted batch job 64521092'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_826081_963760.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 572
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_826081_963760.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_826081_963760, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 572 with external jobid 'Submitted batch job 64521093'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_824575_962003.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 181
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_824575_962003.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_824575_962003, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 181 with external jobid 'Submitted batch job 64521094'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_24050076_24187504.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 350
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_24050076_24187504.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_24050076_24187504, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 350 with external jobid 'Submitted batch job 64521095'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_963761_1101440.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 573
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_963761_1101440.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_963761_1101440, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 573 with external jobid 'Submitted batch job 64521096'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_10050276_10187950.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 966
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_10050276_10187950.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_10050276_10187950, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 966 with external jobid 'Submitted batch job 64521097'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_21665593_21802716.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 518
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_21665593_21802716.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_21665593_21802716, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 518 with external jobid 'Submitted batch job 64521098'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_16659281_16796960.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 687
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_16659281_16796960.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_16659281_16796960, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 687 with external jobid 'Submitted batch job 64521099'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_962004_1099432.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 182
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_962004_1099432.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_962004_1099432, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 182 with external jobid 'Submitted batch job 64521100'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_24187505_24324933.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 351
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_24187505_24324933.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_24187505_24324933, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 351 with external jobid 'Submitted batch job 64521101'.
+
+[Sat Sep 28 18:45:41 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_21802717_21939840.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 519
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_21802717_21939840.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_21802717_21939840, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 519 with external jobid 'Submitted batch job 64521102'.
+
+[Sat Sep 28 18:45:42 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_1101441_1239120.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 574
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_1101441_1239120.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_1101441_1239120, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 574 with external jobid 'Submitted batch job 64521103'.
+
+[Sat Sep 28 18:45:42 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_24369361_24507040.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 743
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_24369361_24507040.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_24369361_24507040, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 743 with external jobid 'Submitted batch job 64521104'.
+
+[Sat Sep 28 18:45:42 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_10187951_10325625.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 967
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_10187951_10325625.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_10187951_10325625, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 967 with external jobid 'Submitted batch job 64521105'.
+
+[Sat Sep 28 18:45:42 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_1099433_1236861.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 183
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_1099433_1236861.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_1099433_1236861, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 183 with external jobid 'Submitted batch job 64521106'.
+
+[Sat Sep 28 18:45:42 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_24324934_24462362.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 352
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_24324934_24462362.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_24324934_24462362, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 352 with external jobid 'Submitted batch job 64521107'.
+
+[Sat Sep 28 18:45:42 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_21939841_22076964.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 520
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_21939841_22076964.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_21939841_22076964, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 520 with external jobid 'Submitted batch job 64521108'.
+
+[Sat Sep 28 18:45:42 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_24507041_24644720.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 744
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_24507041_24644720.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_24507041_24644720, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 744 with external jobid 'Submitted batch job 64521109'.
+
+[Sat Sep 28 18:45:42 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_10600976_10738650.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 968
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_10600976_10738650.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_10600976_10738650, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 968 with external jobid 'Submitted batch job 64521110'.
+
+[Sat Sep 28 18:45:42 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_1239121_1376800.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 575
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_1239121_1376800.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_1239121_1376800, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 575 with external jobid 'Submitted batch job 64521111'.
+
+[Sat Sep 28 18:45:42 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_1236862_1374290.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 184
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_1236862_1374290.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_1236862_1374290, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 184 with external jobid 'Submitted batch job 64521112'.
+
+[Sat Sep 28 18:45:42 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_24462363_24599791.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 353
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_24462363_24599791.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_24462363_24599791, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 353 with external jobid 'Submitted batch job 64521113'.
+
+[Sat Sep 28 18:45:42 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_22076965_22214088.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 521
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_22076965_22214088.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_22076965_22214088, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 521 with external jobid 'Submitted batch job 64521114'.
+
+[Sat Sep 28 18:45:42 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_6050353_6187860.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 47
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_6050353_6187860.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_6050353_6187860, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 47 with external jobid 'Submitted batch job 64521115'.
+[Sat Sep 28 18:46:27 2024]
+Finished job 392.
+1 of 923 steps (0.1%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:46:27 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_3839473_3976596.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 388
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_3839473_3976596.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_3839473_3976596, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 388 with external jobid 'Submitted batch job 64521116'.
+[Sat Sep 28 18:46:45 2024]
+Finished job 48.
+2 of 923 steps (0.2%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:46:45 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_16043509_16180632.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 477
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_16043509_16180632.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_16043509_16180632, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 477 with external jobid 'Submitted batch job 64521117'.
+[Sat Sep 28 18:46:45 2024]
+Finished job 665.
+3 of 923 steps (0.3%) done
+[Sat Sep 28 18:46:45 2024]
+Finished job 862.
+4 of 923 steps (0.4%) done
+[Sat Sep 28 18:46:45 2024]
+Finished job 138.
+5 of 923 steps (1%) done
+[Sat Sep 28 18:46:45 2024]
+Finished job 783.
+6 of 923 steps (1%) done
+[Sat Sep 28 18:46:45 2024]
+Finished job 280.
+7 of 923 steps (1%) done
+[Sat Sep 28 18:46:45 2024]
+Finished job 616.
+8 of 923 steps (1%) done
+[Sat Sep 28 18:46:45 2024]
+Finished job 224.
+9 of 923 steps (1%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:46:45 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_11929789_12066912.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 447
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_11929789_12066912.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_11929789_12066912, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 447 with external jobid 'Submitted batch job 64521118'.
+
+[Sat Sep 28 18:46:45 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_21988641_22126069.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 335
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_21988641_22126069.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_21988641_22126069, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 335 with external jobid 'Submitted batch job 64521119'.
+
+[Sat Sep 28 18:46:45 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_19608733_19745856.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 503
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_19608733_19745856.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_19608733_19745856, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 503 with external jobid 'Submitted batch job 64521120'.
+
+[Sat Sep 28 18:46:45 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_5093976_5231650.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 950
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_5093976_5231650.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_5093976_5231650, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 950 with external jobid 'Submitted batch job 64521121'.
+
+[Sat Sep 28 18:46:45 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_27150553_27287676.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 558
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_27150553_27287676.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_27150553_27287676, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 558 with external jobid 'Submitted batch job 64521122'.
+
+[Sat Sep 28 18:46:45 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_19745857_19882980.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 504
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_19745857_19882980.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_19745857_19882980, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 504 with external jobid 'Submitted batch job 64521123'.
+
+[Sat Sep 28 18:46:45 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/Y_1086625_1222452.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 923
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/Y_1086625_1222452.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=Y_1086625_1222452, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 923 with external jobid 'Submitted batch job 64521124'.
+Select jobs to execute...
+[Sat Sep 28 18:46:46 2024]
+Finished job 672.
+10 of 923 steps (1%) done
+
+[Sat Sep 28 18:46:46 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_18415487_18552915.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 309
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_18415487_18552915.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_18415487_18552915, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 309 with external jobid 'Submitted batch job 64521125'.
+[Sat Sep 28 18:46:46 2024]
+Finished job 784.
+11 of 923 steps (1%) done
+[Sat Sep 28 18:46:46 2024]
+Finished job 448.
+12 of 923 steps (1%) done
+[Sat Sep 28 18:46:46 2024]
+Finished job 56.
+13 of 923 steps (1%) done
+[Sat Sep 28 18:46:46 2024]
+Finished job 169.
+14 of 923 steps (2%) done
+[Sat Sep 28 18:46:46 2024]
+Finished job 113.
+15 of 923 steps (2%) done
+[Sat Sep 28 18:46:46 2024]
+Finished job 170.
+16 of 923 steps (2%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:46:46 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_22166481_22304160.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 727
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_22166481_22304160.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_22166481_22304160, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 727 with external jobid 'Submitted batch job 64521126'.
+
+[Sat Sep 28 18:46:46 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_27287677_27424800.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 559
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_27287677_27424800.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_27287677_27424800, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 559 with external jobid 'Submitted batch job 64521127'.
+
+[Sat Sep 28 18:46:46 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_27013429_27150552.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 557
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_27013429_27150552.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_27013429_27150552, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 557 with external jobid 'Submitted batch job 64521128'.
+
+[Sat Sep 28 18:46:46 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_5369326_5507000.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 952
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_5369326_5507000.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_5369326_5507000, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 952 with external jobid 'Submitted batch job 64521129'.
+
+[Sat Sep 28 18:46:46 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_3579551_3717225.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 949
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_3579551_3717225.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_3579551_3717225, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 949 with external jobid 'Submitted batch job 64521130'.
+
+[Sat Sep 28 18:46:46 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_21891121_22028800.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 725
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_21891121_22028800.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_21891121_22028800, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 725 with external jobid 'Submitted batch job 64521131'.
+[Sat Sep 28 18:46:46 2024]
+Finished job 338.
+17 of 923 steps (2%) done
+[Sat Sep 28 18:46:46 2024]
+Finished job 562.
+18 of 923 steps (2%) done
+[Sat Sep 28 18:46:46 2024]
+Finished job 954.
+19 of 923 steps (2%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:46:46 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_16866253_17003376.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 483
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_16866253_17003376.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_16866253_17003376, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 483 with external jobid 'Submitted batch job 64521132'.
+
+[Sat Sep 28 18:46:46 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_15419601_15557275.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 883
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_15419601_15557275.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_15419601_15557275, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 883 with external jobid 'Submitted batch job 64521133'.
+
+[Sat Sep 28 18:46:46 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_22138789_22276296.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 164
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_22138789_22276296.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_22138789_22276296, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 164 with external jobid 'Submitted batch job 64521134'.
+Select jobs to execute...
+[Sat Sep 28 18:46:47 2024]
+Finished job 730.
+20 of 923 steps (2%) done
+
+[Sat Sep 28 18:46:47 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_963726_1101400.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 812
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_963726_1101400.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_963726_1101400, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 812 with external jobid 'Submitted batch job 64521135'.
+[Sat Sep 28 18:46:47 2024]
+Finished job 506.
+21 of 923 steps (2%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:46:47 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_12941451_13079125.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 868
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_12941451_13079125.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_12941451_13079125, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 868 with external jobid 'Submitted batch job 64521136'.
+[Sat Sep 28 18:46:53 2024]
+Finished job 743.
+22 of 923 steps (2%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:46:53 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_18449121_18586800.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 700
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_18449121_18586800.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_18449121_18586800, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 700 with external jobid 'Submitted batch job 64521137'.
+[Sat Sep 28 18:46:53 2024]
+Finished job 967.
+23 of 923 steps (2%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:46:53 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_11275657_11413164.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 85
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_11275657_11413164.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_11275657_11413164, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 85 with external jobid 'Submitted batch job 64521138'.
+[Sat Sep 28 18:46:54 2024]
+Finished job 183.
+24 of 923 steps (3%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:46:54 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_10739041_10876720.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 644
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_10739041_10876720.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_10739041_10876720, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 644 with external jobid 'Submitted batch job 64521139'.
+[Sat Sep 28 18:46:54 2024]
+Finished job 352.
+25 of 923 steps (3%) done
+[Sat Sep 28 18:46:54 2024]
+Finished job 520.
+26 of 923 steps (3%) done
+[Sat Sep 28 18:46:54 2024]
+Finished job 744.
+27 of 923 steps (3%) done
+[Sat Sep 28 18:46:54 2024]
+Finished job 968.
+28 of 923 steps (3%) done
+[Sat Sep 28 18:46:54 2024]
+Finished job 575.
+29 of 923 steps (3%) done
+[Sat Sep 28 18:46:54 2024]
+Finished job 184.
+30 of 923 steps (3%) done
+[Sat Sep 28 18:46:54 2024]
+Finished job 353.
+31 of 923 steps (3%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:46:54 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_18035426_18173100.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 895
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_18035426_18173100.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_18035426_18173100, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 895 with external jobid 'Submitted batch job 64521140'.
+
+[Sat Sep 28 18:46:54 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_5231651_5369325.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 951
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_5231651_5369325.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_5231651_5369325, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 951 with external jobid 'Submitted batch job 64521141'.
+
+[Sat Sep 28 18:46:54 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_31115681_31253360.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 792
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_31115681_31253360.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_31115681_31253360, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 792 with external jobid 'Submitted batch job 64521142'.
+
+[Sat Sep 28 18:46:54 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_22551313_22688820.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 167
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_22551313_22688820.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_22551313_22688820, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 167 with external jobid 'Submitted batch job 64521143'.
+
+[Sat Sep 28 18:46:54 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_19882981_20020104.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 505
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_19882981_20020104.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_19882981_20020104, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 505 with external jobid 'Submitted batch job 64521144'.
+
+[Sat Sep 28 18:46:54 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_3028851_3166525.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 948
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_3028851_3166525.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_3028851_3166525, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 948 with external jobid 'Submitted batch job 64521145'.
+
+[Sat Sep 28 18:46:54 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_7970883_8108311.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 233
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_7970883_8108311.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_7970883_8108311, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 233 with external jobid 'Submitted batch job 64521146'.
+[Sat Sep 28 18:46:54 2024]
+Finished job 521.
+32 of 923 steps (3%) done
+[Sat Sep 28 18:46:54 2024]
+Finished job 47.
+33 of 923 steps (4%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:46:54 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_2891176_3028850.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 947
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_2891176_3028850.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_2891176_3028850, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 947 with external jobid 'Submitted batch job 64521147'.
+
+[Sat Sep 28 18:46:54 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_22441841_22579520.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 729
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_22441841_22579520.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_22441841_22579520, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 729 with external jobid 'Submitted batch job 64521148'.
+Select jobs to execute...
+[Sat Sep 28 18:47:06 2024]
+Finished job 171.
+34 of 923 steps (4%) done
+
+[Sat Sep 28 18:47:06 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_15906385_16043508.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 476
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_15906385_16043508.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_15906385_16043508, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 476 with external jobid 'Submitted batch job 64521149'.
+[Sat Sep 28 18:47:06 2024]
+Finished job 507.
+35 of 923 steps (4%) done
+[Sat Sep 28 18:47:06 2024]
+Finished job 731.
+36 of 923 steps (4%) done
+[Sat Sep 28 18:47:06 2024]
+Finished job 955.
+37 of 923 steps (4%) done
+[Sat Sep 28 18:47:06 2024]
+Finished job 563.
+38 of 923 steps (4%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:47:06 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_19060237_19197360.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 499
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_19060237_19197360.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_19060237_19197360, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 499 with external jobid 'Submitted batch job 64521150'.
+
+[Sat Sep 28 18:47:06 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_6746076_6883750.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 839
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_6746076_6883750.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_6746076_6883750, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 839 with external jobid 'Submitted batch job 64521151'.
+
+[Sat Sep 28 18:47:06 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_6746321_6884000.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 615
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_6746321_6884000.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_6746321_6884000, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 615 with external jobid 'Submitted batch job 64521152'.
+
+[Sat Sep 28 18:47:06 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_16766339_16903767.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 297
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_16766339_16903767.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_16766339_16903767, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 297 with external jobid 'Submitted batch job 64521153'.
+Select jobs to execute...
+[Sat Sep 28 18:47:07 2024]
+Finished job 339.
+39 of 923 steps (4%) done
+
+[Sat Sep 28 18:47:07 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_8364565_8501688.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 421
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_8364565_8501688.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_8364565_8501688, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 421 with external jobid 'Submitted batch job 64521154'.
+[Sat Sep 28 18:47:07 2024]
+Finished job 340.
+40 of 923 steps (4%) done
+[Sat Sep 28 18:47:07 2024]
+Finished job 508.
+41 of 923 steps (4%) done
+[Sat Sep 28 18:47:07 2024]
+Finished job 732.
+42 of 923 steps (5%) done
+[Sat Sep 28 18:47:07 2024]
+Finished job 956.
+43 of 923 steps (5%) done
+[Sat Sep 28 18:47:07 2024]
+Finished job 564.
+44 of 923 steps (5%) done
+[Sat Sep 28 18:47:07 2024]
+Finished job 172.
+45 of 923 steps (5%) done
+[Sat Sep 28 18:47:07 2024]
+Finished job 341.
+46 of 923 steps (5%) done
+[Sat Sep 28 18:47:07 2024]
+Finished job 509.
+47 of 923 steps (5%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:47:07 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_21753441_21891120.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 724
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_21753441_21891120.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_21753441_21891120, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 724 with external jobid 'Submitted batch job 64521155'.
+
+[Sat Sep 28 18:47:07 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_687146_824574.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 180
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_687146_824574.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_687146_824574, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 180 with external jobid 'Submitted batch job 64521156'.
+
+[Sat Sep 28 18:47:07 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_16521601_16659280.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 686
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_16521601_16659280.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_16521601_16659280, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 686 with external jobid 'Submitted batch job 64521157'.
+
+[Sat Sep 28 18:47:07 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_27424801_27561924.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 560
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_27424801_27561924.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_27424801_27561924, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 560 with external jobid 'Submitted batch job 64521158'.
+
+[Sat Sep 28 18:47:07 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_22304161_22441840.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 728
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_22304161_22441840.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_22304161_22441840, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 728 with external jobid 'Submitted batch job 64521159'.
+
+[Sat Sep 28 18:47:08 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_14988373_15125880.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 112
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_14988373_15125880.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_14988373_15125880, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 112 with external jobid 'Submitted batch job 64521160'.
+
+[Sat Sep 28 18:47:08 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_22126070_22263498.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 336
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_22126070_22263498.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_22126070_22263498, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 336 with external jobid 'Submitted batch job 64521161'.
+
+[Sat Sep 28 18:47:08 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_22688821_22826328.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 168
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_22688821_22826328.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_22688821_22826328, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 168 with external jobid 'Submitted batch job 64521162'.
+[Sat Sep 28 18:47:08 2024]
+Finished job 957.
+48 of 923 steps (5%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:47:08 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_18278058_18415486.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 308
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_18278058_18415486.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_18278058_18415486, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 308 with external jobid 'Submitted batch job 64521163'.
+Select jobs to execute...
+[Sat Sep 28 18:47:08 2024]
+Finished job 173.
+49 of 923 steps (5%) done
+
+[Sat Sep 28 18:47:08 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_8227441_8364564.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 420
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_8227441_8364564.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_8227441_8364564, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 420 with external jobid 'Submitted batch job 64521164'.
+[Sat Sep 28 18:47:08 2024]
+Finished job 342.
+50 of 923 steps (5%) done
+[Sat Sep 28 18:47:08 2024]
+Finished job 510.
+51 of 923 steps (6%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:47:08 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_2753501_2891175.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 946
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_2753501_2891175.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_2753501_2891175, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 946 with external jobid 'Submitted batch job 64521165'.
+
+[Sat Sep 28 18:47:08 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_21391345_21528468.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 516
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_21391345_21528468.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_21391345_21528468, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 516 with external jobid 'Submitted batch job 64521166'.
+[Sat Sep 28 18:47:08 2024]
+Finished job 734.
+52 of 923 steps (6%) done
+[Sat Sep 28 18:47:08 2024]
+Finished job 958.
+53 of 923 steps (6%) done
+[Sat Sep 28 18:47:08 2024]
+Finished job 566.
+54 of 923 steps (6%) done
+[Sat Sep 28 18:47:08 2024]
+Finished job 902.
+55 of 923 steps (6%) done
+[Sat Sep 28 18:47:08 2024]
+Finished job 735.
+56 of 923 steps (6%) done
+[Sat Sep 28 18:47:08 2024]
+Finished job 343.
+57 of 923 steps (6%) done
+[Sat Sep 28 18:47:08 2024]
+Finished job 175.
+58 of 923 steps (6%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:47:08 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_14292617_14430045.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 279
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_14292617_14430045.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_14292617_14430045, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 279 with external jobid 'Submitted batch job 64521167'.
+
+[Sat Sep 28 18:47:08 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_22263499_22400927.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 337
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_22263499_22400927.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_22263499_22400927, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 337 with external jobid 'Submitted batch job 64521168'.
+
+[Sat Sep 28 18:47:08 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_27561925_27699048.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 561
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_27561925_27699048.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_27561925_27699048, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 561 with external jobid 'Submitted batch job 64521169'.
+
+[Sat Sep 28 18:47:09 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_18923113_19060236.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 498
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_18923113_19060236.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_18923113_19060236, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 498 with external jobid 'Submitted batch job 64521170'.
+
+[Sat Sep 28 18:47:09 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_15281926_15419600.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 882
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_15281926_15419600.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_15281926_15419600, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 882 with external jobid 'Submitted batch job 64521171'.
+
+[Sat Sep 28 18:47:09 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/Y_2852389_2988216.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 1007
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/Y_2852389_2988216.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=Y_2852389_2988216, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 1007 with external jobid 'Submitted batch job 64521172'.
+
+[Sat Sep 28 18:47:09 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_12238213_12375720.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 92
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_12238213_12375720.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_12238213_12375720, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 92 with external jobid 'Submitted batch job 64521173'.
+Select jobs to execute...
+[Sat Sep 28 18:47:09 2024]
+Finished job 511.
+59 of 923 steps (6%) done
+
+[Sat Sep 28 18:47:09 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_18838597_18976104.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 140
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_18838597_18976104.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_18838597_18976104, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 140 with external jobid 'Submitted batch job 64521174'.
+[Sat Sep 28 18:47:09 2024]
+Finished job 959.
+60 of 923 steps (7%) done
+[Sat Sep 28 18:47:09 2024]
+Finished job 567.
+61 of 923 steps (7%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:47:09 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_26602057_26739180.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 554
+    reason: Updated input files: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv
+    wildcards: jobid=3L_26602057_26739180, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 554 with external jobid 'Submitted batch job 64521175'.
+
+[Sat Sep 28 18:47:09 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_9625561_9763068.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 73
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_9625561_9763068.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_9625561_9763068, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 73 with external jobid 'Submitted batch job 64521176'.
+[Sat Sep 28 18:47:09 2024]
+Finished job 176.
+62 of 923 steps (7%) done
+[Sat Sep 28 18:47:09 2024]
+Finished job 512.
+63 of 923 steps (7%) done
+[Sat Sep 28 18:47:09 2024]
+Finished job 568.
+64 of 923 steps (7%) done
+[Sat Sep 28 18:47:09 2024]
+Finished job 736.
+65 of 923 steps (7%) done
+[Sat Sep 28 18:47:09 2024]
+Finished job 960.
+66 of 923 steps (7%) done
+[Sat Sep 28 18:47:09 2024]
+Finished job 344.
+67 of 923 steps (7%) done
+[Sat Sep 28 18:47:09 2024]
+Finished job 177.
+68 of 923 steps (7%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:47:09 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_5782351_5920025.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 953
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_5782351_5920025.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_5782351_5920025, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 953 with external jobid 'Submitted batch job 64521177'.
+
+[Sat Sep 28 18:47:09 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_21863773_22001280.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 162
+    reason: Updated input files: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv
+    wildcards: jobid=2L_21863773_22001280, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 162 with external jobid 'Submitted batch job 64521178'.
+
+[Sat Sep 28 18:47:09 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_21301496_21438924.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 330
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_21301496_21438924.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_21301496_21438924, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 330 with external jobid 'Submitted batch job 64521179'.
+
+[Sat Sep 28 18:47:10 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_8383170_8520598.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 236
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_8383170_8520598.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_8383170_8520598, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 236 with external jobid 'Submitted batch job 64521180'.
+
+[Sat Sep 28 18:47:10 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_23637789_23775217.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 347
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_23637789_23775217.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_23637789_23775217, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 347 with external jobid 'Submitted batch job 64521181'.
+
+[Sat Sep 28 18:47:10 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_30978001_31115680.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 791
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_30978001_31115680.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_30978001_31115680, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 791 with external jobid 'Submitted batch job 64521182'.
+
+[Sat Sep 28 18:47:10 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_23818641_23956320.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 739
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_23818641_23956320.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_23818641_23956320, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 739 with external jobid 'Submitted batch job 64521183'.
+Select jobs to execute...
+[Sat Sep 28 18:47:10 2024]
+Finished job 569.
+69 of 923 steps (7%) done
+
+[Sat Sep 28 18:47:10 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_11138149_11275656.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 84
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_11138149_11275656.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_11138149_11275656, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 84 with external jobid 'Submitted batch job 64521184'.
+[Sat Sep 28 18:47:10 2024]
+Finished job 737.
+70 of 923 steps (8%) done
+[Sat Sep 28 18:47:10 2024]
+Finished job 961.
+71 of 923 steps (8%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:47:10 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_10738651_10876325.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 969
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_10738651_10876325.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_10738651_10876325, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 969 with external jobid 'Submitted batch job 64521185'.
+
+[Sat Sep 28 18:47:10 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_18785989_18923112.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 497
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_18785989_18923112.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_18785989_18923112, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 497 with external jobid 'Submitted batch job 64521186'.
+[Sat Sep 28 18:47:10 2024]
+Finished job 345.
+72 of 923 steps (8%) done
+[Sat Sep 28 18:47:10 2024]
+Finished job 513.
+73 of 923 steps (8%) done
+[Sat Sep 28 18:47:10 2024]
+Finished job 94.
+74 of 923 steps (8%) done
+[Sat Sep 28 18:47:10 2024]
+Finished job 710.
+75 of 923 steps (8%) done
+[Sat Sep 28 18:47:10 2024]
+Finished job 346.
+76 of 923 steps (8%) done
+[Sat Sep 28 18:47:10 2024]
+Finished job 178.
+77 of 923 steps (8%) done
+[Sat Sep 28 18:47:10 2024]
+Finished job 514.
+78 of 923 steps (8%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:47:10 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_6596593_6734021.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 223
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_6596593_6734021.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_6596593_6734021, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 223 with external jobid 'Submitted batch job 64521187'.
+
+[Sat Sep 28 18:47:10 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_11427026_11564700.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 859
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_11427026_11564700.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_11427026_11564700, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 859 with external jobid 'Submitted batch job 64521188'.
+
+[Sat Sep 28 18:47:10 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_23775218_23912646.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 348
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_23775218_23912646.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_23775218_23912646, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 348 with external jobid 'Submitted batch job 64521189'.
+
+[Sat Sep 28 18:47:10 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_1514481_1652160.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 577
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_1514481_1652160.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_1514481_1652160, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 577 with external jobid 'Submitted batch job 64521190'.
+
+[Sat Sep 28 18:47:11 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_2615826_2753500.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 945
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_2615826_2753500.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_2615826_2753500, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 945 with external jobid 'Submitted batch job 64521191'.
+
+[Sat Sep 28 18:47:11 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_21726265_21863772.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 161
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_21726265_21863772.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_21726265_21863772, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 161 with external jobid 'Submitted batch job 64521192'.
+
+[Sat Sep 28 18:47:11 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_8520599_8658027.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 237
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_8520599_8658027.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_8520599_8658027, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 237 with external jobid 'Submitted batch job 64521193'.
+Select jobs to execute...
+[Sat Sep 28 18:47:11 2024]
+Finished job 570.
+79 of 923 steps (9%) done
+
+[Sat Sep 28 18:47:11 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_413026_550700.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 811
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_413026_550700.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_413026_550700, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 811 with external jobid 'Submitted batch job 64521194'.
+[Sat Sep 28 18:47:11 2024]
+Finished job 962.
+80 of 923 steps (9%) done
+[Sat Sep 28 18:47:11 2024]
+Finished job 963.
+81 of 923 steps (9%) done
+[Sat Sep 28 18:47:11 2024]
+Finished job 179.
+82 of 923 steps (9%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:47:11 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_1374291_1511719.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 185
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_1374291_1511719.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_1374291_1511719, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 185 with external jobid 'Submitted batch job 64521195'.
+
+[Sat Sep 28 18:47:11 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_2065126_2202800.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 944
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_2065126_2202800.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_2065126_2202800, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 944 with external jobid 'Submitted batch job 64521196'.
+
+[Sat Sep 28 18:47:11 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_21164067_21301495.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 329
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_21164067_21301495.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_21164067_21301495, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 329 with external jobid 'Submitted batch job 64521197'.
+[Sat Sep 28 18:47:11 2024]
+Finished job 515.
+83 of 923 steps (9%) done
+[Sat Sep 28 18:47:11 2024]
+Finished job 571.
+84 of 923 steps (9%) done
+[Sat Sep 28 18:47:11 2024]
+Finished job 68.
+85 of 923 steps (9%) done
+[Sat Sep 28 18:47:11 2024]
+Finished job 741.
+86 of 923 steps (9%) done
+[Sat Sep 28 18:47:11 2024]
+Finished job 517.
+87 of 923 steps (9%) done
+[Sat Sep 28 18:47:11 2024]
+Finished job 965.
+88 of 923 steps (10%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:47:12 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_21202721_21340400.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 720
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_21202721_21340400.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_21202721_21340400, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 720 with external jobid 'Submitted batch job 64521198'.
+
+[Sat Sep 28 18:47:12 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_26327809_26464932.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 552
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_26327809_26464932.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_26327809_26464932, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 552 with external jobid 'Submitted batch job 64521199'.
+
+[Sat Sep 28 18:47:12 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_18648865_18785988.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 496
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_18648865_18785988.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_18648865_18785988, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 496 with external jobid 'Submitted batch job 64521200'.
+
+[Sat Sep 28 18:47:12 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_26464933_26602056.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 553
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_26464933_26602056.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_26464933_26602056, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 553 with external jobid 'Submitted batch job 64521201'.
+
+[Sat Sep 28 18:47:12 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_21340401_21478080.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 721
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_21340401_21478080.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_21340401_21478080, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 721 with external jobid 'Submitted batch job 64521202'.
+
+[Sat Sep 28 18:47:12 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_9763069_9900576.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 74
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_9763069_9900576.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_9763069_9900576, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 74 with external jobid 'Submitted batch job 64521203'.
+Select jobs to execute...
+[Sat Sep 28 18:47:12 2024]
+Finished job 572.
+89 of 923 steps (10%) done
+
+[Sat Sep 28 18:47:12 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_8090317_8227440.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 419
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_8090317_8227440.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_8090317_8227440, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 419 with external jobid 'Submitted batch job 64521204'.
+[Sat Sep 28 18:47:12 2024]
+Finished job 181.
+90 of 923 steps (10%) done
+[Sat Sep 28 18:47:12 2024]
+Finished job 350.
+91 of 923 steps (10%) done
+[Sat Sep 28 18:47:12 2024]
+Finished job 573.
+92 of 923 steps (10%) done
+[Sat Sep 28 18:47:12 2024]
+Finished job 966.
+93 of 923 steps (10%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:47:12 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_24782401_24920080.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 746
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_24782401_24920080.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_24782401_24920080, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 746 with external jobid 'Submitted batch job 64521205'.
+
+[Sat Sep 28 18:47:12 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_21588757_21726264.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 160
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_21588757_21726264.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_21588757_21726264, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 160 with external jobid 'Submitted batch job 64521206'.
+
+[Sat Sep 28 18:47:12 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_21038725_21176232.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 156
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2L_21038725_21176232.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2L_21038725_21176232, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 156 with external jobid 'Submitted batch job 64521207'.
+
+[Sat Sep 28 18:47:12 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_23956321_24094000.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 740
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3R_23956321_24094000.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3R_23956321_24094000, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 740 with external jobid 'Submitted batch job 64521208'.
+[Sat Sep 28 18:47:13 2024]
+Finished job 518.
+94 of 923 steps (10%) done
+[Sat Sep 28 18:47:13 2024]
+Finished job 687.
+95 of 923 steps (10%) done
+[Sat Sep 28 18:47:13 2024]
+Finished job 182.
+96 of 923 steps (10%) done
+[Sat Sep 28 18:47:13 2024]
+Finished job 351.
+97 of 923 steps (11%) done
+[Sat Sep 28 18:47:13 2024]
+Finished job 519.
+98 of 923 steps (11%) done
+Select jobs to execute...
+
+[Sat Sep 28 18:47:13 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_18861476_18999150.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 899
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_18861476_18999150.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_18861476_18999150, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 899 with external jobid 'Submitted batch job 64521209'.
+
+[Sat Sep 28 18:47:13 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_11151676_11289350.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 970
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_11151676_11289350.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_11151676_11289350, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 970 with external jobid 'Submitted batch job 64521210'.
+
+[Sat Sep 28 18:47:13 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_8673526_8811200.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 964
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/X_8673526_8811200.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=X_8673526_8811200, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 964 with external jobid 'Submitted batch job 64521211'.
+
+[Sat Sep 28 18:47:13 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_19789777_19927205.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 319
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_19789777_19927205.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_19789777_19927205, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 319 with external jobid 'Submitted batch job 64521212'.
+
+[Sat Sep 28 18:47:13 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_16729129_16866252.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 482
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/3L_16729129_16866252.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=3L_16729129_16866252, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 482 with external jobid 'Submitted batch job 64521213'.
+Select jobs to execute...
+[Sat Sep 28 18:47:13 2024]
+Finished job 574.
+99 of 923 steps (11%) done
+
+[Sat Sep 28 18:47:13 2024]
+rule runSNP_calling:
+    input: /scratch/aob2x/compBio_SNP_28Sept2024/jobs.csv, /standard/BerglandTeach/mapping_output
+    output: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_10444605_10582033.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    jobid: 251
+    reason: Missing output files: /scratch/aob2x/compBio_SNP_28Sept2024/sub_vcfs/2R_10444605_10582033.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.vcf.gz
+    wildcards: jobid=2R_10444605_10582033, popset=PoolSeq, method=PoolSNP, maf=001, mac=50, version=28Sept2024_ExpEvo
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, ntasks_per_node=4, memory_limit=48, time_limit=360, log_dir=/scratch/aob2x/compBio_SNP_28Sept2024/logs
+
+Submitted job 251 with external jobid 'Submitted batch job 64521214'.
+Select jobs to execute...
