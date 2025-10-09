@@ -17,11 +17,11 @@
 ######### Load SNP data for larger metapopulation study of Drosophila melanogaster (DEST) #########
 
 ### open GDS file
-  genofile <- seqOpen("/scratch/aob2x/dest.expevo.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.gds")
+  genofile <- seqOpen("/scratch/aob2x/compBio_SNP_29Sept2025/dest.all.PoolSNP.001.50.29Sept2025_ExpEvo.norep.ann.gds")
   genofile
 
 ### load meta-data file
-  samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/full_sample_metadata.28Sept2024_ExpEvo.csv")
+  samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/full_sample_metadata.90Sept2025_ExpEvo.csv")
 
 # Extract samples from GDS
   samps.gds <- seqGetData(genofile, "sample.id")
@@ -34,18 +34,18 @@
 # Get basic SNP table
   seqSetFilter(genofile, sample.id=samps.new$sampleId)
 
-  snps.dt <- data.table(chr=seqGetData(genofile, "chromosome"),
+  snp.dt <- data.table(chr=seqGetData(genofile, "chromosome"),
                         pos=seqGetData(genofile, "position"),
                         variant.id=seqGetData(genofile, "variant.id"),
                         nAlleles=seqNumAllele(genofile),
                         missing=seqMissing(genofile))
 
 # Choose biallelic sites - multiallelic positions are difficult to work with and violate assumptions
-  snps.dt <- snps.dt[nAlleles==2]
-  seqSetFilter(genofile, sample.id=samps.new$sampleId, variant.id=snps.dt$variant.id)
+  snp.dt <- snp.dt[nAlleles==2]
+  seqSetFilter(genofile, sample.id=samps.new$sampleId, variant.id=snp.dt$variant.id)
 
 # Select sites 1) on autosomes
-  subsamp.variantIds <- sample(snps.dt[chr%in%c("2L", "2R", "3L","3R")]$variant.id, 100000)
+  subsamp.variantIds <- sample(snp.dt[chr%in%c("2L", "2R", "3L","3R")]$variant.id, 100000)
   seqSetFilter(genofile,
                sample.id=samps.new$sampleId,
                variant.id=subsamp.variantIds)
@@ -103,11 +103,11 @@
   pca.dt[,trt:=tstrsplit(sample, "_")[[3]]]
 
   pca.dt
-  ggplot(data=pca.dt, aes(x=PC1, y=PC2, color=trt), size=10) + geom_point()
+  ggplot(data=pca.dt, aes(x=PC1, y=PC2), size=10) + geom_point()
 
 
 # Now it is your turn to merge your samples with the metadata object "samps" and:
-# 1) plot the PCA using data.table and ggplot2 to show your experimental treatment groups!
+# 1) plot the PCA using data.table and ggplot2 to show your experimental treatment groups.
 # Make sure to utilize the geom_mark_eclipse() function for your treament groups, do the groupings make sense?
 
 # Use: geom_label_repel(data=dt, aes(x=PC1, y=PC2, label=treatment)) from ggrepel to add labels!
