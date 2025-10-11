@@ -11,8 +11,8 @@
 #SBATCH --account berglandlab_standard
 
 ### sbatch ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/vcf2gds.sh
-### sacct -j 4351531
-### cat /scratch/aob2x/dest/slurmOutput/vcf2gds.22867938
+### sacct -j 4508179
+### cat /scratch/aob2x/dest/slurmOutput/vcf2gds.4508179_*.out
 
 module load htslib/1.17 bcftools/1.17 parallel/20200322 gcc/11.4.0 openmpi/4.1.4 R/4.3.1 samtools vcftools
 

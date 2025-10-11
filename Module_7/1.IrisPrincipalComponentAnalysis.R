@@ -17,7 +17,7 @@
   data(iris)
 
 # Convert to data.frame object
-  iris.dt <- data.frame(iris)
+  iris.dt <- data.table(iris)
 
 # YOUR TURN: make the data from wide --> long
 

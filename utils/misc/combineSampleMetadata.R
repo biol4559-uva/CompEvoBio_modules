@@ -1,3 +1,6 @@
+# ijob -A berglandlab_standard -c1 -p standard --mem=6G
+### module load gcc/11.4.0  openmpi/4.1.4 R/4.3.1; R
+
 ### libraries
   library(data.table)
   library(readxl)
