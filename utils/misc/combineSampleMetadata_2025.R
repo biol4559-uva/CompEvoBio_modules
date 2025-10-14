@@ -9,8 +9,8 @@
   library(SeqArray)
 
 ### load metadata
-  #xl.fn <- "/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/ExpEvo_meta.xlsx"
-  xl.fn <- "~/CompEvoBio_modules/data/ExpEvo_meta.xlsx"
+  xl.fn <- "/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/ExpEvo_meta.xlsx"
+  #xl.fn <- "~/CompEvoBio_modules/data/ExpEvo_meta.xlsx"
 
   eem <- foreach(i=excel_sheets(xl.fn))%do%{
     read_excel(xl.fn, i)
@@ -22,6 +22,21 @@
 
 ### load DEST metadata
   samps <- fread("https://raw.githubusercontent.com/DEST-bio/DESTv2/refs/heads/main/populationInfo/dest_v2.samps_24Aug2024.csv")
+
+### semi-curated
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### combine
   sampse <- rbind(samps, eem, fill=T)
@@ -60,5 +75,22 @@
   all2 <- merge(sampse[!grepl("_PRJNA657615", sampleId) & !grepl("gen", sampleId)][,c("sampleId","nFlies")], s.dt, by.x="sampleId", by.y="sampleId.gds", all=T)
   all2[is.na(gds)]
 
+### all 3
+  samps.ag <- all2[,list(.N), list(sampleId)]
+  table(samps.ag$N)
+  all3 <- all2[-as.numeric(sapply(samps.ag[N==2]$sampleId, function(x) which(all2$sampleId==x)[1]))]
+  all3
 
-  write.csv(sampse, file="~/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.csv", quote=F, row.names=F)
+
+  write.csv(all3, file="~/full_sample_metadata.90Sept2025_ExpEvo.csv", quote=F, row.names=F)
+
+
+### fix it again
+  sampse <- fread("/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.csv")
+  samps <- merge(samps, sampse[,c("sampleId", "gds")], all=T)
+  tmp <- samps[,.N,list(sampleId)]
+  table(samps$Recommendation)
+  samps[is.na(Recommendation), Recommendation:="Pass"]
+  samps[is.na(locality),locality:=tstrsplit(sampleId, "_")[[2]]]
+  samps
+  table(tmp$N)
