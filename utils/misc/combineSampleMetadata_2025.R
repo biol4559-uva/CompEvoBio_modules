@@ -24,17 +24,19 @@
   samps <- fread("https://raw.githubusercontent.com/DEST-bio/DESTv2/refs/heads/main/populationInfo/dest_v2.samps_24Aug2024.csv")
 
 ### semi-curated
-  badSamp <- fread("/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.csv")
+  badSamp <- fread("/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.v3.csv")
   eem <- merge(eem, badSamp, by="sampleId", all.x=T)
   eem[,Recommendation:="Pass"]
   eem
 
 ### rbidn
   samps2 <- rbind(samps, eem, fill=T)
-  save(samps, file="/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.csv", quote=F, row.names=F)
+  #save(samps2, file="/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.csv", quote=F, row.names=F)
 
 
 
+  #load("/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.csv")
+  write.csv(samps2, file="/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.csv", quote=F, row.names=F)
 
 
 

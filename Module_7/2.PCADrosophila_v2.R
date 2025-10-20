@@ -121,7 +121,7 @@
 
 # Restrict to well-known populations across D. melanogaster
 # Remove D. simulans sample in dgn dataset
-  samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/full_sample_metadata.90Sept2025_ExpEvo.csv")
+  samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/full_sample_metadata.90Sept2025_ExpEvo.csv", fill=T)
 
   samps.new <- samps[grepl(bioproj, sampleId)]
   samps <- rbind(samps[set=="DrosRTEC"],
