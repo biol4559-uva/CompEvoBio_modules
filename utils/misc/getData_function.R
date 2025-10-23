@@ -55,8 +55,8 @@ getData <- function(snps=snp.dt[pos==14617051 & chr=="2L"], samples=samps) {
                                 "bio_rep", "tech_rep", "exp_rep", "loc_rep", "subsample", "sampling_strategy",
                                 "SRA_Accession"), with=F], by="sampleId")
 
-  afis[chr=="X|Y", nEff:=round((dp*nFlies - 1)/(dp+nFlies))]
-  afis[chr!="X", nEff:=round((dp*2*nFlies - 1)/(dp+2*nFlies))]
+  afis[chr=="X" | chr=="Y", nEff:=round((dp*nFlies)/(dp+nFlies   - 1))]
+  afis[chr!="X", nEff:=round((dp*2*nFlies)/(dp+2*nFlies - 1))]
   afis[,af_nEff:=round(af*nEff)/nEff]
   setnames(afis, "col", "annotation")
   ### return
