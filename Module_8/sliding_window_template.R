@@ -6,17 +6,17 @@
   library(patchwork)
   library(foreach)
   library(doMC)
-  registerDoMC(20)
+  registerDoMC(10)
 
 ### load this function
   source("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/utils/misc/getData_function.R")
 
 ### open GDS file
-  genofile <- seqOpen("/scratch/aob2x/dest.expevo.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.gds")
+  genofile <- seqOpen("/scratch/aob2x/compBio_SNP_29Sept2025/dest.all.PoolSNP.001.50.29Sept2025_ExpEvo.norep.ann.gds")
   genofile
 
 ### load meta-data file
-  samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/full_sample_metadata.28Sept2024_ExpEvo.csv")
+  samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/full_sample_metadata.90Sept2025_ExpEvo.csv", fill=T)
 
 ### common SNP.dt
   seqResetFilter(genofile)
@@ -47,7 +47,7 @@
   dim(wins)
 
 ### iterate thorugh windows to calculate a summary of your data
-### note, that if you run this as a loop it will take about 18 minutes to run.
+### note, that if you run this as a loop it will take about 10 minutes to run.
 ### However, you can easily run this script through a batch job in Rivanna to parallelize it
   setkey(snp.dt, chr, pos)
 
@@ -55,7 +55,7 @@
    windows.to.use <- 1:10                 ### test set
 
 
-  system.time(out <- foreach(i=1:dim(wins)[1], .errorhandling="remove")%dopar%{
+  system.time(out <- foreach(i=wins.to.use, .errorhandling="remove")%dopar%{
     #i <- 100
     message(i)
     ### get data for your sample for this window
@@ -66,7 +66,7 @@
     ### Now we summarize.
     ### Some summary statistics include: missing data per sample; average coverage; average frequency of mutations; averge difference in allele frequency between treatments? What else?
     ### the example below shows coverage and missing data rate.
-      tmp.data.ag <- tmp.data[,list(coverge=mean(dp, na.rm=T), missing=mean(is.na(dp))), list(sampleId, window)]
+      tmp.data.ag <- tmp.data[,list(coverage=mean(dp, na.rm=T), missing=mean(is.na(dp))), list(sampleId, window)]
 
     ### your turn You'll have to figure out how to return the object you want from each iteration of your foreach loop.
 

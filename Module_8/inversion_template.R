@@ -1,5 +1,4 @@
 ### libraries
-
   library(curl)
   library(SeqArray)
   library(data.table)
@@ -13,11 +12,11 @@
   source("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/utils/misc/getData_function.R")
 
 ### open GDS file
-  genofile <- seqOpen("/scratch/aob2x/dest.expevo.PoolSeq.PoolSNP.001.50.28Sept2024_ExpEvo.norep.gds")
+  genofile <- seqOpen("/scratch/aob2x/compBio_SNP_29Sept2025/dest.all.PoolSNP.001.50.29Sept2025_ExpEvo.norep.ann.gds")
   genofile
 
 ### load meta-data file
-  samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/full_sample_metadata.28Sept2024_ExpEvo.csv")
+  samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/full_sample_metadata.90Sept2025_ExpEvo.csv", fill=T)
 
 ### load in inversion markers
   inv.markers <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/main/Module_8/inversion_markers_v6.txt")
@@ -39,10 +38,11 @@
 ### you will need to use the "merge" command from the data.table package
 ### how many of the inversion markers do not intersect with our set? Do you feel comfortable with that level of intersection?
 
+
+### your turn: create samps.new with your samples only
+
 ### get the allele frequencies
   dat <- getData(snps=markers, samples=samps.new)
-
-### your turn: write a figure legend for this figure.
 
 ### your turn:
 ### calculate the frequency of the inversion for each of your samples by averaging the frequency of all SNPs associated with the inversion
@@ -51,6 +51,9 @@
 
 ### your turn:
 ### plot the estimated allele frequency of each inversion across treatments
+
+### your turn: write a figure legend for this figure. A figure legend has a (1) title, (2) description of each panel A, B, C, (3) a description of the axes, (4) a description of the data (e.g., what does each point represent), (5) a description of other information in the figure (e.g., text)
+
 
 ### some simple models to test for differences in frequency between the treatment groups
   mod <- lm(freq~exp_rep, dat.ag[inversion=="In(2L)t"])

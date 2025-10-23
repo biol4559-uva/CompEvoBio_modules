@@ -20,6 +20,7 @@
   eem[,locality:=tstrsplit(sampleId, "_")[[2]]]
   eem
 
+
 ### load DEST metadata
   samps <- fread("https://raw.githubusercontent.com/DEST-bio/DESTv2/refs/heads/main/populationInfo/dest_v2.samps_24Aug2024.csv")
 
@@ -32,11 +33,15 @@
 ### rbidn
   samps2 <- rbind(samps, eem, fill=T)
   #save(samps2, file="/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.csv", quote=F, row.names=F)
+  samps.ag<-samps2[,list(.N), list(sampleId)]
 
-
+  samps3 <- samps2[-as.numeric(sapply(samps.ag[N==2]$sampleId, function(x) which(x==samps2$sampleId)[1])),]
+  samps3[is.na(nFlies), nFlies:=nFlies.x]
+  table(is.na(samps3$nFlies))
+  samps3[is.na(nFlies)]
 
   #load("/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.csv")
-  write.csv(samps2, file="/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.csv", quote=F, row.names=F)
+  write.csv(samps3, file="/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.csv", quote=F, row.names=F)
 
 
 
