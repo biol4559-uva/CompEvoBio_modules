@@ -31,5 +31,5 @@ Remember the equation for Fst:  Fst=(Htot-Hwith)/Htot
 5. You might also want to look at the "population branch statistic" which is based on three populations and Fst values between them. It calculates the branch lengths for population from the collective "center"
 
 <p align="center">
-  <img src="/Module_9/images/pbs.jpeg" width="500"/>
+  <img src="/Module_9/pbs.jpeg" width="500"/>
 </p>
