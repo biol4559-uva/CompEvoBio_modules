@@ -13,6 +13,8 @@ Objective:
 ## instructions
 1. First, open the [Fst function script](/CompEvoBio_modules/Module_9/Fst_function_template.R). We'll talk in class about Fst and you will be tasked with writing a fuction that calculates it. This is just a warm-up exercise.
 
+Remember the equation for Fst:  Fst=(Htot-Hwith)/Htot
+
 2. Calculating Fst between two populations using a naive estimator (like in step 1) is fast and easy. Doing a more proper analysis when there are many more samples, and pool-seq is a bit more complicated. It is also slower. We are going to break the task into windows and then submit an array job where each job processes a window. Then, we'll collect the jobs together. That way, hopefully, things will run more quickly. Use your scatter gather approach from last week, and try scattering across all windows (~2000 jobs). [Start here](/CompEvoBio_modules/Module_9/Fst_scatter.sh), and then look [here](/CompEvoBio_modules/Module_9/Fst_template.R)
 
 3. Now we need to collect our results and make sense of them. Use
