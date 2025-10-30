@@ -11,8 +11,8 @@
 #SBATCH --account berglandlab
 
 ### ijob -A berglandlab -c20 -p standard --mem=40G
-### run as: sbatch --array=1-816 /home/aob2x/DESTv3/mappingPipeline/misc/testRun.sh
-### sacct -j 4841903
+### run as: sbatch --array=1-816 /home/aob2x/CompEvoBio_modules/utils/get_mtDNA/get_mtDNA.sh
+### sacct -j 4918194
 ### cat /scratch/aob2x/logs/RunDest.4841903*.err
 
 ### modules
