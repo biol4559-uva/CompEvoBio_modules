@@ -13,7 +13,7 @@
 
 # ijob -A berglandlab -c10 -p standard --mem=50G
 # sbatch ~/CompEvoBio_modules/utils/get_mtDNA/PoolSNP_mtDNA.sh
-# sacct -j 5024727 | grep -v "COMPLE"
+# sacct -j 5040049 | grep -v "COMPLE"
 # cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.5024727_*.err
 
 
