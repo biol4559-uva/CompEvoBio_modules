@@ -12,9 +12,9 @@
 
 
 # ijob -A berglandlab -c10 -p standard --mem=50G
-# sbatch --array=1-1002 ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_scatter.sh
-# sacct -j 4287499 | grep -v "COMPLE"
-# cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.4243100_3.out
+# sbatch ~/CompEvoBio_modules/utils/get_mtDNA/PoolSNP_mtDNA.sh
+# sacct -j 5024727 | grep -v "COMPLE"
+# cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.5024727_*.err
 
 
   module purge
@@ -25,7 +25,6 @@
   module load htslib/1.17  bcftools/1.17 parallel/20200322 gcc/11.4.0 openmpi/4.1.4 python/3.11.4 vcftools/0.1.16 R/4.3.1
   module load bedtools/2.30.0
 
-
   cat /scratch/aob2x/allpops.mtDNA.sites | python ~/CompEvoBio_modules/utils/snpCalling/PoolSNP/PoolSnp.py \
   --sync - \
   --min-cov 4 \
@@ -33,8 +32,7 @@
   --min-count 4 \
   --min-freq 0.001 \
   --miss-frac 0.5 \
-  --names /standard/BerglandTeach/mtDNA/sync/allpops.mtDNA.names | sed 's/,$//g' > /standard/BerglandTeach/mtDNA/mtDNA.vcf
-
+  --names $( cat /standard/BerglandTeach/mtDNA/sync/allpops.mtDNA.names |  tr '\n' ',' | sed 's/,$//g' ) > /standard/BerglandTeach/mtDNA/mtDNA.vcf
 
   cat /standard/BerglandTeach/mtDNA/mtDNA.vcf | sed 's/mitochondrion_genome/dmel_mitochondrion_genome/g' | \
   java -jar ~/snpEff/snpEff.jar \

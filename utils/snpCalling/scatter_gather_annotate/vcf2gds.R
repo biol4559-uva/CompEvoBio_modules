@@ -1,4 +1,4 @@
-# ijob -A biol4559-aob2x -c10 -p largemem --mem=40G
+# ijob -A biol4020-aob2x -c10 -p standard --mem=40G
 # module load gcc/7.1.0 openmpi/3.1.4 R/3.6.3; R
 
 library(SeqArray)
@@ -9,10 +9,10 @@ vcf.fn=args[[1]]
 gds.fn=gsub(".vcf", ".gds", vcf.fn)
 
 #vcf.fn=paste(vcf.fn, ".gz", sep="")
-#vcf.fn="dest.all.PoolSNP.001.5.test.ann.vcf"
+#vcf.fn="/standard/BerglandTeach/mtDNA/mtDNA.ann.vcf"
 seqParallelSetup(cluster=10, verbose=TRUE)
 
-seqVCF2GDS(vcf.fn, gds.fn, storage.option="ZIP_RA", parallel=48, verbose=T, optimize=T)
+seqVCF2GDS(vcf.fn, gds.fn, storage.option="ZIP_RA", parallel=5, verbose=T, optimize=T)
 
 
 
