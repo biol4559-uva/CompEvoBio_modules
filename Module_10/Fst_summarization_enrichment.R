@@ -119,12 +119,3 @@
 
 
 ### can you identify candidate SNPs and look at their specific allele frequency change across replicates
-
-
-
-
-
-
-
-
-  
