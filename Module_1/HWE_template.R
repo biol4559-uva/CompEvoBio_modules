@@ -1,6 +1,3 @@
-### specify your library path
-  .libPaths(c("~/USERNAME", .libPaths())) ### <- you'll need to change USERNAME to your computing ID
-
 ### install packages; you only need to this once (ever)
   install.packages("ggplot2", "data.table")
 
@@ -32,7 +29,7 @@
 ### the same function can return a vector of values.
   test_fun(x=c(1:10), y=c(-1:-10))
 
-### does this work? What does the error message mean?
+### does this work? What does the error message mean? What happens if you change the length of the vectors to be multiples of each other?
   test_fun(x=c(1:10), y=c(1:3))
 
 ### the output of this function helps you keep track of input and output by returning a data.table
@@ -63,3 +60,5 @@
     geom_line(aes(x=x, y=value, group=variable, color=variable))
 
   ggsave(p1, file="~/test_plot1.png")
+
+### your turn: use the basic framework of a function and a plot that we used above to generate the standard Hardy Weinberg plot
