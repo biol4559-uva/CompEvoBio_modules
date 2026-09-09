@@ -8,11 +8,11 @@
 #SBATCH -o /scratch/aob2x/compBio/logs/prefetch.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/compBio/logs/prefetch.%A_%a.err # Standard error
 #SBATCH -p standard
-#SBATCH --account berglandlab_standard
+#SBATCH --account biol4020-aob2x
 
 wd=/scratch/aob2x/compBio
 ### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/utils/getSRA/sras_2026.csv )%20 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
-### sacct -j 3259440
+### sacct -j 19489792
 ### cat /scratch/aob2x/compBio/logs/prefetch.52222298_*.out | grep -B1 "do not"
 ### cat /scratch/aob2x/compBio/logs/prefetch.3259341_3.out
 
