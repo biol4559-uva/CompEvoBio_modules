@@ -3,4 +3,4 @@ sbatch --array=1-$( cat /standard/BerglandTeach/misc/aob_small_file.csv | wc -l 
 /standard/BerglandTeach/dest_freeze2.6.1_latest.sif \
 /scratch/aob2x/compBio/fastq/ \
 /standard/BerglandTeach/mapping_output \
-/standard/BerglandTeach/aob_small_file.csv
+/standard/BerglandTeach/misc/aob_small_file.csv

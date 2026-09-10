@@ -18,9 +18,9 @@
 ###################################
   #SLURM_ARRAY_TASK_ID=1
 
-  sampleId=$( cat $4 | sed "${SLURM_ARRAY_TASK_ID}q;d" | cut -f3 -d',' )
-  srr=$( cat $4 | sed "${SLURM_ARRAY_TASK_ID}q;d" | cut -f1 -d',' )
-  numFlies=$( cat $4 | sed "${SLURM_ARRAY_TASK_ID}q;d" | cut -f2 -d',' )
+  sampleId=$( cat $4 | dos2unix | sed "${SLURM_ARRAY_TASK_ID}q;d" | cut -f3 -d',' )
+  srr=$( cat $4 | dos2unix | sed "${SLURM_ARRAY_TASK_ID}q;d" | cut -f1 -d',' )
+  numFlies=$( cat $4 | dos2unix | sed "${SLURM_ARRAY_TASK_ID}q;d" | cut -f2 -d',' )
 
 
   echo ${sampleId}

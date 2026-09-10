@@ -8,7 +8,7 @@
 #SBATCH -o /scratch/COMPUTE_ID/logs/demo_1.%A_%a.out # Standard output
 #SBATCH -e /scratch/COMPUTE_ID/logs/demo_1.%A_%a.err # Standard error
 #SBATCH -p standard
-#SBATCH --account biol4559-aob2x
+#SBATCH --account biol4020-aob2x
 
 ### run as: sbatch --array=1-5 PATH_TO_THIS_FILE
 ### sacct -j XXXXXXXXX

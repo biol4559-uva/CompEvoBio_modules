@@ -12,7 +12,7 @@
 
 wd=/scratch/aob2x/compBio
 ### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/utils/getSRA/sras_2026.csv )%20 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
-### sacct -j 19490038
+### sacct -j 19514008
 ### cat /scratch/aob2x/compBio/logs/prefetch.52222298_*.out | grep -B1 "do not"
 ### cat /scratch/aob2x/compBio/logs/prefetch.3259341_3.out
 
@@ -71,3 +71,6 @@ fi
 
 #rm /scratch/aob2x/fastq/${sranum}.sra
 #cat /home/aob2x/CompEvoBio_modules/data/runs.csv | nl | grep "SRR12463313"
+
+
+find . -maxdepth 1 -type f ! -name "*_*" -print0 | xargs -0 mv -t /standard/BerglandTeach/misc/stray_singles
