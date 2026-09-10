@@ -12,7 +12,7 @@
 
 wd=/scratch/aob2x/compBio
 ### run as: sbatch --array=1-$( wc -l < ~/CompEvoBio_modules/utils/getSRA/sras_2026.csv )%20 ~/CompEvoBio_modules/utils/getSRA/downloadSRA.sh
-### sacct -j 19489792
+### sacct -j 19490038
 ### cat /scratch/aob2x/compBio/logs/prefetch.52222298_*.out | grep -B1 "do not"
 ### cat /scratch/aob2x/compBio/logs/prefetch.3259341_3.out
 
