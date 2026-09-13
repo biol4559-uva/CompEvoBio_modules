@@ -47,8 +47,8 @@ In this way, our slurm script is a bit like a function that only takes one param
 ### Run MULTIQC.
 1. Combine your FASTQC output files into a single comparative file using MULTIQC in an interactive terminal:
 ```
-module load multiqc
-multiqc -o ~/multiQC_output/ /scratch/COMPUTEID/fastq_QC_Out/
+module load apptainer
+apptainer exec /standard/BerglandTeach/multiqc.sif multiqc -o ~/multiQC_output/ /scratch/COMPUTEID/fastq_QC_Out/
 ```
 
 2. Download the two contents of that foler and open the html file.

@@ -73,4 +73,4 @@ fi
 #cat /home/aob2x/CompEvoBio_modules/data/runs.csv | nl | grep "SRR12463313"
 
 
-find . -maxdepth 1 -type f ! -name "*_*" -print0 | xargs -0 mv -t /standard/BerglandTeach/misc/stray_singles
+#find . -maxdepth 1 -type f ! -name "*_*" -print0 | xargs -0 mv -t /standard/BerglandTeach/misc/stray_singles
