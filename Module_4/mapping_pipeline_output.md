@@ -53,7 +53,7 @@ If your sample has low coverage, like mine, the screen will look quite blank. Th
 
 7. Fortunately, all we have to do to assess PCR duplicate rate is look at the report. Create an Excel (or Google Sheet) file with the PCR duplicate rates for all of the samples in your study. You can do this manually by navigating to each file, and typing this command:
 ```
-grep -A2 "METRICS" ExpEvo_PRJNA185744_Control3_2_1998-MM-DD.mark_duplicates_report.txt | head -n2
+grep -A2 "METRICS" ExpEvo_PRJNA185744_Control3_2_1998-MM-DD.mark_duplicates_report.txt  | tail -n2 | cut -f9
 ```
 
 You should get something like this; the 9th column should be the duplication rate (3.6% in my case):
