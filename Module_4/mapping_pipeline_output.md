@@ -18,7 +18,7 @@ Objectives:
   <img src="/Module_4/images/mapping_directory.jpeg" width="1000"/>
 </p>
 
-3. First, we are going to look at the `*bam` files. These files are where the raw information about where the FASTQ reads map to. These files are compressed using a special algorithm, and we need to use a special tool to unpack them. To do this, we need to load the `samtools` module using the command:
+3. First, we are going to look at the `*bam` files. These files are where the raw information about where the FASTQ reads map to. These files are compressed using a special algorithm, and we need to use a specialized tool to unpack them. To do this, we need to load the `samtools` module using the command:
 ```
 module load samtools
 ```
