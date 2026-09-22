@@ -13,7 +13,7 @@
 
 # ijob -A berglandlab -c10 -p standard --mem=50G
 # sbatch --array=1-105 ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_copy.sh
-# sacct -j 20363782
+# sacct -j 20363907
 # cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.4242823_1.out
 
 # SLURM_ARRAY_TASK_ID=1

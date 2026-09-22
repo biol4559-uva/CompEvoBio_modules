@@ -8,12 +8,12 @@
 #SBATCH -o /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.%A_%a.err # Standard error
 #SBATCH -p standard
-#SBATCH --account berglandlab_standard
+#SBATCH --account biol4020-aob2x
 
 
 # ijob -A berglandlab -c10 -p standard --mem=50G
 # sbatch --array=1-1002 ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_scatter.sh
-# sacct -j 4287499 | grep -v "COMPLE"
+# sacct -j 20364046 | grep -v "COMPLE"
 # cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.4243100_3.out
 
 
@@ -24,7 +24,7 @@ trap 'rm -rf ${tmpdir}' EXIT
 
 #module load htslib bcftools parallel intel/18.0 intelmpi/18.0 mvapich2/2.3.1 R/3.6.3 python/3.6.6 vcftools/0.1.16
 #module load htslib/1.10.2 bcftools/1.9 parallel/20200322 intel/18.0 intelmpi/18.0 R/3.6.3 python/3.6.6 vcftools/0.1.16
-module load htslib/1.17  bcftools/1.17 parallel/20200322 gcc/11.4.0 openmpi/4.1.4 python/3.11.4 vcftools/0.1.16 R/4.3.1
+module load htslib/1.17  bcftools/1.17 parallel/20250722 gcc/14.2.0  openmpi/5.0.7 python/3.11.4 vcftools/0.1.16 R/4.6.0
 module load bedtools/2.30.0
 
 ### r, mvapch, parallel
@@ -35,8 +35,8 @@ module load bedtools/2.30.0
   method=PoolSNP
   maf=001
   mac=50
-  version=29Sept2025_ExpEvo
-  wd=/scratch/aob2x/compBio_SNP_29Sept2025
+  version=22Sept2026_ExpEvo
+  wd=/scratch/aob2x/compBio_SNP_22Sept2026
   script_dir=~/CompEvoBio_modules/utils/snpCalling/
   pipeline_output=/project/berglandlab/DEST/dest_mapped/
   job=${SLURM_ARRAY_TASK_ID}    # job=1
