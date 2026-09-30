@@ -3,7 +3,7 @@
 #SBATCH -J manual_annotate # A single job name for the array
 #SBATCH --ntasks-per-node=5 # one core
 #SBATCH -N 1 # on one node
-#SBATCH -t 12:00:00 ### 1 hours
+#SBATCH -t 2:00:00 ### 1 hours
 #SBATCH --mem 40G
 #SBATCH -o /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_annotate.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_annotate.%A_%a.err # Standard error
@@ -12,7 +12,7 @@
 
 ### cat /scratch/aob2x/DESTv2_output_SNAPE/logs/runSnakemake.49369837*.err
 
-### sbatch ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_annotate_slices.sh
+### sbatch  sbatch --array=1-1002 ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_annotate_slices.sh
 ### sacct -j 4425471
 ### cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_annotate.4425471*.err
 # # ijob -A biol4559-aob2x -c10 -p largemem --mem=40G
