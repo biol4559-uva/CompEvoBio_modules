@@ -18,6 +18,7 @@
 
 module load htslib/1.17  bcftools/1.17 parallel/20250722 gcc/14.2.0  openmpi/5.0.7 python/3.11.4 perl/5.40.2 vcftools/0.1.16 R/4.6.0
 module load bedtools/2.30.0
+
 concatVCF() {
 
 
@@ -51,7 +52,7 @@ concatVCF() {
   #> $outdir/vcfs_order.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.sort
 
 
-  ls -d ${outdir}/*.${popSet}.${method}.${maf}.${mac}.${version}.vcf.gz | \
+  ls -d ${outdir}/*.${popSet}.${method}.${maf}.${mac}.${version}.norep.eff.vcf.gz | \
   rev | cut -f1 -d '/' |rev | grep -E "^${chr}_" | sort -t"_" -k2n,2 -k4g,4 | \
   sed "s|^|$outdir/|g" > $outdir/vcfs_order.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.sort
 
@@ -65,20 +66,10 @@ concatVCF() {
   -O z \
   -n \
   --threads 48 \
-  -o $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.vcf.gz
+  -o $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.norep.eff.vcf.gz
 
-  # vcf-concat \
-  # -f $outdir/vcfs_order.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.sort \
-  # -s | \
-  # bgzip -c > $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-
-  tabix -p vcf $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.vcf.gz
-
-  bedtools intersect -sorted -v -header \
-  -b ${script_dir}/scatter_gather_annotate/repeat_bed/repeats.sort.bed.gz \
-  -a $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.vcf.gz |
-  bgzip -c > \
-  $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+ 
+  tabix -p vcf $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.norep.eff.vcf.gz
 
 }
 export -f concatVCF
