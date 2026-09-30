@@ -3,7 +3,7 @@
 #SBATCH -J manual_gather # A single job name for the array
 #SBATCH --ntasks-per-node=48 # one core
 #SBATCH -N 1 # on one node
-#SBATCH -t 14:00:00 ### 1 hours
+#SBATCH -t 1:00:00 ### 1 hours
 #SBATCH --mem 20G
 #SBATCH -o /scratch/aob2x/29Sept2025_ExpEvo/manual_gather.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.%A_%a.err # Standard error
@@ -11,7 +11,7 @@
 #SBATCH --account berglandlab
 
 ### sbatch ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_gather.sh
-### sacct -j 4393980
+### sacct -j 20672573
 ### cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.4393980_*.err
 ### cat /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_gather
 ### cd /scratch/aob2x/compBio_SNP_25Sept2023
