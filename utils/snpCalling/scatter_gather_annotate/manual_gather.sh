@@ -16,8 +16,8 @@
 ### cat /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_gather
 ### cd /scratch/aob2x/compBio_SNP_25Sept2023
 
-module load htslib/1.17  bcftools/1.17 parallel/20200322 gcc/11.4.0 openmpi/4.1.4 python/3.11.4 perl/5.40.2 vcftools/0.1.16
-
+module load htslib/1.17  bcftools/1.17 parallel/20250722 gcc/14.2.0  openmpi/5.0.7 python/3.11.4 perl/5.40.2 vcftools/0.1.16 R/4.6.0
+module load bedtools/2.30.0
 concatVCF() {
 
 
@@ -25,10 +25,11 @@ concatVCF() {
   method=PoolSNP
   maf=001
   mac=50
-  version=29Sept2025_ExpEvo
-  wd=/scratch/aob2x/compBio_SNP_29Sept2025
+  version=22Sept2026_ExpEvo
+  wd=/scratch/aob2x/compBio_SNP_22Sept2026
   script_dir=~/CompEvoBio_modules/utils/snpCalling/
   pipeline_output=/project/berglandlab/DEST/dest_mapped/
+
 
 
   # chr=2L
@@ -82,5 +83,5 @@ concatVCF() {
 }
 export -f concatVCF
 
-parallel -j1 concatVCF ::: 2L 2R 3L 3R 4 mitochondrion X Y
+parallel -j1 concatVCF ::: 2L 2R 3L 3R 4 mitochondrion_genome X Y
 #parallel -j8 concatVCF ::: 3L
