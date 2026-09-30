@@ -12,8 +12,8 @@
 
 ### cat /scratch/aob2x/DESTv2_output_SNAPE/logs/runSnakemake.49369837*.err
 
-### sbatch  sbatch --array=1-1002 ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_annotate_slices.sh
-### sacct -j 4425471
+### sbatch --array=1-1002 ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_annotate_slices.sh
+### sacct -j 20665238
 ### cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_annotate.4425471*.err
 # # ijob -A biol4559-aob2x -c10 -p largemem --mem=40G
 
@@ -46,7 +46,7 @@ echo "convert to vcf & annotate"
    ${input_file} | \
    java -jar ~/snpEff/snpEff.jar \
    eff \
-   BDGP6.86 - | head -n 100 > \
+   BDGP6.86 - | > \
    ${output_file}
 
 echo "bgzip & tabix"
