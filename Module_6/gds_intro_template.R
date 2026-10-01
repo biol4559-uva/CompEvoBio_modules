@@ -1,5 +1,5 @@
 ### run once and change directory to your scratch.
-  BiocManager::install("SeqArray" force=T)
+  BiocManager::install("SeqArray", force=T)
 
 ### libraries
   library(SeqArray)
