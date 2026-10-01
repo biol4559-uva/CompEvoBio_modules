@@ -11,7 +11,7 @@
   registerDoMC(10)
 
 ### load this function
-  getData <- function(snps=snp.dt[pos==14617051 & chr=="2L"], samples=samps) {
+getData <- function(snps=snp.dt[pos==14617051 & chr=="2L"], samples=samps) {
     # snps=snp.dt[pos==14617051 & chr=="2L"]; samples=samps
 
     ### filter to target
@@ -74,21 +74,22 @@
     setnames(afis, "col", "annotation")
     ### return
     afis[,-c("n"), with=F]
-  }
+
+}
 
 ### open GDS file
-  genofile <- seqOpen("/scratch/aob2x/compBio_SNP_29Sept2025/dest.all.PoolSNP.001.50.29Sept2025_ExpEvo.norep.ann.gds")
+  genofile <- seqOpen("/standard/BerglandTeach/data/dest.all.PoolSNP.001.50.22Sept2026_ExpEvo.norep.eff.reheader.gds")
   genofile
   table(grepl("ExpEvo", seqGetData(genofile, "sample.id")))
 
 ### load meta-data file
-  samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/full_sample_metadata.90Sept2025_ExpEvo.csv")
+  samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/expEvo_2026_samplemetadata.csv")
 
 ### subset samps to only show records associated with your paper. One easy way to do this is to use the `grepl` command.
 ### This command returns a vector of TRUE or FALSE if the search pattern is found (or not)
 ### For example:
-  samps[grepl("SRP002024", sampleId)]
-  samps[locality=="SRP002024"]
+  samps[grepl("PRJNA185744", sampleId)]
+  samps[locality=="PRJNA185744"]
 
 ### First, we need to extract from our GDS file a dictionary that contains the position information for every SNP in the dataset
 ### common SNP.dt
@@ -110,7 +111,7 @@
 ### The columns that we care about for frequencies are "af_nEff" and "nEff".
 ### "nEff" is the effective read depth, assuming pools of males. Is this a correct assumption for you? Do you need to modify the function?
 ### "af_nEff" is the allele frequency estimate rounded such that af_nEff * nEff is an integer.
-  dat <- getData(snps=snp.dt[pos==14617051 & chr=="2L"], samples=samps[grepl("SRP002024", sampleId)])
+  dat <- getData(snps=snp.dt[pos==14617051 & chr=="2L"], samples=samps[grepl("PRJNA185744", sampleId)])
 
 ### YOUR TURN:
 ### use FlyBase to find the full coordinate range of Adh, and extract all SNPs in the region
@@ -124,7 +125,7 @@
 ### On the other hand, mutations in coding sequence of genes that do not cause amino acid changes (synonymous) are likely to be neutral.
 ### As a result, the average allele frequency of Non-Synonymous mutations should be lower than for Synonymous mutations.
 ### There should also be fewer mutations at NS sites compared to Syn sites.
-### Do you see evidence of this?
+### Do you see evidence of this across the genome?
 ###
 
   ### first, we are going to subset the SNP data to make our life easier. We will re-evaluate this later
@@ -133,7 +134,7 @@
     snp.dt[J(subsamp)] ### double check that it works.
 
   ### next, we are going to extract out allele frequency data
-    dat <- getData(snps=snp.dt[J(subsamp)], samples=samps[grepl("SRP002024", sampleId)])
+    dat <- getData(snps=snp.dt[J(subsamp)], samples=samps[grepl("PRJNA185744", sampleId)])
     dat ### The dimensions of the output should be 1000*(num samples). Are they?
 
   ### YOUR TURN:
@@ -144,9 +145,9 @@
   ### 1000 SNPs is not that many out of 4.3M. If you were to subset, you'd be sitting here forever. That is going to make it hard to scale up to a larger number of SNPs.
   ### Does parallelization to make things go faster. Use a foreach() loop to iterate through your samples. use `%dopar%`
 
-    system.time(dat <- getData(snps=snp.dt[J(subsamp)], samples=samps[grepl("SRP002024", sampleId)]))
+    system.time(dat <- getData(snps=snp.dt[J(subsamp)], samples=samps[grepl("PRJNA185744", sampleId)]))
 
-    system.time(dat <- foreach(samp.i=samps[grepl("SRP002024", sampleId)]$sampleId)%dopar%{
+    system.time(dat <- foreach(samp.i=samps[grepl("PRJNA185744", sampleId)]$sampleId)%dopar%{
         # samp.i <- "ExpEvo_SRP002024_ACO_1_1975-MM-DD"
         dat <- getData(snps=snp.dt[J(subsamp)], samples=samps[sampleId==samp.i])
         dat

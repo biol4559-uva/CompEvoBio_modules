@@ -19,6 +19,7 @@
   eem
   eem[,locality:=tstrsplit(sampleId, "_")[[2]]]
   eem[,Recommendation:="Pass"]
+  eem[,sampleId:=gsub(" ", "", sampleId)]
 
 ### load DEST metadata
   samps <- fread("https://raw.githubusercontent.com/DEST-bio/DESTv2/refs/heads/main/populationInfo/dest_v2.samps_24Aug2024.csv")
@@ -31,11 +32,22 @@
 
 ### rbidn
   samps2 <- rbind(samps, eem, fill=T)
+  samps2[,sampleId:=gsub(" ", "", sampleId)]
 
   genofile <- seqOpen("/standard/BerglandTeach/data/dest.all.PoolSNP.001.50.22Sept2026_ExpEvo.norep.eff.reheader.gds")
+  gdsSamps <- seqGetData(genofile, "sample.id")
+  table(gdsSamps%in%eem$sampleId)
+  table(eem$sampleId%in%gdsSamps)
 
-
+  eem$sampleId[!eem$sampleId%in%gdsSamps]
   
+  gdsSamps[grepl("ExpEvo", gdsSamps) & !gdsSamps%in%eem$sampleId]
+  samps2[sampleId=="ExpEvo_PRJEB5713_VirSys_2_2007-MM-DD", sampleId:="ExpEvo_PRJEB5713-VirSys_2_2007-MM-DD"]
+
+  write.csv(samps2, quote=T, row.names=F, file="~/expEvo_2026_samplemetadata.csv")
+  tmp <- fread(file="~/expEvo_2026_samplemetadata.csv")
+
+
   seqGetData(genofile, "sample.id")[!(sapply(seqGetData(genofile, "sample.id"), function(x) x%in%samps2$sampleId))]
 
 
