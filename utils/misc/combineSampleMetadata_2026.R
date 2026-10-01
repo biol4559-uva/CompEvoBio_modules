@@ -1,5 +1,5 @@
-# ijob -A berglandlab_standard -c20 -p standard --mem=40G
-### module load gcc/11.4.0  openmpi/4.1.4 R/4.3.1; R
+# ijob -A berglandlab -c1 -p standard --mem=10G
+### module load gcc/14.2.0 openmpi/5.0.7 R/4.6.0; R --vanilla
 
 
 ### libraries
@@ -9,29 +9,41 @@
   library(SeqArray)
 
 ### load metadata
-  xl.fn <- "/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/ExpEvo_meta.xlsx"
+  xl.fn <- "/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/expevo_2026_samplemetadata.xlsx"
   #xl.fn <- "~/CompEvoBio_modules/data/ExpEvo_meta.xlsx"
 
-  eem <- foreach(i=excel_sheets(xl.fn))%do%{
+  eem <- foreach(i=excel_sheets(xl.fn)[1])%do%{
     read_excel(xl.fn, i)
   }
   eem <- rbindlist(eem, fill=T)
   eem
   eem[,locality:=tstrsplit(sampleId, "_")[[2]]]
-  eem
-
+  eem[,Recommendation:="Pass"]
 
 ### load DEST metadata
   samps <- fread("https://raw.githubusercontent.com/DEST-bio/DESTv2/refs/heads/main/populationInfo/dest_v2.samps_24Aug2024.csv")
 
-### semi-curated
-  badSamp <- fread("/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.v3.csv")
-  eem <- merge(eem, badSamp, by="sampleId", all.x=T)
-  eem[,Recommendation:="Pass"]
-  eem
+#### semi-curated
+#  badSamp <- fread("/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.v3.csv")
+#  eem <- merge(eem, badSamp, by="sampleId", all.x=T)
+#  eem[,Recommendation:="Pass"]
+#  eem
 
 ### rbidn
   samps2 <- rbind(samps, eem, fill=T)
+
+  genofile <- seqOpen("/standard/BerglandTeach/data/dest.all.PoolSNP.001.50.22Sept2026_ExpEvo.norep.eff.reheader.gds")
+
+
+  
+  seqGetData(genofile, "sample.id")[!(sapply(seqGetData(genofile, "sample.id"), function(x) x%in%samps2$sampleId))]
+
+
+
+
+
+
+
   #save(samps2, file="/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.csv", quote=F, row.names=F)
   samps.ag<-samps2[,list(.N), list(sampleId)]
 
@@ -41,7 +53,7 @@
   samps3[is.na(nFlies)]
 
   #load("/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.csv")
-  write.csv(samps3, file="/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.csv", quote=F, row.names=F)
+  write.csv(samps2, file="/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/full_sample_metadata.90Sept2025_ExpEvo.csv", quote=F, row.names=F)
 
 
 
