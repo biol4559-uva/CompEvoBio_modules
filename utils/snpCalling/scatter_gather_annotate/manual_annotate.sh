@@ -22,13 +22,12 @@ module purge
 module load htslib/1.17 bcftools/1.17 parallel/20200322 gcc/11.4.0 openmpi/4.1.4 R/4.3.1 samtools vcftools bedtools/2.30.0
 
 
-
 popSet=all
 method=PoolSNP
 maf=001
 mac=50
-version=29Sept2025_ExpEvo
-wd=/scratch/aob2x/compBio_SNP_29Sept2025
+version=22Sept2026_ExpEvo
+wd=/scratch/aob2x/compBio_SNP_22Sept2026
 script_dir=~/CompEvoBio_modules/utils/snpCalling/
 pipeline_output=/project/berglandlab/DEST/dest_mapped/
 
@@ -36,58 +35,18 @@ snpEffPath=~/snpEff
 
 cd ${wd}
 
-echo "no rep & index"
-
-  noRepIndex () {
-
-    popSet=all
-    method=PoolSNP
-    maf=001
-    mac=50
-    version=29Sept2025_ExpEvo
-    wd=/scratch/aob2x/compBio_SNP_29Sept2025
-    script_dir=~/CompEvoBio_modules/utils/snpCalling/
-    pipeline_output=/project/berglandlab/DEST/dest_mapped/
-    chr=${1} #chr=2L
-    bcf_outdir=${wd}/sub_bcf
-
-    bedtools intersect -sorted -v -header \
-    -b ${script_dir}/scatter_gather_annotate/repeat_bed/repeats.sort.bed.gz \
-    -a $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.vcf.gz |
-    bgzip -c > \
-    $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-
-    bcftools index -f $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
-  }
-  export -f noRepIndex
-
-  parallel -j5 noRepIndex ::: 2L 2R 3L 3R X
-
  echo "concat"
-   ls -d ${wd}/sub_bcf/dest.*.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz | grep -E "2L|2R|3L|3R|X" > \
+   ls -d ${wd}/sub_bcf/dest.*.${popSet}.${method}.${maf}.${mac}.${version}.norep.eff.vcf.gz  > \
    ${wd}/sub_bcf/vcf_order.genome
 
    bcftools concat \
    -f ${wd}/sub_bcf/vcf_order.genome \
    -O z \
    --threads 10 \
-   -o ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
+   -o ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.eff.vcf.gz
 
    tabix -p vcf ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
 
-
- echo "convert to vcf & annotate"
-   bcftools view \
-   --threads 48 \
-   ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz | \
-   java -jar ~/snpEff/snpEff.jar \
-   eff \
-   BDGP6.86 - > \
-   ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf
-
-echo "make GDS"
-   Rscript --vanilla ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/gds2vcf.R ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf
-
-echo "bgzip & tabix"
-  bgzip -@10 -c ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf > ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf.gz
-  tabix -p vcf ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.ann.vcf.gz
+Rscript --vanilla ~/DESTv3/snpCalling_dev/scatter_gather_annotate/vcf2gds.R \
+${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz \
+10

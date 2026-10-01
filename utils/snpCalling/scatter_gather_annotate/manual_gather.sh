@@ -5,20 +5,22 @@
 #SBATCH -N 1 # on one node
 #SBATCH -t 1:00:00 ### 1 hours
 #SBATCH --mem 20G
-#SBATCH -o /scratch/aob2x/29Sept2025_ExpEvo/manual_gather.%A_%a.out # Standard output
-#SBATCH -e /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.%A_%a.err # Standard error
+#SBATCH -o /scratch/aob2x/compBio_SNP_22Sept2026/logs/manual_gather.%A_%a.out # Standard output
+#SBATCH -e /scratch/aob2x/compBio_SNP_22Sept2026/logs/manual_gather.%A_%a.err # Standard error
 #SBATCH -p standard
 #SBATCH --account berglandlab
 
 ### sbatch ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_gather.sh
-### sacct -j 20672573
+### sacct -j 20672612
 ### cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_gather.4393980_*.err
 ### cat /scratch/aob2x/compBio_SNP_25Sept2023/logs/manual_gather
 ### cd /scratch/aob2x/compBio_SNP_25Sept2023
 
-module load htslib/1.17  bcftools/1.17 parallel/20250722 gcc/14.2.0  openmpi/5.0.7 python/3.11.4 perl/5.40.2 vcftools/0.1.16 R/4.6.0
-module load bedtools/2.30.0
+# # ijob -A biol4020-aob2x -c10 -p standard --mem=40G
 
+
+module purge
+module load gcc/14.2.0 xz/5.8.3 htslib/1.23 bcftools/1.23 parallel/20250722
 concatVCF() {
 
 
@@ -33,7 +35,7 @@ concatVCF() {
 
 
 
-  # chr=2L
+  # chr=3L
 
   chr=${1}
 
@@ -57,15 +59,14 @@ concatVCF() {
   sed "s|^|$outdir/|g" > $outdir/vcfs_order.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.sort
 
   # less -S $outdir/vcfs_order.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.sort
-
+  #sed -i '$d' $outdir/vcfs_order.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.sort | tail
 
   echo "Concatenating"
 
   bcftools concat \
   -f $outdir/vcfs_order.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.sort \
   -O z \
-  -n \
-  --threads 48 \
+  --threads 10 \
   -o $bcf_outdir/dest.${chr}.${popSet}.${method}.${maf}.${mac}.${version}.norep.eff.vcf.gz
 
  
