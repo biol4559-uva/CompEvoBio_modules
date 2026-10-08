@@ -44,7 +44,7 @@
   gdsSamps[grepl("ExpEvo", gdsSamps) & !gdsSamps%in%eem$sampleId]
   samps2[sampleId=="ExpEvo_PRJEB5713_VirSys_2_2007-MM-DD", sampleId:="ExpEvo_PRJEB5713-VirSys_2_2007-MM-DD"]
 
-  write.csv(samps2, quote=T, row.names=F, file="~/expEvo_2026_samplemetadata.csv")
+  write.csv(samps2, quote=T, row.names=F, file="/Users/alanbergland/Documents/GitHub/CompEvoBio_modules/data/expEvo_2026_samplemetadata.csv")
   tmp <- fread(file="~/expEvo_2026_samplemetadata.csv")
 
 

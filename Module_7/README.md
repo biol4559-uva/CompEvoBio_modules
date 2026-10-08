@@ -28,6 +28,6 @@ Objective:
 
 3. Run the code to generate the base figures of the Iris floral phenotypes and run the PCA.
 
-4. Add to your version of [2.PCADrosophila.R](/Module_7/2.PCADrosophila.R) to use PCA on the genome-wide SNPs within your samples. You will have to merge the PCA results with the metadata and use ggplot to graph how your samples group according to experimental treatment.
+4. Add to your version of [2.PCADrosophila.R](/Module_7/2.PCADrosophila_v2.R) to use PCA on the genome-wide SNPs within your samples. You will have to merge the PCA results with the metadata and use ggplot to graph how your samples group according to experimental treatment.
 
 5. To complete this assignment, upload your script and figures to GitHub. In the Canvas assignment, upload your figure and the path to your github folder.

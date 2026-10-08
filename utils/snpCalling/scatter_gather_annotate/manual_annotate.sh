@@ -18,8 +18,7 @@
 # # ijob -A biol4559-aob2x -c10 -p largemem --mem=40G
 
 module purge
-
-module load htslib/1.17 bcftools/1.17 parallel/20200322 gcc/11.4.0 openmpi/4.1.4 R/4.3.1 samtools vcftools bedtools/2.30.0
+module load gcc/14.2.0 xz/5.8.3 htslib/1.23 bcftools/1.23
 
 
 popSet=all
@@ -47,6 +46,27 @@ cd ${wd}
 
    tabix -p vcf ${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz
 
+
+
+bcftools view -h /scratch/aob2x/compBio_SNP_22Sept2026/dest.all.PoolSNP.001.50.22Sept2026_ExpEvo.norep.eff.vcf.gz > \
+/scratch/aob2x/headdder
+nano /scratch/aob2x/headdder
+
+bcftools reheader \
+-h /scratch/aob2x/headdder \
+-o /scratch/aob2x/compBio_SNP_22Sept2026/dest.all.PoolSNP.001.50.22Sept2026_ExpEvo.norep.eff.reheader.vcf.gz \
+--threads 10 \
+-v 10 \
+/scratch/aob2x/compBio_SNP_22Sept2026/dest.all.PoolSNP.001.50.22Sept2026_ExpEvo.norep.eff.vcf.gz
+
+less -S /scratch/aob2x/compBio_SNP_22Sept2026/dest.all.PoolSNP.001.50.22Sept2026_ExpEvo.norep.eff.reheader.vcf.gz
+
+module purge
+module load gcc/14.2.0  openmpi/5.0.7
+module load R/4.6.0
+
+tabix /scratch/aob2x/compBio_SNP_22Sept2026/dest.all.PoolSNP.001.50.22Sept2026_ExpEvo.norep.eff.reheader.vcf.gz
+
 Rscript --vanilla ~/DESTv3/snpCalling_dev/scatter_gather_annotate/vcf2gds.R \
-${wd}/dest.${popSet}.${method}.${maf}.${mac}.${version}.norep.vcf.gz \
+/scratch/aob2x/compBio_SNP_22Sept2026/dest.all.PoolSNP.001.50.22Sept2026_ExpEvo.norep.eff.reheader.vcf.gz \
 10

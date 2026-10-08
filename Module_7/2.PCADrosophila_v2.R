@@ -1,23 +1,15 @@
-
-####################################################################################################
-############## Move onto loading their own Drosophila GDS data and preform a PCA ###################
-####################################################################################################
-
 # Libraries
 library(data.table)
 library(ggplot2)
 library(patchwork)
 library(SeqArray)
-library(ggforce)
-library(zoo)
-library(ggrepel)
 library(doMC)
 registerDoMC(4)
 
 ######### Load SNP data for larger metapopulation study of Drosophila melanogaster (DEST) #########
 
 ### open GDS file
-genofile <- seqOpen("/scratch/aob2x/compBio_SNP_29Sept2025/dest.all.PoolSNP.001.50.29Sept2025_ExpEvo.norep.ann.gds")
+genofile <- seqOpen("/scratch/aob2x/dest.all.PoolSNP.001.50.22Sept2026_ExpEvo.norep.eff.reheader.gds")
 genofile
 
 # Get basic SNP table
@@ -30,22 +22,17 @@ snp.dt <- data.table(chr=seqGetData(genofile, "chromosome"),
 # Choose biallelic sites - multiallelic positions are difficult to work with and violate assumptions
 snp.dt <- snp.dt[nAlleles==2]
 
-
-##############################################################################
-################## Move onto Larger species-wide dataset #####################
-##############################################################################
-
 # Restrict to your samples
-bioproj = "PRJNA285429"
+bioproj = "PRJNA185744"
 
 # Restrict to well-known populations across D. melanogaster
 # Remove D. simulans sample in dgn dataset
-samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/full_sample_metadata.90Sept2025_ExpEvo.csv", fill=T)
+samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/expEvo_2026_samplemetadata.csv")
 
 samps.new <- samps[grepl(bioproj, sampleId)]
-samps <- rbind(samps[set=="DrosRTEC"],
-               samps[set=="DrosEU"],
-               samps[set=="dgn"][!sampleId=="SIM_SIM_w501_1_NA-MM-DD"],
+samps <- rbind(samps[set=="DrosRTEC" & Recommendation=="Pass"],
+               samps[set=="DrosEU" & Recommendation=="Pass"],
+               samps[set=="dgn" & Recommendation=="Pass"][!sampleId=="SIM_SIM_w501_1_NA-MM-DD"],
                samps.new)
 samps.n <- samps[,list(.N), list(sampleId)]
 table(samps.n$N)
@@ -117,3 +104,7 @@ pca.dt <- merge(pca.dt, samps, by="sampleId")
 
 # plot
 ggplot(data=pca.dt, aes(x=PC1, y=PC2, color=grepl("ExpEvo", sampleId), shape=continent)) + geom_point()
+
+
+### Your Turn: redo your PCA with only your Experimental Evolution samples. You'll have to start up around line 37
+

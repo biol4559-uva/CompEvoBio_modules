@@ -13,9 +13,9 @@
 ### cat /scratch/aob2x/DESTv2_output_SNAPE/logs/runSnakemake.49369837*.err
 
 ### sbatch --array=1-1002 ~/CompEvoBio_modules/utils/snpCalling/scatter_gather_annotate/manual_annotate_slices.sh
-### sacct -j 20665319
+### sacct -j 20665540
 ### cat /scratch/aob2x/29Sept2025_ExpEvo/logs/manual_annotate.4425471*.err
-# # ijob -A biol4559-aob2x -c10 -p largemem --mem=40G
+# # ijob -A biol4020-aob2x -c10 -p standard --mem=40G
 
 module purge
 
