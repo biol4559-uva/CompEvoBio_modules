@@ -12,11 +12,11 @@
   source("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/utils/misc/getData_function.R")
 
 ### open GDS file
-  genofile <- seqOpen("/scratch/aob2x/compBio_SNP_29Sept2025/dest.all.PoolSNP.001.50.29Sept2025_ExpEvo.norep.ann.gds")
+  genofile <- seqOpen("/scratch/aob2x/dest.all.PoolSNP.001.50.22Sept2026_ExpEvo.norep.eff.reheader.gds")
   genofile
 
 ### load meta-data file
-  samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/full_sample_metadata.90Sept2025_ExpEvo.csv", fill=T)
+  samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/expEvo_2026_samplemetadata.csv")
 
 ### load in inversion markers
   inv.markers <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/main/Module_8/inversion_markers_v6.txt")
@@ -35,7 +35,7 @@
 
 ### your turn: our goal is to retrieve the variant.ids for each inversion marker SNP.
 ### That way we can query our GDS object for allele frequencies.
-### you will need to use the "merge" command from the data.table package
+### you will need to use the "merge" command from the data.table package to combine the inv.markers object with the snp.dt object. Don't forget to index first
 ### how many of the inversion markers do not intersect with our set? Do you feel comfortable with that level of intersection?
 
 
