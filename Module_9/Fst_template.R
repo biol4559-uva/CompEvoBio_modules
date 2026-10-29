@@ -1,37 +1,34 @@
 args = commandArgs(trailingOnly=TRUE)
 jobId=as.numeric(args[1])
 
-## install packages
-  # install.packages("poolfstat")
-
 ### libraries
   library(SeqArray)
   library(data.table)
-  library(ggplot2)
-  library(patchwork)
+  #library(ggplot2)
+  #library(patchwork)
   library(foreach)
-  library(doMC)
-  registerDoMC(10)
+  #library(doMC)
   library(poolfstat)
 
 ### load this function
   source("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/utils/misc/getData_function.R")
 
+
 ### open GDS file
-  genofile <- seqOpen("/scratch/aob2x/compBio_SNP_29Sept2025/dest.all.PoolSNP.001.50.29Sept2025_ExpEvo.norep.ann.gds")
+  genofile <- seqOpen("/scratch/aob2x/dest.all.PoolSNP.001.50.22Sept2026_ExpEvo.norep.eff.reheader.gds")
   genofile
 
 ### load meta-data file
-  samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/full_sample_metadata.90Sept2025_ExpEvo.csv", fill=T)
+  samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/expEvo_2026_samplemetadata.csv")
 
 ### common SNP.dt
   seqResetFilter(genofile)
   snp.dt <- data.table(chr=seqGetData(genofile, "chromosome"),
-                       pos=seqGetData(genofile, "position"),
-                       nAlleles=seqGetData(genofile, "$num_allele"),
-                       id=seqGetData(genofile, "variant.id"),
-                       refAllele=seqGetData(genofile, "$ref"),
-                       altAllele=seqGetData(genofile, "$alt"))
+                      pos=seqGetData(genofile, "position"),
+                      nAlleles=seqGetData(genofile, "$num_allele"),
+                      id=seqGetData(genofile, "variant.id"),
+                      refAllele=seqGetData(genofile, "$ref"),
+                      altAllele=seqGetData(genofile, "$alt"))
 
   snp.dt <- snp.dt[nAlleles==2] ### subset to sites with only two alleles
   seqSetFilter(genofile, snp.dt$id)
@@ -47,22 +44,24 @@ jobId=as.numeric(args[1])
     # chr.i <- "2L"
     tmp <- snp.dt[J(chr.i)]
     data.table(chr=chr.i,
-               start=seq(from=min(tmp$pos), to=max(tmp$pos)-win.bp, by=step.bp),
-               end=seq(from=min(tmp$pos), to=max(tmp$pos)-win.bp, by=step.bp) + win.bp)
+              start=seq(from=min(tmp$pos), to=max(tmp$pos)-win.bp, by=step.bp),
+              end=seq(from=min(tmp$pos), to=max(tmp$pos)-win.bp, by=step.bp) + win.bp)
   }
 
   wins[,window:=1:dim(wins)[1]]
   dim(wins)
 
-### iterate thorugh windows to calculate a summary of your data
+### iterate through windows to calculate a summary of your data
   setkey(snp.dt, chr, pos)
 
-  system.time(out <- foreach(i=1:100, .errorhandling="remove")%dopar%{
-    #i <- 100
+  system.time(out <- foreach(i=jobId, .errorhandling="remove")%do%{
+    #i <- 10
     message(i)
+
     ### get data for your sample for this window
       focalSNPs <- snp.dt[J(wins[i]$chr)][pos>=wins[i]$start & pos<=wins[i]$end]
       tmp.data <- getData(snps=focalSNPs, samples=samps[grepl("PRJEB5713", sampleId)])
+
       tmp.data[,window:=i]
       tmp.data[is.na(dp), dp:=0]
       tmp.data[is.na(ad), ad:=0]
@@ -70,20 +69,19 @@ jobId=as.numeric(args[1])
       tmp.data[,refDep:=dp-ad]
 
     ### format conversion for poolfstat
-      tmp.data.ref.mat <- dcast(data=tmp.data[,c("sampleId", "variant.id", "refDep")], variant.id~sampleId, value.var="refDep")
-      tmp.data.dp.mat <- dcast(data=tmp.data[,c("sampleId", "variant.id", "dp")], variant.id~sampleId, value.var="dp")
-
+      tmp.data.ref.mat <- as.data.table(dcast(data=tmp.data[,c("sampleId", "variant.id", "refDep")], variant.id~sampleId, value.var="refDep"))
+      tmp.data.dp.mat <-  as.data.table(dcast(data=tmp.data[,c("sampleId", "variant.id", "dp")], variant.id~sampleId, value.var="dp"))
 
       setnames(focalSNPs, c("chr", "pos", "refAllele", "altAllele"), c("Chromosome", "Position", "RefAllele", "AltAllele"))
 
       tmp.pool <- new("pooldata",
-                  npools=dim(tmp.data.summary)[1],
-                  nsnp=dim(tmp.data.dp.mat)[1],
-                  refallele.readcount=as.matrix(tmp.data.ref.mat[,-"variant.id"]),
-                  readcoverage=as.matrix(tmp.data.dp.mat[,-"variant.id"]),
-                  poolsizes= tmp.data.summary$nFlies * 2,
-                  poolnames = tmp.data.summary$sampleId,
-                  snp.info = focalSNPs[,c("Chromosome", "Position", "RefAllele", "AltAllele")])
+                      npools=dim(tmp.data.summary)[1],
+                      nsnp=dim(tmp.data.dp.mat)[1],
+                      refallele.readcount=as.matrix(tmp.data.ref.mat[,-"variant.id"]),
+                      readcoverage=as.matrix(tmp.data.dp.mat[,-"variant.id"]),
+                      poolsizes= tmp.data.summary$nFlies * 2,
+                      poolnames = tmp.data.summary$sampleId,
+                      snp.info = focalSNPs[,c("Chromosome", "Position", "RefAllele", "AltAllele")])
 
     ### calculte pairwise Fst
       fst.out <- compute.pairwiseFST(x=tmp.pool, output.snp.values=T)
@@ -116,6 +114,7 @@ jobId=as.numeric(args[1])
       fst.snp.long[,Htot:=1-value.y]
       fst.snp.long[,Hwith:=1-value.x]
 
+
     ### your turn
     ### summarize the Fst values.
     ### summarize by taking the average Fst within and between groups per SNP
@@ -123,13 +122,35 @@ jobId=as.numeric(args[1])
       fst.snp.long[,trt1:=tstrsplit(samp1, "_")[[3]]]
       fst.snp.long[,trt2:=tstrsplit(samp2, "_")[[3]]]
 
-
     ### your turn
     ### make sure to return the data you want
-      fst.snp.long[,list(aveFst=mean(Fst, na.rm=T)), list(trt1, trt2, chr=Chromosome, pos=Position)][!is.nan(aveFst)]
+      fst.snp.long.ag <- fst.snp.long[,list(aveFst=mean(Fst, na.rm=T), Htot=mean(Htot, na.rm=T), Hwith=mean(Hwith, na.rm=T)),
+                                      list(trt1, trt2, chr=Chromosome, pos=Position)][!is.nan(aveFst)]
 
+
+      # ggplot(data=fst.snp.long.ag, aes(x=Htot, y=aveFst)) + geom_point() + facet_grid(trt1~trt2)
+      # ggplot(data=fst.snp.long.ag, aes(aveFst, group=paste(trt1, trt2), fill=paste(trt1, trt2))) + geom_density(alpha=.75)
+      # ggplot(data=fst.snp.long.ag, aes(aveFst, x=paste(trt1, trt2), group=paste(trt1, trt2), fill=paste(trt1, trt2))) + geom_boxplot(alpha=.75)
+
+    ### your turn
+    ### tack in annotation from
+      focalSNPs.annot <- tmp.data[,list(annotation=unique(annotation), gene=unique(gene)), list(variant.id, chr, pos)]
+      fst.snp.long.ag <- merge(fst.snp.long.ag, focalSNPs.annot, by=c("chr", "pos"))
+
+      # ggplot(data=fst.snp.long.ag[annotation%like%"mis" | annotation%like%"syn"], aes(y=Htot, x=annotation)) + geom_boxplot()
+
+      return(fst.snp.long.ag)
   })
+
+
+### save
   out <- rbindlist(out)
-  system("mkdir /scratch/aob2x/Fst_out")
-  save(out, file=paste("/scratch/aob2x/Fst_out/window", i, ".Rdata", sep=""))
-  out
+  # system("mkdir /scratch/aob2x/Fst_out")
+  save(out, file=paste("/scratch/aob2x/Fst_out/window", jobId, ".Rdata", sep=""))
+
+
+
+
+
+
+  
