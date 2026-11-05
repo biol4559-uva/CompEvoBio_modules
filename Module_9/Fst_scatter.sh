@@ -8,16 +8,16 @@
 #SBATCH -o /scratch/aob2x/logs/fst.%A_%a.out # Standard output
 #SBATCH -e /scratch/aob2x/logs/fst.%A_%a.err # Standard error
 #SBATCH -p standard
-#SBATCH --account biol4559-aob2x
+#SBATCH --account biol4020-aob2x
 
-### run as: sbatch --array=1-NUMBER_OF_WINDOWS PATH_TO_THIS_FILE
+### run as: sbatch --array=1-1085 ~/CompEvoBio_modules/Module_9/Fst_scatter.sh
 ### sacct -j XXXXXXXXX
 ### cat /scratch/COMPUTE_ID/logs/fst.*.err
 
 
 ### modules
-  module load gcc/11.4.0 openmpi/4.1.4 R/4.3.1; echo "R_LIBS_USER=~/R/goolf/4.3" > ~/.Renviron
+  module load gcc/14.2.0 openmpi/5.0.7 R/4.6.0
 
 ### run window
 
-  Rscript --vanilla FULL_PATH_TO-Fst_template.R ${SLURM_ARRAY_TASK_ID}
+  Rscript --vanilla ~/CompEvoBio_modules/Module_9/2025_fstwindow.R ${SLURM_ARRAY_TASK_ID}

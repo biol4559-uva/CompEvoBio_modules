@@ -13,7 +13,6 @@ jobId=as.numeric(args[1])
 ### load this function
   source("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/utils/misc/getData_function.R")
 
-
 ### open GDS file
   genofile <- seqOpen("/scratch/aob2x/dest.all.PoolSNP.001.50.22Sept2026_ExpEvo.norep.eff.reheader.gds")
   genofile
@@ -67,7 +66,8 @@ jobId=as.numeric(args[1])
       tmp.data[is.na(ad), ad:=0]
       tmp.data.summary <- tmp.data[,list(nFlies=mean(nFlies)), list(sampleId)]
       tmp.data[,refDep:=dp-ad]
-
+      
+      tmp.data.summary[,sampleId:=tolower(sub("-", "_", sampleId))]
     ### format conversion for poolfstat
       tmp.data.ref.mat <- as.data.table(dcast(data=tmp.data[,c("sampleId", "variant.id", "refDep")], variant.id~sampleId, value.var="refDep"))
       tmp.data.dp.mat <-  as.data.table(dcast(data=tmp.data[,c("sampleId", "variant.id", "dp")], variant.id~sampleId, value.var="dp"))
