@@ -11,7 +11,7 @@
 #SBATCH --account biol4020-aob2x
 
 ### run as: sbatch --array=1-1085 ~/CompEvoBio_modules/Module_9/Fst_scatter.sh
-### sacct -j XXXXXXXXX
+### sacct -j 22497591
 ### cat /scratch/COMPUTE_ID/logs/fst.*.err
 
 
