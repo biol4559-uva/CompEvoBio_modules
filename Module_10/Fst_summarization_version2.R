@@ -139,17 +139,3 @@ fst.out <- rbindlist(fst.out)
 ### can you identify candidate SNPs and look at their specific allele frequency change across replicates
   table(out.norm[normFst<.000001]$chr)
 
-
-
-### get max Fst
-  fst.out[,maf:= (1+sqrt(1-2*Htot))/2]
-  fst.out[maf>.5, maf:=1-maf]
-  fst.out[,fstMax:=maf/(1-maf)]
-  fst.out[,fstBar:=aveFst/fstMax]
-
-  fst.out[which.max(fstBar)]
-
-  library(SeqArray)
-
-  focalSNPs <- snp.dt[J(wins[i]$chr)][pos>=wins[i]$start & pos<=wins[i]$end]
-  tmp.data <- getData(snps=focalSNPs, samples=samps[grepl("PRJEB5713", sampleId)])
