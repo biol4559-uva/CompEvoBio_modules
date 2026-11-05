@@ -18,7 +18,7 @@
 ### load meta-data file
   samps <- fread("https://raw.githubusercontent.com/biol4559-uva/CompEvoBio_modules/refs/heads/main/data/expEvo_2026_samplemetadata.csv")
 
- ### common SNP.dt
+### common SNP.dt
   seqResetFilter(genofile)
   snp.dt <- data.table(chr=seqGetData(genofile, "chromosome"),
                        pos=seqGetData(genofile, "position"),
@@ -30,6 +30,10 @@
   snp.dt <- snp.dt[nAlleles==2] ### subset to sites with only two alleles
   seqSetFilter(genofile, snp.dt$id)
   snp.dt[,af:=seqGetData(genofile, "annotation/info/AF")$data] ### this is the global average frequency
+
+### load your Big Fst object
+  load(file="/scratch/aob2x/big_fstOutput.Rdata")
+
 
 ### get SNPs from best window
   ## 3L 7219979 7319979
