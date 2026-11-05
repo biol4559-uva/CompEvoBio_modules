@@ -50,6 +50,11 @@ sbatch --array=1-$( cat /scratch/aob2x/small_file.csv  | wc -l  ) \
 /scratch/aob2x/small_file.csv
 ```
 
+having issues with your small file? Try this:
+```
+ tr -cd '\11\12\40-\176' < small_file.csv | sed 's/ _/_/g' | sed -e '$a\' | wc -l
+```
+
 3. Confirm your job is successfully running by running the command `sacct -j JOBID`
 
 4. To complete this assignment, upload your JOBID to Cavnas.
