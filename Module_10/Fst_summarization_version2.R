@@ -7,13 +7,13 @@
   #install.packages("dplyr")
   library(dplyr)
 
-### collect data
-fl <- list.files("/scratch/aob2x/Fst_out", "window", full.names=T)
-fst.out <- foreach(i=fl)%do%{
-  load(i)
-  return(out)
-}
-fst.out <- rbindlist(fst.out)
+### collect data (if you haven't already)
+  fl <- list.files("/scratch/aob2x/Fst_out", "window", full.names=T)
+  fst.out <- foreach(i=fl)%do%{
+    load(i)
+    return(out)
+  }
+  fst.out <- rbindlist(fst.out)
 
 ### save big object
   save(fst.out, file="/scratch/aob2x/big_fstOutput.Rdata")
@@ -23,7 +23,7 @@ fst.out <- rbindlist(fst.out)
 ### generate plot of the histogram of Fst values across combinations of comparisions (e.g., control vs treatment) for each chromosome
 
 ### your turn
-### generate a "Manhattan" plot of the raw pvalues, but only for the extreme values
+### generate a "Manhattan" plot of the raw Fst values, but only for the extreme values
   ggplot(data=fst.out[aveFst>.15], aes(x=pos, y=aveFst)) + geom_point() + facet_grid(trt1+trt2~chr)
 
 ### let's generate a sliding window analysis calculating the average Fst values between comparisons
@@ -77,17 +77,16 @@ fst.out <- rbindlist(fst.out)
 
   ggplot(data=windowedFst.pval, aes(x=meanPos, y=-log10(pvalue), group=thr, color=as.factor(thr))) + geom_line() + facet_grid(trt1+trt2~chr) ### your turn - work with this plot to make it look nicer
   ggplot(data=windowedFst.pval, aes(x=meanPos, y=aveFst)) + geom_line() + facet_grid(trt1+trt2~chr) ### your turn - work with this plot to make it look nicer
-
   ggplot(data=windowedFst.pval[chr=="3L"], aes(x=meanPos, y=-log10(pvalue), group=thr, color=as.factor(thr))) + geom_line() + facet_grid(trt1+trt2~chr) ### your turn - work with this plot to make it look nicer
 
 
   ggplot(data=windowedFst.pval[chr=="3L"][thr==.001], aes(x=-log10(pvalue), y=aveFst)) + geom_point()
   windowedFst.pval[chr=="3L"][thr==.001][which.max(aveFst)]
-  wins[1114]
 
+
+### what are some candidate regions? Identify peaks
   setkey(fst.out, chr, pos)
   candidates <- out.norm[chr=="3L"][pos>=7219979][pos<=7319979][trt1=="Control"][trt2=="VirSys"][normFst<.0001]
-
 
   setkey(candidates, chr, pos)
   fst.out[J(candidates)][trt1=="Control"][trt2=="VirSys"]

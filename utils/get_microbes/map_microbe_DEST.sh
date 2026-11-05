@@ -11,7 +11,7 @@
 #SBATCH --account biol4020-aob2x
 
 # sbatch --array=1-12 ~/CompEvoBio_modules/utils/get_microbes/map_microbe_DEST.sh
-
+# sacct -j 22499092
 
 module load apptainer/1.4.5
 #apptainer build -F /scratch/aob2x/dest_v3.sif docker://alanbergland/dest_v3:latest
